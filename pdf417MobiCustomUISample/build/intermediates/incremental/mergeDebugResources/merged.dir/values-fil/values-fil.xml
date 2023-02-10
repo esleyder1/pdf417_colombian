@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mb_autofocus_fail">Hindi maipokus ang camera. Subukang mag-scan sa ilalim ng ibang ilaw.</string>
+    <string name="mb_camera_not_allowed">Hindi pinahihintulutan ang camera ng mga setting ng pahintulot.</string>
+    <string name="mb_camera_not_ready">Hindi pa handa ang camera.</string>
+    <string name="mb_camera_permission_required">Kinakailangan ang pahintulot ng camera.</string>
+    <string name="mb_custom_ui_forbidden">Hindi pinahihintulutan ng lisensya ang pasadyang aktibidad ng camera!</string>
+    <string name="mb_dismiss_error_dialog">Isara</string>
+    <string name="mb_enable_camera">I-enable ang camera</string>
+    <string name="mb_enable_permission_help">Ililipat ka ngayon sa mga setting ng pahintulot kung saan mo bibigyan ng pahintulot ang app.</string>
+    <string name="mb_enable_permission_help_instant_app">Mangyaring pahintulutan ang camera sa mga setting ng pahintulot ng app.</string>
+    <string name="mb_error_camera_high">Ilapit pa</string>
+    <string name="mb_error_camera_near">Ilayo pa</string>
+    <string name="mb_error_initializing">Hindi nabuksan ang native library. Pakitingnan ang ADB error log para sa higit pang detalye.</string>
+    <string name="mb_feature_unsupported_android_version">Suportado ang feature para sa Android 2.1 at mas bago</string>
+    <string name="mb_feature_unsupported_autofocus">Hindi suportado ang feature na ito sa camera na walang autofocus</string>
+    <string name="mb_feature_unsupported_device">Hindi suportado ang feature na ito dahil sa teknikal na katangian ng iyong device</string>
+    <string name="mb_invalid_license">Hindi wastong key ng lisensya! Pakitingnan ang ADB error log para sa higit pang detalye.</string>
+    <string name="mb_licence_check_device_offline">Suriin ang koneksiyon sa internet</string>
+    <string name="mb_licence_check_failed">Mali sa network</string>
+    <string name="mb_licence_locked">Hindi magagamit ang pag-scan</string>
+    <string name="mb_warning_title">Babala</string>
+</resources>

@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dev.pdf417censo.com.CustomUIScanActivity">
+
+    <com.microblink.blinkbarcode.view.recognition.RecognizerRunnerView
+        android:id="@+id/recognizer_runner_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.microblink.blinkbarcode.view.recognition.RecognizerRunnerView>
+
+</FrameLayout>
