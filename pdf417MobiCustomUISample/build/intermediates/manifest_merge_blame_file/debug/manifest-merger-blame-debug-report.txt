@@ -9,108 +9,119 @@
 7-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml
 8
 9    <uses-permission android:name="android.permission.CAMERA" />
-9-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:5:5-65
-9-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:5:22-62
+9-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:6:5-65
+9-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:6:22-62
 10    <uses-permission android:name="android.permission.FLASHLIGHT" />
-10-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:6:5-69
-10-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:6:22-66
+10-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:7:5-69
+10-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:7:22-66
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:7:5-67
-11-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:7:22-64
-12
-13    <uses-feature android:name="android.hardware.camera" />
-13-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:9:5-60
-13-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:9:19-57
-14    <uses-feature
-14-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:10:5-95
-15        android:name="android.hardware.camera.autofocus"
-15-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:10:19-67
-16        android:required="false" />
-16-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:10:68-92
+11-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:8:5-67
+11-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:8:22-64
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:10:5-80
+12-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:10:22-78
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:11:5-79
+13-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:11:22-77
+14    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+14-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:12:5-82
+14-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:12:22-79
+15
+16    <uses-feature android:name="android.hardware.camera" />
+16-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:13:5-60
+16-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:13:19-57
 17    <uses-feature
-17-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:11:5-91
-18        android:name="android.hardware.camera.flash"
-18-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:11:19-63
+17-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:14:5-95
+18        android:name="android.hardware.camera.autofocus"
+18-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:14:19-67
 19        android:required="false" />
-19-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:11:64-88
+19-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:14:68-92
 20    <uses-feature
-20-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:12:5-15:20
-21        android:glEsVersion="0x00020000"
-21-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:13:9-41
-22        android:required="false" >
-22-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:14:9-33
-23    </uses-feature>
-24
-25    <supports-screens
-25-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:12:5-18:40
-26        android:anyDensity="true"
-26-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:13:9-34
-27        android:largeScreens="true"
-27-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:14:9-36
-28        android:normalScreens="true"
-28-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:15:9-37
-29        android:resizeable="true"
-29-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:16:9-34
-30        android:smallScreens="true"
-30-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:17:9-36
-31        android:xlargeScreens="true" />
-31-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:18:9-37
-32
-33    <application
-33-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:17:5-41:19
-34        android:name="dev.pdf417censo.com.CustomUIDemoApp"
-34-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:18:9-59
-35        android:allowBackup="true"
-35-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:19:9-35
-36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-36-->[androidx.core:core:1.3.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/513efa8b232871d058fdda7e90972b20/core-1.3.0/AndroidManifest.xml:24:18-86
-37        android:debuggable="true"
-38        android:icon="@drawable/ic_launcher"
-38-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:20:9-45
-39        android:label="@string/app_name"
-39-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:22:9-41
-40        android:largeHeap="true"
-40-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:34:9-33
-41        android:testOnly="true"
-42        android:theme="@style/AppTheme" >
-42-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:21:9-40
-43        <activity
-43-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:23:9-32:20
-44            android:name="dev.pdf417censo.com.MainActivity"
-44-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:24:13-60
-45            android:label="@string/app_name"
-45-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:26:13-45
-46            android:screenOrientation="portrait" >
-46-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:25:13-49
-47            <intent-filter>
-47-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:27:13-31:29
-48                <action android:name="android.intent.action.MAIN" />
-48-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:28:17-69
-48-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:28:25-66
-49
-50                <category android:name="android.intent.category.LAUNCHER" />
-50-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:30:17-77
-50-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:30:27-74
-51            </intent-filter>
-52        </activity>
-53        <activity
-53-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:33:9-36:20
-54            android:name="com.microblink.blinkbarcode.activity.BarcodeScanActivity"
-54-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:34:13-84
-55            android:configChanges="orientation|screenSize"
-55-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:38:13-59
-56            android:screenOrientation="nosensor"
-56-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0bbea8fe1a2f91fab9197388e1944eac/pdf417.mobi-8.0.0/AndroidManifest.xml:39:13-49
-57            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
-57-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:35:13-77
-58        </activity>
-59        <activity
-59-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:37:9-40:20
-60            android:name="dev.pdf417censo.com.CustomUIScanActivity"
-60-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:38:13-68
-61            android:screenOrientation="portrait" >
-61-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:39:13-49
+20-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:15:5-91
+21        android:name="android.hardware.camera.flash"
+21-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:15:19-63
+22        android:required="false" />
+22-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:15:64-88
+23    <uses-feature
+23-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:16:5-19:20
+24        android:glEsVersion="0x00020000"
+24-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:17:9-41
+25        android:required="false" >
+25-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:18:9-33
+26    </uses-feature>
+27
+28    <supports-screens
+28-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:12:5-18:40
+29        android:anyDensity="true"
+29-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:13:9-34
+30        android:largeScreens="true"
+30-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:14:9-36
+31        android:normalScreens="true"
+31-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:15:9-37
+32        android:resizeable="true"
+32-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:16:9-34
+33        android:smallScreens="true"
+33-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:17:9-36
+34        android:xlargeScreens="true" />
+34-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:18:9-37
+35
+36    <application
+36-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:21:5-46:19
+37        android:name="dev.pdf417censo.com.CustomUIDemoApp"
+37-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:22:9-59
+38        android:allowBackup="true"
+38-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:23:9-35
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.3.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d2282b2039db7b96a5d44b761b02443/core-1.3.0/AndroidManifest.xml:24:18-86
+40        android:debuggable="true"
+41        android:icon="@drawable/ic_launcher"
+41-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:24:9-45
+42        android:label="@string/app_name"
+42-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:26:9-41
+43        android:largeHeap="true"
+43-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:34:9-33
+44        android:requestLegacyExternalStorage="true"
+44-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:27:9-52
+45        android:testOnly="true"
+46        android:theme="@style/AppTheme" >
+46-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:25:9-40
+47        <activity
+47-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:28:9-37:20
+48            android:name="dev.pdf417censo.com.MainActivity"
+48-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:29:13-60
+49            android:label="@string/app_name"
+49-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:31:13-45
+50            android:screenOrientation="portrait" >
+50-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:30:13-49
+51            <intent-filter>
+51-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:32:13-36:29
+52                <action android:name="android.intent.action.MAIN" />
+52-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:33:17-69
+52-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:33:25-66
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:35:17-77
+54-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:35:27-74
+55            </intent-filter>
+56        </activity>
+57        <activity
+57-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:38:9-41:20
+58            android:name="com.microblink.blinkbarcode.activity.BarcodeScanActivity"
+58-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:39:13-84
+59            android:configChanges="orientation|screenSize"
+59-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:38:13-59
+60            android:screenOrientation="nosensor"
+60-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:39:13-49
+61            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+61-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:40:13-77
 62        </activity>
-63    </application>
-64
-65</manifest>
+63        <activity
+63-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:42:9-45:20
+64            android:name="dev.pdf417censo.com.CustomUIScanActivity"
+64-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:13-68
+65            android:screenOrientation="portrait" >
+65-->/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:44:13-49
+66        </activity>
+67    </application>
+68
+69</manifest>

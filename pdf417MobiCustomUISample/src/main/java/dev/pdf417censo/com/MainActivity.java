@@ -1,10 +1,15 @@
 package dev.pdf417censo.com;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -19,15 +24,25 @@ import com.microblink.blinkbarcode.recognition.RecognitionSuccessType;
 import com.microblink.blinkbarcode.uisettings.ActivityRunner;
 import com.microblink.blinkbarcode.uisettings.BarcodeUISettings;
 import com.microblink.blinkbarcode.view.recognition.ScanResultListener;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
 
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -85,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             public void onScanningDone(@NonNull RecognitionSuccessType recognitionSuccessType) {
                 // pause scanning to prevent further scanning and mutating of mBarcodeRecognizer's result
                 // while fragment is being removed
+
                 mRecognizerRunnerFragment.getRecognizerRunnerView().pauseScanning();
                 removeFragment();
                 handleScanResult();
@@ -98,33 +114,21 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
+
         if (savedInstanceState != null) {
             mRecognizerRunnerFragment = (RecognizerRunnerFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.recognizer_runner_view_container);
         }
-    }
-
-    public String eliminarceros(String cadena)
-    {
-        boolean salida=true;
-        int j=0;
-        String resultado=cadena;
-        while (salida)
-        {
-            if (Integer.parseInt(""+resultado.charAt(j))> 0 )
-            {
-                salida= false;
-            }else
-            {
-                resultado= resultado.substring(1,resultado.length())  ;
-            }
-        }
-        return resultado;
+        createExcel();
+        //startDefaultScanActivity();
     }
 
     public void onClick(View v) {
@@ -135,18 +139,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                 startDefaultScanActivity();
                 break;
             }
-            case R.id.btnDefaultOverlay: {
-                showScanFragment();
-                break;
-            }
-            case R.id.btnCustomUI: {
-                startCustomUiActivity();
-                break;
-            }
-            case R.id.btnCustomUIROI: {
-                startCustomUiActivityWithCustomScanRegion();
-                break;
-            }
+
         }
     }
 
@@ -171,6 +164,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     private void startCustomUiActivity() {
         Intent intent = new Intent(this, CustomUIScanActivity.class);
         // add RecognizerBundle to intent
+
         mRecognizerBundle.saveToIntent(intent);
         startActivityForResult(intent, MY_REQUEST_CODE);
     }
@@ -218,6 +212,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         BarcodeRecognizer.Result result = mBarcodeRecognizer.getResult();
 
         shareScanResult(result);
+
     }
 
     public static boolean isValidIndex(String[] arr, int index) {
@@ -247,7 +242,6 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             e.printStackTrace();
         }
 
-        boolean datosGuadados = false;
 
         //Toast.makeText(this, result.toString(), Toast.LENGTH_SHORT).show();
 
@@ -268,8 +262,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
 
                 //si contiene RH + || -
-                if(isValidIndex(elements,7) && elements[7].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 7", Toast.LENGTH_SHORT).show();
+                if(isValidIndex(elements,7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 7 linea 272", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5]+" "+elements[6];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[7].split("");
@@ -289,9 +283,23 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(isValidIndex(elements,6) && elements[6].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 6", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5];
+                }else if(isValidIndex(elements,6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 6 linea 282", Toast.LENGTH_SHORT).show();
+
+                    String identAndApellido = elements[2];
+                    String[] parts = identAndApellido.split("00");
+                    String part1 = parts[0]; // 004
+                    String replaced = identAndApellido.replace(part1+"00","");
+
+                    persona.identificacion = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
+                    String primer_apellido = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
+
+                    if(replaced.isEmpty()){
+                        persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5];
+                    }else{
+                        persona.nombreCompleto = primer_apellido+" "+elements[3]+" "+elements[4]+" "+elements[5];
+                    }
+
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[6].split("");
                     persona.rh = generoAndRH[16]+generoAndRH[17];
@@ -309,9 +317,22 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if(isValidIndex(elements,5) && elements[5].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 5", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[4];
+                else if(isValidIndex(elements,5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 5 linea 313", Toast.LENGTH_SHORT).show();
+                    String identAndApellido = elements[2];
+                    String[] parts = identAndApellido.split("00");
+                    String part1 = parts[0]; // 004
+                    String replaced = identAndApellido.replace(part1+"00","");
+
+                    persona.identificacion = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
+                    String primer_apellido = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
+
+                    if(replaced.isEmpty()){
+                        persona.nombreCompleto = primerApellido+" "+elements[3]+" "+elements[4];
+                    }else{
+                        persona.nombreCompleto = primer_apellido+" "+elements[3]+" "+elements[4];
+                    }
+
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[5].split("");
                     persona.rh = generoAndRH[16]+generoAndRH[17];
@@ -336,8 +357,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                 String primerApellido = elements[4];
 
                 //si contiene RH + || -
-                if(isValidIndex(elements,8) && elements[8].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 7", Toast.LENGTH_SHORT).show();
+                if(isValidIndex(elements,8) && elements[8].length() > 16 && elements[8].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 7 linea 329", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[5]+" "+elements[6]+" "+elements[7];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[8].split("");
@@ -358,8 +379,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
                     return;
                 }
-                else if(isValidIndex(elements,7) && elements[7].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 7", Toast.LENGTH_SHORT).show();
+                else if(isValidIndex(elements,7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 7 linea 362", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[5]+" "+elements[6];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[7].split("");
@@ -379,8 +400,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(isValidIndex(elements,6) && elements[6].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 6", Toast.LENGTH_SHORT).show();
+                }else if(isValidIndex(elements,6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 6 linea 383", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[5];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[6].split("");
@@ -408,8 +429,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                 String primerApellido = elements[4];
 
                 //si contiene RH + || -
-                if(isValidIndex(elements,7) && elements[7].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 7", Toast.LENGTH_SHORT).show();
+                if(isValidIndex(elements,7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 7 linea 412", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[5]+" "+elements[6];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[7].split("");
@@ -429,8 +450,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(isValidIndex(elements,6) && elements[6].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 6", Toast.LENGTH_SHORT).show();
+                }else if(isValidIndex(elements,6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 6 linea 433", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[5];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[6].split("");
@@ -460,8 +481,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
 
                 //si contiene RH + || -
-                if(isValidIndex(elements,7) && elements[7].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 7", Toast.LENGTH_SHORT).show();
+                if(isValidIndex(elements,7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 7 linea 464", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5]+" "+elements[6];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[7].split("");
@@ -481,8 +502,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(isValidIndex(elements,6) && elements[6].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 6", Toast.LENGTH_SHORT).show();
+                }else if(isValidIndex(elements,6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 6 linea 485", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[6].split("");
@@ -501,8 +522,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if(isValidIndex(elements,5) && elements[5].matches(".*[+-].*")){
-                    Toast.makeText((this), "aqui: 5", Toast.LENGTH_SHORT).show();
+                else if(isValidIndex(elements,5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")){
+                    Toast.makeText((this), "aqui: 5 linea 505", Toast.LENGTH_SHORT).show();
                     persona.nombreCompleto = primerApellido+" "+elements[4];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[5].split("");
@@ -570,24 +591,58 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             Toast.makeText(this, Nombre, Toast.LENGTH_SHORT).show();*/
 
     }
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void createExcel(){
+        Toast.makeText(this, "EXCEL", Toast.LENGTH_SHORT).show();
 
-    private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
-    public static String bytesToHex(byte[] bytes) {
-        char[] hexChars = new char[bytes.length * 2];
-        for (int j = 0; j < bytes.length; j++) {
-            int v = bytes[j] & 0xFF;
-            hexChars[j * 2] = HEX_ARRAY[v >>> 4];
-            hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
+        HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
+        HSSFSheet hssfSheet = hssfWorkbook.createSheet("Custom Sheet");
+
+        HSSFRow hssfRow = hssfSheet.createRow(0);
+        HSSFCell hssfCell = hssfRow.createCell(0);
+
+        hssfCell.setCellValue("HUBERT DAGUA");
+
+        File localStorage = getExternalFilesDir(null);
+        if (localStorage == null) { return; }
+        String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory( Environment.DIRECTORY_DOCUMENTS));
+        String rootPath = storagePath + "/test";
+        String fileName = "/test.xlsx";
+
+        File root = new File(rootPath);
+        if(!root.mkdirs()) {
+            Log.i("Test", "This path is already exist: " + root.getAbsolutePath());
         }
-        return new String(hexChars);
-    }
-    private String byteArrayToHex(byte[] data) {
-        StringBuilder sb = new StringBuilder();
-        for (byte b : data) {
-            sb.append(String.format("%02x", b));
+
+        File file = new File(rootPath + fileName);
+        try {
+            int permissionCheck = ContextCompat.checkSelfPermission(
+                    MainActivity.this,
+                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+                if (!file.createNewFile()) {
+                    Log.i("Test", "This file is already exist: " + file.getAbsolutePath());
+                }
+            }
+            FileOutputStream fileOutputStream= new FileOutputStream(file);
+            hssfWorkbook.write(fileOutputStream);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return sb.toString();
+
+
     }
+
+    public void askForPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (!Environment.isExternalStorageManager()) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                startActivity(intent);
+            }
+        }
+    }
+
 
     @NonNull
     @Override
@@ -612,4 +667,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     public void onBackPressed() {
         super.onBackPressed();
     }
+
+
+
+
 }
