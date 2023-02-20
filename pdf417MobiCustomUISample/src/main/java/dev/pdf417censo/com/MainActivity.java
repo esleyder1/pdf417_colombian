@@ -253,43 +253,19 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         String secondLastName = convertByteToArray(rawDataBuffer, 81, 104);
         String fisrtName = convertByteToArray(rawDataBuffer, 104, 127);
         String middleName = convertByteToArray(rawDataBuffer, 127, 150);
+        String gender = convertByteToArray(rawDataBuffer, 151, 152);
+        String birthdayYear = convertByteToArray(rawDataBuffer, 152, 156);
+        String birthdayMonth = convertByteToArray(rawDataBuffer, 156, 158);
+        String birthdayDay = convertByteToArray(rawDataBuffer, 158, 160);
+        String municipalityCode = convertByteToArray(rawDataBuffer, 160, 162);
+        String departmentCode = convertByteToArray(rawDataBuffer, 162, 165);
+        String bloodType = convertByteToArray(rawDataBuffer, 166, 168);
 
+        Persona p = new Persona(documentNumber, lastName, secondLastName, fisrtName
+                , middleName, gender, birthdayYear, birthdayMonth, birthdayDay,
+                municipalityCode, departmentCode, bloodType);
 
-        Toast.makeText(this, lastName, Toast.LENGTH_SHORT).show();
-
-        String Nombre = "", Apellido = "", cedula = "", fecha = "", dia, mes, ano;
-        /*String[] auxliarArray=arrayElements[7].split("decoded\\):");
-
-        String strDatos =auxliarArray[1];
-        char[] ca = strDatos.toCharArray();
-        for(int i=0; i<strDatos.length();i++)
-        {
-            if(Character.isLetter(ca[i]))       //Si es letra
-                Apellido+=ca[i];    //Salto de línea e imprimimos el carácter
-            else                                //Si no es letra
-                cedula+=ca[i];           //Imprimimos el carácter
-        }
-        Apellido=Apellido.trim();
-        cedula=(cedula.replaceAll("\n", "")).trim();
-        if (cedula.length()== 0 ) {
-            auxliarArray = arrayElements[5].split("decoded\\):");
-            strDatos = auxliarArray[1];
-            ca = strDatos.toCharArray();
-            Apellido = "";
-            for (int i = 0; i < strDatos.length(); i++) {
-                if (Character.isLetter(ca[i]))       //Si es letra
-                    Apellido += ca[i];    //Salto de línea e imprimimos el carácter
-                else                                //Si no es letra
-                    cedula += ca[i];           //Imprimimos el carácter
-            }
-            Apellido = Apellido.trim();
-            cedula = (cedula.replaceAll("\n", "")).trim();
-            cedula = cedula.substring(cedula.length() - 10, cedula.length());
-            cedula = eliminarceros(cedula);
-            auxliarArray = arrayElements[9].split("decoded\\):");
-            Nombre = (auxliarArray[1].replaceAll("\n", "")).trim();
-            Toast.makeText(this, Nombre, Toast.LENGTH_SHORT).show();*/
-
+        createExcel(p);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -300,10 +276,10 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void createExcel() {
+    public void createExcel(Persona p) {
 
-        if (persona != null) {
-            Toast.makeText(this, "EXCEL: " + persona.getNombreCompleto(), Toast.LENGTH_SHORT).show();
+        if (p != null) {
+            Toast.makeText(this, "Hola: " + p.getFisrtName(), Toast.LENGTH_SHORT).show();
 
 
             HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
@@ -346,14 +322,14 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             row.add("500");
             row.add("1");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                row.add(persona.documentType());
+                row.add(p.documentType());
             }
-            row.add(persona.getIdentificacion());
-            row.add(persona.getNombreCompleto());
-            row.add(persona.getNombreCompleto());
-            row.add(persona.getFechaNacimiento());
+            row.add(p.getDocumentNumber());
+            row.add(p.getFisrtName() + " "+ p.getMiddleName());
+            row.add(p.getLastName() + " "+ p.getSecondLastName());
+            row.add(p.getBirthdayYear() + "/" + p.getBirthdayMonth() + "/" + p.getBirthdayDay());
             row.add("HI");
-            row.add(persona.getGenero());
+            row.add(p.getGender());
             row.add("S");
             row.add("AGRICULTOR");
             row.add("SE");
@@ -362,7 +338,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             row.add("3215980548");
             row.add("BRICEYDA PAZU SECUE");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                row.add(persona.calculateAge());
+                row.add(p.calculateAge());
             }
 
             for (int i = 0; i < row.size(); i++) {
@@ -377,7 +353,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             }
             String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
             String rootPath = storagePath + "/censo";
-            String fileName = "/censo.xlsx";
+            String fileName = "/listado.xlsx";
 
             File root = new File(rootPath);
             if (!root.mkdirs()) {

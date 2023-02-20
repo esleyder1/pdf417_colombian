@@ -16,77 +16,141 @@ import java.util.Locale;
 
 public class Persona implements Serializable {
 
-    String identificacion;
-    String nombreCompleto;
-    String fechaNacimiento;
-    String genero;
-    String rh;
-    String tipoDocumento;
+    String documentNumber;
+    String lastName;
+    String secondLastName;
+    String fisrtName;
+    String middleName;
+    String gender;
+    String birthdayYear;
+    String birthdayMonth;
+    String birthdayDay;
+    String municipalityCode;
+    String departmentCode;
+    String bloodType;
+    String documentType;
+
 
     public Persona() {
     }
 
-    public Persona(String identificacion, String nombreCompleto, String fechaNacimiento, String genero, String rh) {
-        this.identificacion = identificacion;
-        this.nombreCompleto = nombreCompleto;
-        this.fechaNacimiento = fechaNacimiento;
-        this.genero = genero;
-        this.rh = rh;
+    public Persona(String documentNumber, String lastName, String secondLastName, String fisrtName, String middleName, String gender, String birthdayYear, String birthdayMonth, String birthdayDay, String municipalityCode, String departmentCode, String bloodType) {
+        this.documentNumber = documentNumber;
+        this.lastName = lastName;
+        this.secondLastName = secondLastName;
+        this.fisrtName = fisrtName;
+        this.middleName = middleName;
+        this.gender = gender;
+        this.birthdayYear = birthdayYear;
+        this.birthdayMonth = birthdayMonth;
+        this.birthdayDay = birthdayDay;
+        this.municipalityCode = municipalityCode;
+        this.departmentCode = departmentCode;
+        this.bloodType = bloodType;
     }
 
-    public String getIdentificacion() {
-        return identificacion;
+    public String getDocumentNumber() {
+        return documentNumber;
     }
 
-    public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
+    public void setDocumentNumber(String documentNumber) {
+        this.documentNumber = documentNumber;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getSecondLastName() {
+        return secondLastName;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setSecondLastName(String secondLastName) {
+        this.secondLastName = secondLastName;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getFisrtName() {
+        return fisrtName;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setFisrtName(String fisrtName) {
+        this.fisrtName = fisrtName;
     }
 
-    public String getRh() {
-        return rh;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setRh(String rh) {
-        this.rh = rh;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    public String getTipoDocumento() {
-        return tipoDocumento;
+    public String getGender() {
+        return gender;
     }
 
-    public void setTipoDocumento(String tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getBirthdayYear() {
+        return birthdayYear;
+    }
+
+    public void setBirthdayYear(String birthdayYear) {
+        this.birthdayYear = birthdayYear;
+    }
+
+    public String getBirthdayMonth() {
+        return birthdayMonth;
+    }
+
+    public void setBirthdayMonth(String birthdayMonth) {
+        this.birthdayMonth = birthdayMonth;
+    }
+
+    public String getBirthdayDay() {
+        return birthdayDay;
+    }
+
+    public void setBirthdayDay(String birthdayDay) {
+        this.birthdayDay = birthdayDay;
+    }
+
+    public String getMunicipalityCode() {
+        return municipalityCode;
+    }
+
+    public void setMunicipalityCode(String municipalityCode) {
+        this.municipalityCode = municipalityCode;
+    }
+
+    public String getDepartmentCode() {
+        return departmentCode;
+    }
+
+    public void setDepartmentCode(String departmentCode) {
+        this.departmentCode = departmentCode;
+    }
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String calculateAge() {
         String age = "";
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDate birthDate = LocalDate.parse(this.fechaNacimiento, df);
+        String birthdayFull = birthdayYear + "/" + birthdayMonth + "/" + birthdayDay;
+        LocalDate birthDate = LocalDate.parse(birthdayFull, df);
         if ((birthDate != null) && (LocalDate.now() != null)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 age = String.valueOf(Period.between(birthDate, LocalDate.now()).getYears());
@@ -98,18 +162,19 @@ public class Persona implements Serializable {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String documentType() {
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDate birthDate = LocalDate.parse(this.fechaNacimiento, df);
+        String birthdayFull = birthdayYear + "/" + birthdayMonth + "/" + birthdayDay;
+        LocalDate birthDate = LocalDate.parse(birthdayFull, df);
         if ((birthDate != null) && (LocalDate.now() != null)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 int age = Period.between(birthDate, LocalDate.now()).getYears();
                 if(age > 18) {
-                    this.tipoDocumento = "C.C";
+                    this.documentType = "C.C";
                 }else{
-                    this.tipoDocumento = "T.I";
+                    this.documentType = "T.I";
                 }
             }
         }
-        return this.tipoDocumento;
+        return this.documentType;
     }
 
 }
