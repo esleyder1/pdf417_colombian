@@ -1,7 +1,9 @@
-dev/pdf417censo/com/BuildConfig.java
- dev.pdf417censo.com.BuildConfig
+dev/pdf417censo/com/Persona.java
+ dev.pdf417censo.com.Persona
 dev/pdf417censo/com/CustomUIDemoApp.java
  dev.pdf417censo.com.CustomUIDemoApp
+dev/pdf417censo/com/BuildConfig.java
+ dev.pdf417censo.com.BuildConfig
 dev/pdf417censo/com/CustomUIScanActivity.java
  dev.pdf417censo.com.CustomUIScanActivity
  dev.pdf417censo.com.CustomUIScanActivity$1
@@ -14,8 +16,6 @@ dev/pdf417censo/com/CustomUIScanActivity.java
  dev.pdf417censo.com.CustomUIScanActivity$5
  dev.pdf417censo.com.CustomUIScanActivity$6
  dev.pdf417censo.com.CustomUIScanActivity$7
-dev/pdf417censo/com/Persona.java
- dev.pdf417censo.com.Persona
 dev/pdf417censo/com/MainActivity.java
  dev.pdf417censo.com.MainActivity
  dev.pdf417censo.com.MainActivity$1

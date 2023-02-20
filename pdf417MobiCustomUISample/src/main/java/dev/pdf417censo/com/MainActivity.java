@@ -28,6 +28,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import static java.nio.charset.StandardCharsets.*;
 
 
 
@@ -43,12 +44,15 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Year;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -87,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
      * Association is done via {@link #getScanningOverlay()} method in fragment's {@link RecognizerRunnerFragment#onAttach(Activity)}
      * lifecycle event, so you must ensure that mScanOverlay exists at this time.
      */
-    private BasicOverlayController mScanOverlay = createRecognizerAndOverlay();
+    private final BasicOverlayController mScanOverlay = createRecognizerAndOverlay();
 
     private BasicOverlayController createRecognizerAndOverlay() {
         // You have to enable recognizers and barcode types you want to support
@@ -101,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         BarcodeUISettings uiSettings = new BarcodeUISettings(mRecognizerBundle);
         return uiSettings.createOverlayController(this, new ScanResultListener() {
             // called when RecognizerRunnerFragment finishes recognition
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             @WorkerThread
             public void onScanningDone(@NonNull RecognitionSuccessType recognitionSuccessType) {
@@ -205,6 +210,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         startActivityForResult(intent, MY_REQUEST_CODE);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -215,12 +221,13 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void handleScanResult() {
         BarcodeRecognizer.Result result = mBarcodeRecognizer.getResult();
 
         shareScanResult(result);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            createExcel();
+            //createExcel();
         }
     }
 
@@ -228,6 +235,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         return index >= 0 && index < arr.length;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void shareScanResult(BarcodeRecognizer.Result result) {
 
         StringBuilder sb = new StringBuilder(result.getBarcodeType().name());
@@ -240,390 +248,14 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
         byte[] rawDataBuffer = result.getRawData();
 
-        JSONObject resultObject = new JSONObject();
-        try {
-            resultObject.put(RESULT_TYPE, "Barcode result");
-            resultObject.put(TYPE, "PDF417");
-            resultObject.put(DATA, result.getStringData());
+        String documentNumber = convertByteToArray(rawDataBuffer, 48, 58);
+        String lastName = convertByteToArray(rawDataBuffer, 58, 80);
+        String secondLastName = convertByteToArray(rawDataBuffer, 81, 104);
+        String fisrtName = convertByteToArray(rawDataBuffer, 104, 127);
+        String middleName = convertByteToArray(rawDataBuffer, 127, 150);
 
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-        //Toast.makeText(this, result.toString(), Toast.LENGTH_SHORT).show();
-
-        Log.d("CEDULA", result.getStringData());
-
-        String res = null;
-        try {
-            res = resultObject.getString("data").replaceAll("\u0000", " ");
-            res = res.replaceAll("\\s+", " ");
-            String[] elements = res.split(" ");
-
-
-            //LINA
-            if (elements[2].matches("^(?=.*[A-ZñÑ])(?=.*[0-9])[A-ZñÑ0-9]+$") && elements[2].length() > 6) {
-
-                persona.identificacion = elements[2].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
-                String primerApellido = elements[2].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
-
-
-                //si contiene RH + || -
-                if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 7 linea 272", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5] + " " + elements[6];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[7].split("");
-                    persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-
-                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 6 linea 282", Toast.LENGTH_SHORT).show();
-
-                    String identAndApellido = elements[2];
-                    String[] parts = identAndApellido.split("00");
-                    String part1 = parts[0]; // 004
-                    String replaced = identAndApellido.replace(part1 + "00", "");
-
-                    persona.identificacion = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
-                    String primer_apellido = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
-
-                    if (replaced.isEmpty()) {
-                        persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5];
-                    } else {
-                        persona.nombreCompleto = primer_apellido + " " + elements[3] + " " + elements[4] + " " + elements[5];
-                    }
-
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-                    persona.genero = generoAndRH[1];
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (isValidIndex(elements, 5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 5 linea 313", Toast.LENGTH_SHORT).show();
-                    String identAndApellido = elements[2];
-                    String[] parts = identAndApellido.split("00");
-                    String part1 = parts[0]; // 004
-                    String replaced = identAndApellido.replace(part1 + "00", "");
-
-                    persona.identificacion = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
-                    String primer_apellido = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
-
-                    if (replaced.isEmpty()) {
-                        persona.nombreCompleto = primerApellido + " " + elements[3] + " " + elements[4];
-                    } else {
-                        persona.nombreCompleto = primer_apellido + " " + elements[3] + " " + elements[4];
-                    }
-
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[5].split("");
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-                    persona.genero = generoAndRH[1];
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-            }
-            //HUBER
-            if (elements[3].matches("\\d+") && elements[3].length() > 6) {
-                persona.identificacion = elements[3];
-                String primerApellido = elements[4];
-
-                //si contiene RH + || -
-                if (isValidIndex(elements, 8) && elements[8].length() > 16 && elements[8].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 7 linea 329", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[5] + " " + elements[6] + " " + elements[7];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[8].split("");
-                    persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-
-                    return;
-                } else if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 7 linea 362", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[5] + " " + elements[6];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[7].split("");
-                    persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-
-                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 6 linea 383", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[5];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-                    persona.genero = generoAndRH[1];
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-
-            }
-            if (elements[3].matches("\\d+") && elements[3].length() > 6) {
-                persona.identificacion = elements[3];
-                String primerApellido = elements[4];
-
-                //si contiene RH + || -
-                if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 7 linea 412", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[5] + " " + elements[6];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[7].split("");
-                    persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-
-                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 6 linea 433", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[5];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-                    persona.genero = generoAndRH[1];
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-
-            }
-            // ESLEYDER
-            if (elements[3].matches(".*[a-zA-Z].*") && elements[3].length() > 6) {
-                persona.identificacion = elements[3].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
-                String primerApellido = elements[3].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
-
-
-                //si contiene RH + || -
-                if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 7 linea 464", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5] + " " + elements[6];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[7].split("");
-                    persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-
-                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 6 linea 485", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-                    persona.genero = generoAndRH[1];
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (isValidIndex(elements, 5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 5 linea 505", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[4];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[5].split("");
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-                    persona.genero = generoAndRH[1];
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-            }
-
-            // ESLEYDER
-            if (elements[3].matches(".*[a-zA-Z].*") && elements[3].length() > 6) {
-                persona.identificacion = elements[3].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
-                String primerApellido = elements[3].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
-
-
-                //si contiene RH + || -
-                if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 7 linea 464", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5] + " " + elements[6];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[7].split("");
-                    persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-
-                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 6 linea 485", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-                    persona.genero = generoAndRH[1];
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (isValidIndex(elements, 5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")) {
-                    Toast.makeText((this), "aqui: 5 linea 505", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido + " " + elements[4];
-                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
-                    String[] generoAndRH = elements[5].split("");
-                    persona.rh = generoAndRH[16] + generoAndRH[17];
-                    persona.genero = generoAndRH[1];
-                    StringBuilder fechaNac = new StringBuilder();
-                    for (int i = 2; i < 10; i++) {
-                        fechaNac.append(generoAndRH[i]);
-                        if (i == 5 || i == 7) {
-                            fechaNac.append("/");
-                        }
-                    }
-                    persona.fechaNacimiento = fechaNac.toString();
-                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-            }
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
+        Toast.makeText(this, lastName, Toast.LENGTH_SHORT).show();
 
         String Nombre = "", Apellido = "", cedula = "", fecha = "", dia, mes, ano;
         /*String[] auxliarArray=arrayElements[7].split("decoded\\):");
@@ -658,6 +290,13 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             Nombre = (auxliarArray[1].replaceAll("\n", "")).trim();
             Toast.makeText(this, Nombre, Toast.LENGTH_SHORT).show();*/
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public String convertByteToArray(byte[] rawDataBuffer, int from, int to){
+        byte[] bytes = Arrays.copyOfRange(rawDataBuffer, from, to);
+        String dec = new String(bytes, UTF_8).trim();
+        return dec.replaceAll("\uFFFD", "Ñ");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

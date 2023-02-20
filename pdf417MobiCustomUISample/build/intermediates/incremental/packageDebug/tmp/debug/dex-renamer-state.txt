@@ -1,4 +1,4 @@
-#Mon Feb 20 09:40:54 COT 2023
+#Mon Feb 20 16:23:18 COT 2023
 base.0=/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
