@@ -1,4 +1,4 @@
-#Sat Feb 11 14:50:22 COT 2023
-base.0=/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Mon Feb 20 09:40:54 COT 2023
+base.0=/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

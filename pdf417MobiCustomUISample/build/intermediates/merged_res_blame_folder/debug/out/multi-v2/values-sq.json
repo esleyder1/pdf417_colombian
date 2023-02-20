@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
+            "outputFile": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
             "map": [
                 {
                     "source": "/home/esleyder/.gradle/caches/transforms-2/files-2.1/0cb9ff486f5edb59977e253831b932c8/appcompat-1.2.0/res/values-sq/values-sq.xml",

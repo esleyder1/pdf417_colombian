@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ar/values-ar.xml",
+            "outputFile": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "/home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/res/values-ar/values-ar.xml",

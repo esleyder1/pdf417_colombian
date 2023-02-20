@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/home/esleyder/.gradle/caches/transforms-2/files-2.1/0cb9ff486f5edb59977e253831b932c8/appcompat-1.2.0/res/values/values.xml",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/values/strings.xml",
+                    "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "9,10,11,8,3,5,4,6,7",
                         "startColumns": "4,4,4,4,4,1,4,4,4",
@@ -40,20 +40,39 @@
                     }
                 },
                 {
-                    "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/values/dimens.xml",
+                    "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/values/colors.xml",
                     "from": {
-                        "startLines": "3,4,5",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "89,147,203",
-                        "endColumns": "57,55,50",
-                        "endOffsets": "142,198,249"
+                        "startLines": "2,4,5,3",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,161,220,114",
+                        "endColumns": "58,58,59,46",
+                        "endOffsets": "109,215,275,156"
                     },
                     "to": {
-                        "startLines": "170,171,210",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "11250,11308,13969",
-                        "endColumns": "57,55,50",
-                        "endOffsets": "11303,11359,14015"
+                        "startLines": "18,29,30,31",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1132,2036,2095,2155",
+                        "endColumns": "58,58,59,46",
+                        "endOffsets": "1186,2090,2150,2197"
+                    }
+                },
+                {
+                    "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "49,213",
+                        "endLines": "5,10",
+                        "endColumns": "12,12",
+                        "endOffsets": "207,364"
+                    },
+                    "to": {
+                        "startLines": "345,1414",
+                        "startColumns": "4,4",
+                        "startOffsets": "22831,91792",
+                        "endLines": "347,1417",
+                        "endColumns": "12,12",
+                        "endOffsets": "22989,91943"
                     }
                 },
                 {
@@ -76,20 +95,20 @@
                     }
                 },
                 {
-                    "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/values/colors.xml",
+                    "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/values/dimens.xml",
                     "from": {
-                        "startLines": "2,4,5,3",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,161,220,114",
-                        "endColumns": "58,58,59,46",
-                        "endOffsets": "109,215,275,156"
+                        "startLines": "3,4,5",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "89,147,203",
+                        "endColumns": "57,55,50",
+                        "endOffsets": "142,198,249"
                     },
                     "to": {
-                        "startLines": "18,29,30,31",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "1132,2036,2095,2155",
-                        "endColumns": "58,58,59,46",
-                        "endOffsets": "1186,2090,2150,2197"
+                        "startLines": "170,171,210",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "11250,11308,13969",
+                        "endColumns": "57,55,50",
+                        "endOffsets": "11303,11359,14015"
                     }
                 },
                 {
@@ -109,25 +128,6 @@
                         "endLines": "16,17,70,71,172,173,174,175,176,177,178,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,259,260,264,265,266,267,268,269,270,271,272,273,274,281,339,1723,1727,1728,1732,1733,1877,1878,2671,2770,2802,2899,2906",
                         "endColumns": "71,87,68,62,69,67,71,69,60,73,72,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,64,58,58,59,59,59,59,59,59,59,59,59,59,58,59,59,59,59,59,59,59,59,59,59,58,59,59,58,58,58,58,58,58,34,34,54,62,54,57,56,49,60,56,33,34,34,69,70,116,12,109,12,128,71,66,24,24,24,24,24",
                         "endOffsets": "1039,1127,4464,4527,11429,11497,11569,11639,11700,11774,11847,13047,13108,13170,13234,13296,13357,13425,13525,13585,13651,13724,13793,13850,13902,13964,14540,14616,14681,14740,14799,14859,14919,14979,15039,15099,15159,15219,15279,15339,15399,15458,15518,15578,15638,15698,15758,15818,15878,15938,15998,16058,16117,16177,16237,16296,16355,16414,16473,16532,16591,16865,16900,17097,17160,17215,17273,17330,17380,17441,17498,17532,17567,17602,18012,22384,115061,115262,115372,115573,115702,127069,127136,169523,175440,177505,182922,183299"
-                    }
-                },
-                {
-                    "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3,7",
-                        "startColumns": "4,4",
-                        "startOffsets": "49,213",
-                        "endLines": "5,10",
-                        "endColumns": "12,12",
-                        "endOffsets": "207,364"
-                    },
-                    "to": {
-                        "startLines": "345,1414",
-                        "startColumns": "4,4",
-                        "startOffsets": "22831,91792",
-                        "endLines": "347,1417",
-                        "endColumns": "12,12",
-                        "endOffsets": "22989,91943"
                     }
                 },
                 {

@@ -45,6 +45,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Year;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 // ScanningOverlayBinder must be implemented for case when RecognizerRunnerFragment is used
@@ -59,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     private static final String FIELDS = "fields";
     private static final String RAW_DATA = "raw";
 
+    Persona persona = new Persona();
 
 
     /**
@@ -127,7 +133,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             mRecognizerRunnerFragment = (RecognizerRunnerFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.recognizer_runner_view_container);
         }
-        createExcel();
+
+
         //startDefaultScanActivity();
     }
 
@@ -212,7 +219,9 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         BarcodeRecognizer.Result result = mBarcodeRecognizer.getResult();
 
         shareScanResult(result);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            createExcel();
+        }
     }
 
     public static boolean isValidIndex(String[] arr, int index) {
@@ -253,27 +262,27 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             res = res.replaceAll("\\s+", " ");
             String[] elements = res.split(" ");
 
-            Persona persona = new Persona();
+
             //LINA
-            if(elements[2].matches("^(?=.*[A-Z])(?=.*[0-9])[A-Z0-9]+$") && elements[2].length() > 6){
+            if (elements[2].matches("^(?=.*[A-ZñÑ])(?=.*[0-9])[A-ZñÑ0-9]+$") && elements[2].length() > 6) {
 
                 persona.identificacion = elements[2].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
                 String primerApellido = elements[2].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
 
 
                 //si contiene RH + || -
-                if(isValidIndex(elements,7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")){
+                if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 7 linea 272", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5]+" "+elements[6];
+                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5] + " " + elements[6];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[7].split("");
                     persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
 
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -283,31 +292,31 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(isValidIndex(elements,6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")){
+                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 6 linea 282", Toast.LENGTH_SHORT).show();
 
                     String identAndApellido = elements[2];
                     String[] parts = identAndApellido.split("00");
                     String part1 = parts[0]; // 004
-                    String replaced = identAndApellido.replace(part1+"00","");
+                    String replaced = identAndApellido.replace(part1 + "00", "");
 
                     persona.identificacion = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
                     String primer_apellido = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
 
-                    if(replaced.isEmpty()){
-                        persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5];
-                    }else{
-                        persona.nombreCompleto = primer_apellido+" "+elements[3]+" "+elements[4]+" "+elements[5];
+                    if (replaced.isEmpty()) {
+                        persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5];
+                    } else {
+                        persona.nombreCompleto = primer_apellido + " " + elements[3] + " " + elements[4] + " " + elements[5];
                     }
 
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
                     persona.genero = generoAndRH[1];
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -316,31 +325,30 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
-                }
-                else if(isValidIndex(elements,5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")){
+                } else if (isValidIndex(elements, 5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 5 linea 313", Toast.LENGTH_SHORT).show();
                     String identAndApellido = elements[2];
                     String[] parts = identAndApellido.split("00");
                     String part1 = parts[0]; // 004
-                    String replaced = identAndApellido.replace(part1+"00","");
+                    String replaced = identAndApellido.replace(part1 + "00", "");
 
                     persona.identificacion = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
                     String primer_apellido = replaced.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
 
-                    if(replaced.isEmpty()){
-                        persona.nombreCompleto = primerApellido+" "+elements[3]+" "+elements[4];
-                    }else{
-                        persona.nombreCompleto = primer_apellido+" "+elements[3]+" "+elements[4];
+                    if (replaced.isEmpty()) {
+                        persona.nombreCompleto = primerApellido + " " + elements[3] + " " + elements[4];
+                    } else {
+                        persona.nombreCompleto = primer_apellido + " " + elements[3] + " " + elements[4];
                     }
 
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[5].split("");
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
                     persona.genero = generoAndRH[1];
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -352,23 +360,23 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                 }
             }
             //HUBER
-            if(elements[3].matches("\\d+") && elements[3].length() > 6){
+            if (elements[3].matches("\\d+") && elements[3].length() > 6) {
                 persona.identificacion = elements[3];
                 String primerApellido = elements[4];
 
                 //si contiene RH + || -
-                if(isValidIndex(elements,8) && elements[8].length() > 16 && elements[8].matches(".*[+-].*")){
+                if (isValidIndex(elements, 8) && elements[8].length() > 16 && elements[8].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 7 linea 329", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[5]+" "+elements[6]+" "+elements[7];
+                    persona.nombreCompleto = primerApellido + " " + elements[5] + " " + elements[6] + " " + elements[7];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[8].split("");
                     persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
 
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -378,19 +386,18 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
 
                     return;
-                }
-                else if(isValidIndex(elements,7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")){
+                } else if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 7 linea 362", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[5]+" "+elements[6];
+                    persona.nombreCompleto = primerApellido + " " + elements[5] + " " + elements[6];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[7].split("");
                     persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
 
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -400,17 +407,17 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(isValidIndex(elements,6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")){
+                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 6 linea 383", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[5];
+                    persona.nombreCompleto = primerApellido + " " + elements[5];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
                     persona.genero = generoAndRH[1];
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -422,25 +429,24 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                 }
 
 
-
             }
-            if(elements[3].matches("\\d+") && elements[3].length() > 6){
+            if (elements[3].matches("\\d+") && elements[3].length() > 6) {
                 persona.identificacion = elements[3];
                 String primerApellido = elements[4];
 
                 //si contiene RH + || -
-                if(isValidIndex(elements,7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")){
+                if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 7 linea 412", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[5]+" "+elements[6];
+                    persona.nombreCompleto = primerApellido + " " + elements[5] + " " + elements[6];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[7].split("");
                     persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
 
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -450,17 +456,17 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(isValidIndex(elements,6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")){
+                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 6 linea 433", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[5];
+                    persona.nombreCompleto = primerApellido + " " + elements[5];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
                     persona.genero = generoAndRH[1];
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -470,29 +476,28 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
                 }
-
 
 
             }
             // ESLEYDER
-            if(elements[3].matches(".*[a-zA-Z].*") && elements[3].length() > 6){
+            if (elements[3].matches(".*[a-zA-Z].*") && elements[3].length() > 6) {
                 persona.identificacion = elements[3].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
                 String primerApellido = elements[3].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
 
 
                 //si contiene RH + || -
-                if(isValidIndex(elements,7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")){
+                if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 7 linea 464", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5]+" "+elements[6];
+                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5] + " " + elements[6];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[7].split("");
                     persona.genero = generoAndRH[1];
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
 
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -502,17 +507,17 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(isValidIndex(elements,6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")){
+                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 6 linea 485", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[4]+" "+elements[5];
+                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[6].split("");
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
                     persona.genero = generoAndRH[1];
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -521,18 +526,17 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
                     Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
                     return;
-                }
-                else if(isValidIndex(elements,5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")){
+                } else if (isValidIndex(elements, 5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")) {
                     Toast.makeText((this), "aqui: 5 linea 505", Toast.LENGTH_SHORT).show();
-                    persona.nombreCompleto = primerApellido+" "+elements[4];
+                    persona.nombreCompleto = primerApellido + " " + elements[4];
                     Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
                     String[] generoAndRH = elements[5].split("");
-                    persona.rh = generoAndRH[16]+generoAndRH[17];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
                     persona.genero = generoAndRH[1];
                     StringBuilder fechaNac = new StringBuilder();
-                    for(int i = 2; i< 10; i++){
+                    for (int i = 2; i < 10; i++) {
                         fechaNac.append(generoAndRH[i]);
-                        if(i == 5 || i == 7){
+                        if (i == 5 || i == 7) {
                             fechaNac.append("/");
                         }
                     }
@@ -545,9 +549,75 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
             }
 
+            // ESLEYDER
+            if (elements[3].matches(".*[a-zA-Z].*") && elements[3].length() > 6) {
+                persona.identificacion = elements[3].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[0];
+                String primerApellido = elements[3].split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)")[1];
 
 
+                //si contiene RH + || -
+                if (isValidIndex(elements, 7) && elements[7].length() > 16 && elements[7].matches(".*[+-].*")) {
+                    Toast.makeText((this), "aqui: 7 linea 464", Toast.LENGTH_SHORT).show();
+                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5] + " " + elements[6];
+                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
+                    String[] generoAndRH = elements[7].split("");
+                    persona.genero = generoAndRH[1];
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
 
+                    StringBuilder fechaNac = new StringBuilder();
+                    for (int i = 2; i < 10; i++) {
+                        fechaNac.append(generoAndRH[i]);
+                        if (i == 5 || i == 7) {
+                            fechaNac.append("/");
+                        }
+                    }
+                    persona.fechaNacimiento = fechaNac.toString();
+                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
+                    return;
+
+                } else if (isValidIndex(elements, 6) && elements[6].length() > 16 && elements[6].matches(".*[+-].*")) {
+                    Toast.makeText((this), "aqui: 6 linea 485", Toast.LENGTH_SHORT).show();
+                    persona.nombreCompleto = primerApellido + " " + elements[4] + " " + elements[5];
+                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
+                    String[] generoAndRH = elements[6].split("");
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
+                    persona.genero = generoAndRH[1];
+                    StringBuilder fechaNac = new StringBuilder();
+                    for (int i = 2; i < 10; i++) {
+                        fechaNac.append(generoAndRH[i]);
+                        if (i == 5 || i == 7) {
+                            fechaNac.append("/");
+                        }
+                    }
+                    persona.fechaNacimiento = fechaNac.toString();
+                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (isValidIndex(elements, 5) && elements[5].length() > 16 && elements[5].matches(".*[+-].*")) {
+                    Toast.makeText((this), "aqui: 5 linea 505", Toast.LENGTH_SHORT).show();
+                    persona.nombreCompleto = primerApellido + " " + elements[4];
+                    Toast.makeText(this, persona.nombreCompleto, Toast.LENGTH_SHORT).show();
+                    String[] generoAndRH = elements[5].split("");
+                    persona.rh = generoAndRH[16] + generoAndRH[17];
+                    persona.genero = generoAndRH[1];
+                    StringBuilder fechaNac = new StringBuilder();
+                    for (int i = 2; i < 10; i++) {
+                        fechaNac.append(generoAndRH[i]);
+                        if (i == 5 || i == 7) {
+                            fechaNac.append("/");
+                        }
+                    }
+                    persona.fechaNacimiento = fechaNac.toString();
+                    Toast.makeText(this, persona.fechaNacimiento, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, persona.genero, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, persona.rh, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+            }
 
 
         } catch (JSONException e) {
@@ -555,9 +625,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         }
 
 
-
-
-        String Nombre="",Apellido="", cedula="",fecha="", dia, mes, ano;
+        String Nombre = "", Apellido = "", cedula = "", fecha = "", dia, mes, ano;
         /*String[] auxliarArray=arrayElements[7].split("decoded\\):");
 
         String strDatos =auxliarArray[1];
@@ -591,47 +659,115 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             Toast.makeText(this, Nombre, Toast.LENGTH_SHORT).show();*/
 
     }
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void createExcel(){
-        Toast.makeText(this, "EXCEL", Toast.LENGTH_SHORT).show();
+    public void createExcel() {
 
-        HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-        HSSFSheet hssfSheet = hssfWorkbook.createSheet("Custom Sheet");
+        if (persona != null) {
+            Toast.makeText(this, "EXCEL: " + persona.getNombreCompleto(), Toast.LENGTH_SHORT).show();
 
-        HSSFRow hssfRow = hssfSheet.createRow(0);
-        HSSFCell hssfCell = hssfRow.createCell(0);
 
-        hssfCell.setCellValue("HUBERT DAGUA");
+            HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
+            HSSFSheet hssfSheet = hssfWorkbook.createSheet("CENSO RESGUARDO JAMBALO 2023");
 
-        File localStorage = getExternalFilesDir(null);
-        if (localStorage == null) { return; }
-        String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory( Environment.DIRECTORY_DOCUMENTS));
-        String rootPath = storagePath + "/test";
-        String fileName = "/test.xlsx";
+            HSSFRow headerRow = hssfSheet.createRow(0);
 
-        File root = new File(rootPath);
-        if(!root.mkdirs()) {
-            Log.i("Test", "This path is already exist: " + root.getAbsolutePath());
-        }
 
-        File file = new File(rootPath + fileName);
-        try {
-            int permissionCheck = ContextCompat.checkSelfPermission(
-                    MainActivity.this,
-                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-                if (!file.createNewFile()) {
-                    Log.i("Test", "This file is already exist: " + file.getAbsolutePath());
-                }
+            ArrayList<String> header = new ArrayList<>();
+            header.add("VIGENCIA");
+            header.add("RESGUARDO INDIGENA");
+            header.add("COMUNIDAD INDIGENA MISAK (290) NASA (500)");
+            header.add("FICHA FAMILIAR");
+            header.add("TIPO DOCUMENTO");
+            header.add("NUMERO DE DOCUMENTO");
+            header.add("NOMBRES");
+            header.add("APELLIDOS");
+            header.add("FECHA DE NACIMIENTO");
+            header.add("PARENTESCO");
+            header.add("SEXO");
+            header.add("ESTADO CIVIL");
+            header.add("PROFESION");
+            header.add("ESCOLARIDAD");
+            header.add("INTEGRANTES");
+            header.add("DIRECCION");
+            header.add("TELEFONO");
+            header.add("USUARIO");
+            header.add("EDAD");
+
+            for (int i = 0; i < header.size(); i++) {
+                HSSFCell cell = headerRow.createCell(i);
+                cell.setCellValue(header.get(i));
             }
-            FileOutputStream fileOutputStream= new FileOutputStream(file);
-            hssfWorkbook.write(fileOutputStream);
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            HSSFRow dataRow = hssfSheet.createRow(1);
+
+            ArrayList<String> row = new ArrayList<>();
+            row.add(currentYearDate());
+            row.add("1131");
+            row.add("500");
+            row.add("1");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                row.add(persona.documentType());
+            }
+            row.add(persona.getIdentificacion());
+            row.add(persona.getNombreCompleto());
+            row.add(persona.getNombreCompleto());
+            row.add(persona.getFechaNacimiento());
+            row.add("HI");
+            row.add(persona.getGenero());
+            row.add("S");
+            row.add("AGRICULTOR");
+            row.add("SE");
+            row.add("1");
+            row.add("VITOYO");
+            row.add("3215980548");
+            row.add("BRICEYDA PAZU SECUE");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                row.add(persona.calculateAge());
+            }
+
+            for (int i = 0; i < row.size(); i++) {
+                HSSFCell cell = dataRow.createCell(i);
+                cell.setCellValue(row.get(i));
+            }
+
+
+            File localStorage = getExternalFilesDir(null);
+            if (localStorage == null) {
+                return;
+            }
+            String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
+            String rootPath = storagePath + "/censo";
+            String fileName = "/censo.xlsx";
+
+            File root = new File(rootPath);
+            if (!root.mkdirs()) {
+                Log.i("Test", "This path is already exist: " + root.getAbsolutePath());
+            }
+
+            File file = new File(rootPath + fileName);
+            try {
+                int permissionCheck = ContextCompat.checkSelfPermission(
+                        MainActivity.this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+                    if (!file.createNewFile()) {
+                        Log.i("Test", "This file is already exist: " + file.getAbsolutePath());
+                    }
+                }
+                FileOutputStream fileOutputStream = new FileOutputStream(file);
+                hssfWorkbook.write(fileOutputStream);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
+    }
 
+    public String currentYearDate(){
+        Calendar calendar = Calendar.getInstance();
+        return String.valueOf(calendar.get(Calendar.YEAR));
     }
 
     public void askForPermissions() {
@@ -667,8 +803,4 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     public void onBackPressed() {
         super.onBackPressed();
     }
-
-
-
-
 }

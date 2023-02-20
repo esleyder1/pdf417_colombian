@@ -1,30 +1,30 @@
 [
     {
-        "merged": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_scan_region_overlay.xml.flat",
-        "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/layout/scan_region_overlay.xml"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
-        "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/ic_launcher.png"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_custom_ui_scan.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_custom_ui_scan.xml"
     },
     {
-        "merged": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_bg_button.xml.flat",
-        "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/drawable/bg_button.xml"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_bg_button.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/bg_button.xml"
     },
     {
-        "merged": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_custom_ui_scan.xml.flat",
-        "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/layout/activity_custom_ui_scan.xml"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
-        "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/layout/activity_main.xml"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_scan_region_overlay.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/scan_region_overlay.xml"
     },
     {
-        "merged": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/raw_beep.mp3.flat",
-        "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/raw/beep.mp3"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_camera_overlay.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/camera_overlay.xml"
     },
     {
-        "merged": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_camera_overlay.xml.flat",
-        "source": "/home/esleyder/Downloads/pdf417-android-master/Pdf417MobiSample/pdf417MobiCustomUISample/src/main/res/layout/camera_overlay.xml"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/raw_beep.mp3.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/raw/beep.mp3"
     }
 ]
