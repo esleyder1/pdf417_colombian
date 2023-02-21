@@ -145,6 +145,14 @@ public class Persona implements Serializable {
         this.bloodType = bloodType;
     }
 
+    public String getDocumentType() {
+        return documentType;
+    }
+
+    public void setDocumentType(String documentType) {
+        this.documentType = documentType;
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String calculateAge() {
         String age = "";

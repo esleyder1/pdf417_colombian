@@ -23,8 +23,10 @@ import com.microblink.blinkbarcode.geometry.Rectangle;
 import com.microblink.blinkbarcode.recognition.RecognitionSuccessType;
 import com.microblink.blinkbarcode.uisettings.ActivityRunner;
 import com.microblink.blinkbarcode.uisettings.BarcodeUISettings;
+import com.microblink.blinkbarcode.util.StringUtils;
 import com.microblink.blinkbarcode.view.recognition.ScanResultListener;
 import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -39,6 +41,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -55,6 +59,7 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 // ScanningOverlayBinder must be implemented for case when RecognizerRunnerFragment is used
 public class MainActivity extends AppCompatActivity implements RecognizerRunnerFragment.ScanningOverlayBinder {
@@ -283,8 +288,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
 
             HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-            HSSFSheet hssfSheet = hssfWorkbook.createSheet("CENSO RESGUARDO JAMBALO 2023");
-
+            HSSFSheet hssfSheet = hssfWorkbook.createSheet("CENSO RESGUARDO JAMBALO "+currentYearDate());
             HSSFRow headerRow = hssfSheet.createRow(0);
 
 
@@ -324,13 +328,31 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 row.add(p.documentType());
             }
-            row.add(p.getDocumentNumber());
-            row.add(p.getFisrtName() + " "+ p.getMiddleName());
-            row.add(p.getLastName() + " "+ p.getSecondLastName());
+            row.add(p.getDocumentNumber().replaceFirst ("^0*", ""));
+
+            if(p.getMiddleName().isEmpty()){
+                row.add(p.getFisrtName());
+            }else{
+                row.add(p.getFisrtName() + " "+ p.getMiddleName());
+            }
+
+            if(p.getSecondLastName().isEmpty()){
+                row.add(p.getLastName());
+            }else{
+                row.add(p.getLastName() + " "+ p.getSecondLastName());
+            }
+
+
+
             row.add(p.getBirthdayYear() + "/" + p.getBirthdayMonth() + "/" + p.getBirthdayDay());
             row.add("HI");
             row.add(p.getGender());
-            row.add("S");
+            if(Objects.equals(p.documentType, "T.I")){
+                row.add("S");
+            }else{
+                row.add("S");
+            }
+
             row.add("AGRICULTOR");
             row.add("SE");
             row.add("1");
