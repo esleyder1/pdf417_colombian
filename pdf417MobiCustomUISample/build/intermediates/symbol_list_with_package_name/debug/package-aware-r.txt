@@ -784,6 +784,7 @@ id bottom
 id btnBack
 id btnDefaultActivity
 id btnTorch
+id button
 id buttonPanel
 id camera_ask_main
 id camera_ask_permission_button
@@ -805,6 +806,8 @@ id default_activity_button
 id default_photopay_viewfinder
 id dialog_button
 id disableHome
+id editText
+id editText2
 id edit_query
 id end
 id expand_activities_button
@@ -817,6 +820,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageView
 id info
 id italic
 id line1
@@ -832,6 +836,7 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id numberpicker_main_picker
 id off
 id on
 id parentPanel
@@ -883,6 +888,8 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
+id textview
 id time
 id title
 id titleDividerNoCustom
@@ -938,7 +945,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_custom_ui_scan
+layout activity_login
 layout activity_main
+layout activity_pick_data
 layout camera_overlay
 layout custom_dialog
 layout mb_activity_scan

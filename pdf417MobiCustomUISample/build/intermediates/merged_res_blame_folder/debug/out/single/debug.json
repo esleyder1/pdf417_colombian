@@ -8,6 +8,14 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_custom_ui_scan.xml"
     },
     {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_login.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_login.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_pick_data.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_pick_data.xml"
+    },
+    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_bg_button.xml.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/bg_button.xml"
     },

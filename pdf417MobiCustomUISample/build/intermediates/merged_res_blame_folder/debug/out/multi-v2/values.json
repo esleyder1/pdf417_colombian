@@ -26,10 +26,10 @@
                     "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "9,10,11,8,3,5,4,6,7",
-                        "startColumns": "4,4,4,4,4,1,4,4,4",
-                        "startOffsets": "433,471,519,388,56,186,115,247,324",
-                        "endColumns": "37,47,45,44,58,57,73,76,63",
-                        "endOffsets": "466,514,560,428,110,242,184,319,383"
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "436,474,522,391,56,189,115,250,327",
+                        "endColumns": "37,47,45,44,58,60,73,76,63",
+                        "endOffsets": "469,517,563,431,110,245,184,322,386"
                     },
                     "to": {
                         "startLines": "282,283,284,285,313,314,315,316,317",
