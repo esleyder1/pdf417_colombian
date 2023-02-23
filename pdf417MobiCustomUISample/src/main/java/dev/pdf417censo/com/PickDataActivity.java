@@ -15,5 +15,7 @@ public class PickDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pick_data);
 
         picker1 = findViewById(R.id.numberpicker_main_picker);
+        picker1.setMaxValue(4);
+        picker1.setMinValue(0);
     }
 }

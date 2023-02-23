@@ -23,10 +23,12 @@ anim btn_radio_to_off_mtrl_ring_outer_path_animation
 anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
+anim down
 anim mb_hide_text
 anim mb_show_text
 anim mb_snackbar_in
 anim mb_snackbar_out
+anim up
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -716,6 +718,11 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font comfortaa_bold
+font comfortaa_light
+font comfortaa_regular
+font opensans
+font opensans_italic
 id ALT
 id CTRL
 id FUNCTION
@@ -783,8 +790,8 @@ id blocking
 id bottom
 id btnBack
 id btnDefaultActivity
+id btnSaveData
 id btnTorch
-id button
 id buttonPanel
 id camera_ask_main
 id camera_ask_permission_button
@@ -806,8 +813,8 @@ id default_activity_button
 id default_photopay_viewfinder
 id dialog_button
 id disableHome
-id editText
-id editText2
+id edPhone
+id edUser
 id edit_query
 id end
 id expand_activities_button
@@ -818,6 +825,9 @@ id home
 id homeAsUp
 id icon
 id icon_group
+id idIVLogo
+id idPBLoading
+id idRLContainer
 id ifRoom
 id image
 id imageView
@@ -948,6 +958,7 @@ layout activity_custom_ui_scan
 layout activity_login
 layout activity_main
 layout activity_pick_data
+layout activity_splash_animated
 layout camera_overlay
 layout custom_dialog
 layout mb_activity_scan
@@ -1004,7 +1015,6 @@ string app_name
 string custom_ui
 string custom_ui_roi
 string default_ui_no_dialog
-string default_ui_no_logo
 string mb_autofocus_fail
 string mb_camera_not_allowed
 string mb_camera_not_ready
@@ -1025,6 +1035,8 @@ string mb_licence_check_device_offline
 string mb_licence_check_failed
 string mb_licence_locked
 string mb_warning_title
+string save_doc
+string scan_document
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
@@ -1438,3 +1450,5 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+transition change_image_transform
+transition explode

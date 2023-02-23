@@ -43,12 +43,14 @@
         android:requestLegacyExternalStorage="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="dev.pdf417censo.com.LoginActivity" >
+        <activity android:name="dev.pdf417censo.com.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="dev.pdf417censo.com.LoginActivity" >
         </activity>
         <activity android:name="dev.pdf417censo.com.PickDataActivity" >
         </activity>
