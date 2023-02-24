@@ -55,6 +55,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 import dev.pdf417censo.com.data.Persona;
 import dev.pdf417censo.com.data.PersonasDbHelper;
@@ -189,18 +190,49 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
         byte[] rawDataBuffer = result.getRawData();
 
-        String documentNumber = convertByteToArray(rawDataBuffer, 48, 58);
-        String lastName = convertByteToArray(rawDataBuffer, 58, 80);
+        String lastName = "";
+        String documentNumber = "";
+        String gender = "";
+        String birthdayYear = "";
+        String birthdayMonth = "";
+        String birthdayDay = "";
+        String municipalityCode = "";
+        String departmentCode = "";
+        String bloodType = "";
+
+        String tentativeLastName = convertByteToArray(rawDataBuffer, 58, 80);
+        String tentativeDocumentNumber = convertByteToArray(rawDataBuffer, 48, 58);
+        if (Pattern.matches("[a-zA-Z\\u00f1\\u00d1]+",tentativeLastName) && Pattern.matches("[0-9]+",tentativeDocumentNumber)) {
+            documentNumber = convertByteToArray(rawDataBuffer, 48, 58);
+            lastName = convertByteToArray(rawDataBuffer, 58, 80);
+        }else{
+            documentNumber = convertByteToArray(rawDataBuffer, 48, 59);
+            lastName = convertByteToArray(rawDataBuffer, 59, 80);
+        }
         String secondLastName = convertByteToArray(rawDataBuffer, 81, 104);
         String firstName = convertByteToArray(rawDataBuffer, 104, 127);
         String middleName = convertByteToArray(rawDataBuffer, 127, 150);
-        String gender = convertByteToArray(rawDataBuffer, 151, 152);
-        String birthdayYear = convertByteToArray(rawDataBuffer, 152, 156);
-        String birthdayMonth = convertByteToArray(rawDataBuffer, 156, 158);
-        String birthdayDay = convertByteToArray(rawDataBuffer, 158, 160);
-        String municipalityCode = convertByteToArray(rawDataBuffer, 160, 162);
-        String departmentCode = convertByteToArray(rawDataBuffer, 162, 165);
-        String bloodType = convertByteToArray(rawDataBuffer, 166, 168);
+
+
+        if (Pattern.matches("[a-zA-Z]+",convertByteToArray(rawDataBuffer, 151, 152))) {
+            gender = convertByteToArray(rawDataBuffer, 151, 152);
+            birthdayYear = convertByteToArray(rawDataBuffer, 152, 156);
+            birthdayMonth = convertByteToArray(rawDataBuffer, 156, 158);
+            birthdayDay = convertByteToArray(rawDataBuffer, 158, 160);
+            municipalityCode = convertByteToArray(rawDataBuffer, 160, 162);
+            departmentCode = convertByteToArray(rawDataBuffer, 162, 165);
+            bloodType = convertByteToArray(rawDataBuffer, 166, 168);
+        }else{
+            gender = convertByteToArray(rawDataBuffer, 152, 153);
+            birthdayYear = convertByteToArray(rawDataBuffer, 153, 157);
+            birthdayMonth = convertByteToArray(rawDataBuffer, 157, 159);
+            birthdayDay = convertByteToArray(rawDataBuffer, 159, 161);
+            municipalityCode = convertByteToArray(rawDataBuffer, 161, 163);
+            departmentCode = convertByteToArray(rawDataBuffer, 163, 166);
+            bloodType = convertByteToArray(rawDataBuffer, 167, 169);
+        }
+
+
 
         Persona p = new Persona("",documentNumber, lastName, secondLastName, firstName
                 , middleName, gender, birthdayYear, birthdayMonth, birthdayDay,
