@@ -2,7 +2,6 @@
 buildscript {
     repositories {
         mavenCentral()
-        mavenCentral()
         google()
     }
     dependencies {
@@ -14,8 +13,9 @@ allprojects {
     repositories {
         mavenCentral()
         google()
-        maven { url 'http://maven.microblink.com' }
-//        mavenLocal()
+        maven { url 'http://maven.microblink.com'}
+        mavenLocal()
+        jcenter()
     }
 }
 

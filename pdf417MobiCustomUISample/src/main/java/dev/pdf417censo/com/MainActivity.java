@@ -1,5 +1,7 @@
 package dev.pdf417censo.com;
 
+import static com.liyu.sqlitetoexcel.SQLiteToExcel.*;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
@@ -15,6 +17,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.liyu.sqlitetoexcel.ExcelToSQLite;
+import com.liyu.sqlitetoexcel.SQLiteToExcel;
 import com.microblink.blinkbarcode.entities.recognizers.RecognizerBundle;
 import com.microblink.blinkbarcode.entities.recognizers.blinkbarcode.barcode.BarcodeRecognizer;
 import com.microblink.blinkbarcode.fragment.RecognizerRunnerFragment;
@@ -41,9 +45,15 @@ import androidx.core.content.ContextCompat;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 import dev.pdf417censo.com.data.Persona;
@@ -97,7 +107,11 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
                 mRecognizerRunnerFragment.getRecognizerRunnerView().pauseScanning();
                 removeFragment();
-                handleScanResult();
+                try {
+                    handleScanResult();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override
@@ -147,19 +161,23 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         if (requestCode == MY_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             // updates bundled recognizers with results that have arrived
             mRecognizerBundle.loadFromIntent(data);
-            handleScanResult();
+            try {
+                handleScanResult();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private void handleScanResult() {
+    private void handleScanResult() throws IOException {
         BarcodeRecognizer.Result result = mBarcodeRecognizer.getResult();
 
         shareScanResult(result);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private void shareScanResult(BarcodeRecognizer.Result result) {
+    private void shareScanResult(BarcodeRecognizer.Result result) throws IOException {
 
         StringBuilder sb = new StringBuilder(result.getBarcodeType().name());
         sb.append("\n\n");
@@ -199,20 +217,22 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void createExcel(Persona p) {
+    public void createExcel(Persona p) throws IOException {
 
         PersonasDbHelper conn = new PersonasDbHelper(this);
 
         long idRes = conn.savePersona(p);
         conn.close();
-        Toast.makeText(this, "ID registro "+idRes, Toast.LENGTH_SHORT).show();
+/*
+        Toast.makeText(this, "ID registro " + idRes, Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "Hola: " + p.getFisrtName(), Toast.LENGTH_SHORT).show();
+*/
 
         SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
 
 
         HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-        HSSFSheet hssfSheet = hssfWorkbook.createSheet("CENSO RESGUARDO JAMBALO "+currentYearDate());
+        HSSFSheet hssfSheet = hssfWorkbook.createSheet("CENSO RESGUARDO JAMBALO " + currentYearDate());
         HSSFRow headerRow = hssfSheet.createRow(0);
 
 
@@ -242,7 +262,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             cell.setCellValue(header.get(i));
         }
 
-        HSSFRow dataRow = hssfSheet.createRow(getCountRowsExcel()+1);
+        HSSFRow dataRow = hssfSheet.createRow(getCountRowsExcel() + 1);
 
         ArrayList<String> row = new ArrayList<>();
         row.add(currentYearDate());
@@ -252,27 +272,27 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             row.add(p.documentType());
         }
-        row.add(p.getDocumentNumber().replaceFirst ("^0*", ""));
+        row.add(p.getDocumentNumber().replaceFirst("^0*", ""));
 
-        if(p.getMiddleName().isEmpty()){
+        if (p.getMiddleName().isEmpty()) {
             row.add(p.getFisrtName());
-        }else{
-            row.add(p.getFisrtName() + " "+ p.getMiddleName());
+        } else {
+            row.add(p.getFisrtName() + " " + p.getMiddleName());
         }
 
-        if(p.getSecondLastName().isEmpty()){
+        if (p.getSecondLastName().isEmpty()) {
             row.add(p.getLastName());
-        }else{
-            row.add(p.getLastName() + " "+ p.getSecondLastName());
+        } else {
+            row.add(p.getLastName() + " " + p.getSecondLastName());
         }
 
 
-        row.add(p.getBirthdayDay() +  "/" +p.getBirthdayMonth() + "/" + p.getBirthdayYear());
+        row.add(p.getBirthdayDay() + "/" + p.getBirthdayMonth() + "/" + p.getBirthdayYear());
         row.add("HI");
         row.add(p.getGender());
-        if(Objects.equals(p.getDocumentType(), "T.I")){
+        if (Objects.equals(p.getDocumentType(), "T.I")) {
             row.add("S");
-        }else{
+        } else {
             row.add("S");
         }
 
@@ -280,8 +300,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         row.add("SE");
         row.add("1");
         row.add("VITOYO");
-        row.add(prefe.getString("phone",""));
-        row.add(prefe.getString("user",""));
+        row.add(prefe.getString("phone", ""));
+        row.add(prefe.getString("user", ""));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             row.add(p.calculateAge());
         }
@@ -297,15 +317,45 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             return;
         }
         String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
-        String rootPath = storagePath + "/Censo_Jambalo";
+        String rootPath = storagePath + "/CensoJambalo";
         String fileName = "/CENSO_JAMBALO_" + currentYearDate() + ".xls";
 
         File root = new File(rootPath);
         if (!root.mkdirs()) {
             Log.i("Test", "This path is already exist: " + root.getAbsolutePath());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                Files.deleteIfExists(Paths.get(root.getAbsolutePath() +fileName));
+            }
         }
 
+
         File file = new File(rootPath + fileName);
+
+
+
+        new SQLiteToExcel
+                .Builder(this)
+                .setDataBase(this.getDatabasePath("Encuestados.db").getAbsolutePath())
+                .setOutputPath(rootPath)
+                .setOutputFileName("Encuestados.xls")
+                .setTables("persona")
+                .start(new ExportListener() {
+                    @Override
+                    public void onStart() {
+                        Toast.makeText(MainActivity.this, "iniciado", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCompleted(String filePath) {
+                        Toast.makeText(MainActivity.this, "completado", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
         try {
             int permissionCheck = ContextCompat.checkSelfPermission(
                     MainActivity.this,
@@ -316,23 +366,17 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     file.createNewFile();
                 }
             }
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            hssfWorkbook.write(fileOutputStream);
-            fileOutputStream.close();
-            hssfWorkbook.close();
-            int numRows = hssfSheet.getLastRowNum();
-            saveCountRowsExcel(numRows);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    private void saveCountRowsExcel(int countRows) {
-        SharedPreferences preferencias=getSharedPreferences("user_data",Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor=preferencias.edit();
-        editor.putInt("countRows", countRows);
-        editor.apply();
+    private String makeLog(String log) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date now = new Date();
+        return log + " " + sdf.format(now);
     }
 
     private int getCountRowsExcel() {

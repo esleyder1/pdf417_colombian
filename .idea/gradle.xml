@@ -11,8 +11,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/pdf417MobiCustomUISample" />
-            <option value="$PROJECT_DIR$/pdf417MobiDirectAPISample" />
-            <option value="$PROJECT_DIR$/pdf417MobiSample" />
           </set>
         </option>
       </GradleProjectSettings>

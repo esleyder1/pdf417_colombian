@@ -47,6 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void saveInfo() {
         SharedPreferences preferencias=getSharedPreferences("user_data",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=preferencias.edit();

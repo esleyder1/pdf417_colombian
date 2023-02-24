@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "dev.pdf417censo.com"
-        minSdkVersion 16
+        minSdkVersion 25
         targetSdkVersion rootProject.ext.targetSdkVersion
     }
 
@@ -24,8 +24,12 @@ android {
 }
 
 dependencies {
+    implementation 'com.liyu.tools:sqlitetoexcel:1.0.10'
+    implementation 'com.ajts.androidmads.SQLite2Excel:library:1.0.2'
+
     implementation ("com.microblink:pdf417.mobi:${rootProject.ext.pdf417MobiVersion}@aar") {
         transitive = true
     }
-    implementation 'org.apache.poi:poi:3.17'
+    implementation 'org.apache.poi:poi:5.2.3'
+
 }
