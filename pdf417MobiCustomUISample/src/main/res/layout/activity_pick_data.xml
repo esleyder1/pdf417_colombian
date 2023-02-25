@@ -1,46 +1,83 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <LinearLayout
+    <TextView
+        android:layout_width="148dp"
+        android:layout_height="28dp"
+        android:text="Comunidad indígena:"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="65dp"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context=".MainActivity">
+        android:hint="Comunidad indigena"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        tools:ignore="MissingConstraints">
 
-
-        <NumberPicker
-            android:id="@+id/numberpicker_main_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </NumberPicker>
-
-        <Button
-            android:id="@+id/btnDefaultActivity"
-            android:layout_width="wrap_content"
+        <AutoCompleteTextView
+            android:id="@+id/dd_field"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:onClick="onClick"
-            android:text="@string/save_doc" />
+            android:inputType="none"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spCommunity"
+        android:layout_width="152dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="96dp"
+        android:prompt="@string/scan_document"
+        app:layout_constraintEnd_toStartOf="@+id/spRelationShip"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spRelationShip"
+        android:layout_width="152dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="96dp"
+        android:contentDescription="@string/app_name"
+        android:prompt="@string/scan_document"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/spCommunity"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSaveForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="116dp"
+        android:text="NEXT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/recognizer_runner_view_container"
-        android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="match_parent"
-        android:padding="40dp"
-        android:background="#AA000000">
-
-    </FrameLayout>
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
 
     <uses-sdk
         android:minSdkVersion="25"
-        android:targetSdkVersion="30" />
+        android:targetSdkVersion="31" />
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
@@ -46,15 +46,15 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="dev.pdf417censo.com.SplashActivity" >
+        </activity>
+        <activity android:name="dev.pdf417censo.com.LoginActivity" >
+        </activity>
+        <activity android:name="dev.pdf417censo.com.PickDataActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="dev.pdf417censo.com.LoginActivity" >
-        </activity>
-        <activity android:name="dev.pdf417censo.com.PickDataActivity" >
         </activity>
         <activity
             android:name="dev.pdf417censo.com.MainActivity"
@@ -69,6 +69,18 @@
         <activity
             android:name="dev.pdf417censo.com.CustomUIScanActivity"
             android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="dev.pdf417censo.com.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
     </application>
 
 </manifest>

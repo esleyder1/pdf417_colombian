@@ -241,24 +241,22 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         createExcel(p);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public String convertByteToArray(byte[] rawDataBuffer, int from, int to){
         byte[] bytes = Arrays.copyOfRange(rawDataBuffer, from, to);
         String dec = new String(bytes, UTF_8).trim();
         return dec.replaceAll("\uFFFD", "Ñ");
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void createExcel(Persona p) throws IOException {
 
         PersonasDbHelper conn = new PersonasDbHelper(this);
 
         long idRes = conn.savePersona(p);
         conn.close();
-/*
+
         Toast.makeText(this, "ID registro " + idRes, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Hola: " + p.getFisrtName(), Toast.LENGTH_SHORT).show();
-*/
+        Toast.makeText(this, "Hola: " + p.getFisrtName() + " " + p.getLastName(), Toast.LENGTH_SHORT).show();
+
 
         SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
 
@@ -403,12 +401,6 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             e.printStackTrace();
         }
 
-    }
-
-    private String makeLog(String log) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date now = new Date();
-        return log + " " + sdf.format(now);
     }
 
     private int getCountRowsExcel() {

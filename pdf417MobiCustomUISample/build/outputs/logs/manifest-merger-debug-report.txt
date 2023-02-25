@@ -2,29 +2,49 @@
 manifest
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-60:12
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-60:12
-MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1effb03b10db7d8f093355912dc1caaa/sqlitetoexcel-1.0.10/AndroidManifest.xml:2:1-17:12
-MERGED from [com.ajts.androidmads.SQLite2Excel:library:1.0.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/80af7e2e02130465740161698fb0912f/library-1.0.2/AndroidManifest.xml:2:1-17:12
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:2:1-42:12
-MERGED from [androidx.appcompat:appcompat:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0cb9ff486f5edb59977e253831b932c8/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9a6fa3c553e02b3a07c8a8565588eb54/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/47185ad723d232e6208c03e6fdcb34a4/appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f76237f51a0f7e63bcb3c74d5b185ef8/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/84abe344207c34d4a56c6167bf93e6d4/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f2d63b2c28ee1d548ef27f10c2385caa/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/36dcb862f7bd88dade6a96bc3b9a35c6/activity-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/666ad058b1d9c3d7c4bdf80afbc3e64c/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a9578e6bb35b0664a235fe136bea7086/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9f97f489f2a5c174c803b63b463795b0/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.3.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d2282b2039db7b96a5d44b761b02443/core-1.3.0/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/5dbc57b58024a8f25b5db3778841ef05/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/90ecde5404179819368e2359ab771b50/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/dade9b59ee5981570bbd8ef7443af33a/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/27ffe024b65d36df19e13f551b6b146c/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/512febfd0468b29d551bd267612a464f/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/722883bbeda4a23af2c332d7342ff3d3/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/227916b3f0008a165e996ac0bce20467/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/96d0ad977091c6484e2db42674538c87/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9a82a1a22af6402c2242c9ee80e8919f/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.databinding:viewbinding:4.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9f8cfd3eac1f76be3253c1891f484fcd/viewbinding-4.1.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/931064dd1dabd9855818e4ef27763d7d/core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a08a1eefc7971c3487f150f636a3c6fa/material-1.6.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/aea8ef72149a3058e8a92bf4b27526b2/constraintlayout-2.1.2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:2:1-42:12
+MERGED from [androidx.appcompat:appcompat:1.4.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/210b6aae209a73f472d5c73a8cbe6a30/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/724475c0070d4998f0078714b361501f/sqlitetoexcel-1.0.10/AndroidManifest.xml:2:1-17:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/dc48ba1a284341ee627200960374c765/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0fbd15f287723571bf468668c44619b2/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.4] /home/esleyder/.gradle/caches/transforms-2/files-2.1/00e1f480ace7b7c47a6eeee012a2bdeb/activity-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.4.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f0fc0b1d3149b2c439d3e519d1f599de/appcompat-resources-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1243f7f823fc41068c29e01a153f4979/emoji2-views-helper-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/d503c1991b40e2441fcbc513c3cc0f46/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/8d0d9835e7d644c9c4c1f6d67b8a717c/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2d3164e00843b51845c38c1c2487ca27/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2713ec9cd74f01bae4200f4050fe7c1b/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/09e10398b66f8744e20a390eef3a21c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2d5ba24a71ae43c949b0c7a9838b97a3/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/98f5d2974873375a6524a94939f8db29/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9ca8ab8d2b75b3e3204092f9690f15aa/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d6ee21c3f7b9c7845958d3a26c20202/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/92ed035d7e2ad642cd59261a7a7ab7f8/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/92d40c8ba12725446708adc06fd69738/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.7.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ba8a3d241a1b81556649136ec2637f09/core-1.7.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a6ab7001a3cc97d281f95dc0acfeda52/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a7548d0e9a6b097732445d5e03bb10ba/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0331639e9b927e196176679b616eea1f/savedstate-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2efa10caf42f72fffdc8e2b09faf87bb/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ff4c16d90d6ccca3c9cc1200608ff39e/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/45d21530b00f0042f7a6f50235bae18f/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c78016220afbebd300eaba6a538192cb/startup-runtime-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/31bb1c9bbb8787ec9b2814670686c6ae/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1461310bc082e50fa471469770092fe6/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/14b9812f8a3e829171d161b8f4677d9b/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/cf9b51052e0e073adafba0bc075a01e6/lifecycle-runtime-2.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c43a6b6d6ccf354db93fca7909f31309/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a69f70f89212645d1457fb0793f019f5/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/44bbb881635125b269716309878fb54a/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ebfac4e4c1012a166202e4c4ddc8bdc1/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/fd8f6341ff63f8a409e7de23107a4d69/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1e0ece2a2397b3c4008a83efa20a8cdf/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-60:12
 	package
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:4:5-34
@@ -36,14 +56,14 @@ INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.CAMERA
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:6:5-65
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:20:5-65
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:20:5-65
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:20:5-65
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:20:5-65
 	android:name
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:6:22-62
 uses-permission#android.permission.FLASHLIGHT
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:7:5-69
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:21:5-69
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:21:5-69
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:21:5-69
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:21:5-69
 	android:name
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:7:22-66
 uses-permission#android.permission.INTERNET
@@ -64,22 +84,22 @@ ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/sr
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:11:22-79
 uses-feature#android.hardware.camera
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:13:5-60
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:23:5-25:36
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:23:5-25:36
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:23:5-25:36
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:23:5-25:36
 	android:name
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:13:19-57
 uses-feature#android.hardware.camera.autofocus
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:14:5-16:36
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:26:5-28:36
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:26:5-28:36
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:26:5-28:36
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:26:5-28:36
 	android:required
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:16:9-33
 	android:name
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:15:9-57
 uses-feature#android.hardware.camera.flash
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:17:5-19:36
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:29:5-31:36
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:29:5-31:36
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:29:5-31:36
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:29:5-31:36
 	android:required
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:19:9-33
 	android:name
@@ -92,28 +112,36 @@ ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/sr
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:22:9-33
 application
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:24:5-58:19
-MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1effb03b10db7d8f093355912dc1caaa/sqlitetoexcel-1.0.10/AndroidManifest.xml:11:5-15:19
-MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1effb03b10db7d8f093355912dc1caaa/sqlitetoexcel-1.0.10/AndroidManifest.xml:11:5-15:19
-MERGED from [com.ajts.androidmads.SQLite2Excel:library:1.0.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/80af7e2e02130465740161698fb0912f/library-1.0.2/AndroidManifest.xml:11:5-15:19
-MERGED from [com.ajts.androidmads.SQLite2Excel:library:1.0.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/80af7e2e02130465740161698fb0912f/library-1.0.2/AndroidManifest.xml:11:5-15:19
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:33:5-40:19
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:33:5-40:19
-MERGED from [androidx.core:core:1.3.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d2282b2039db7b96a5d44b761b02443/core-1.3.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.3.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d2282b2039db7b96a5d44b761b02443/core-1.3.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/90ecde5404179819368e2359ab771b50/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/90ecde5404179819368e2359ab771b50/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.material:material:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a08a1eefc7971c3487f150f636a3c6fa/material-1.6.0/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a08a1eefc7971c3487f150f636a3c6fa/material-1.6.0/AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/aea8ef72149a3058e8a92bf4b27526b2/constraintlayout-2.1.2/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/aea8ef72149a3058e8a92bf4b27526b2/constraintlayout-2.1.2/AndroidManifest.xml:9:5-20
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:33:5-40:19
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:33:5-40:19
+MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/724475c0070d4998f0078714b361501f/sqlitetoexcel-1.0.10/AndroidManifest.xml:11:5-15:19
+MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/724475c0070d4998f0078714b361501f/sqlitetoexcel-1.0.10/AndroidManifest.xml:11:5-15:19
+MERGED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.core:core:1.7.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ba8a3d241a1b81556649136ec2637f09/core-1.7.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.7.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ba8a3d241a1b81556649136ec2637f09/core-1.7.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/45d21530b00f0042f7a6f50235bae18f/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/45d21530b00f0042f7a6f50235bae18f/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c78016220afbebd300eaba6a538192cb/startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c78016220afbebd300eaba6a538192cb/startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
 	android:requestLegacyExternalStorage
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:29:9-52
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.3.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d2282b2039db7b96a5d44b761b02443/core-1.3.0/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.7.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ba8a3d241a1b81556649136ec2637f09/core-1.7.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1effb03b10db7d8f093355912dc1caaa/sqlitetoexcel-1.0.10/AndroidManifest.xml:14:9-35
+		ADDED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/724475c0070d4998f0078714b361501f/sqlitetoexcel-1.0.10/AndroidManifest.xml:14:9-35
 	android:label
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:28:9-41
 	tools:ignore
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:35:9-39
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:35:9-39
 	android:largeHeap
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:34:9-33
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:34:9-33
 	android:icon
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:27:9-45
 	android:allowBackup
@@ -123,27 +151,27 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/esley
 	android:name
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:25:9-40
 activity#dev.pdf417censo.com.SplashActivity
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:31:9-38:20
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:31:9-34:20
 	android:name
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:32:13-43
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:33:13-37:29
-action#android.intent.action.MAIN
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:34:17-69
-	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:34:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:36:17-77
-	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:36:27-74
 activity#dev.pdf417censo.com.LoginActivity
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:39:9-41:20
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:35:9-37:20
 	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:40:13-42
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:36:13-42
 activity#dev.pdf417censo.com.PickDataActivity
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:42:9-45:20
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:38:9-45:20
 	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:13-45
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:39:13-45
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:40:13-44:29
+action#android.intent.action.MAIN
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:41:17-69
+	android:name
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:41:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:17-77
+	android:name
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:27-74
 activity#dev.pdf417censo.com.MainActivity
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:46:9-51:20
 	android:screenOrientation
@@ -154,12 +182,12 @@ ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/sr
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:47:13-41
 activity#com.microblink.blinkbarcode.activity.BarcodeScanActivity
 ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:52:9-54:89
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:36:9-39:52
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:36:9-39:52
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:36:9-39:52
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:36:9-39:52
 	android:screenOrientation
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:39:13-49
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:39:13-49
 	android:configChanges
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:38:13-59
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:38:13-59
 	android:theme
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:54:13-77
 	android:name
@@ -174,52 +202,92 @@ uses-sdk
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml
-MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1effb03b10db7d8f093355912dc1caaa/sqlitetoexcel-1.0.10/AndroidManifest.xml:7:5-9:41
-MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1effb03b10db7d8f093355912dc1caaa/sqlitetoexcel-1.0.10/AndroidManifest.xml:7:5-9:41
-MERGED from [com.ajts.androidmads.SQLite2Excel:library:1.0.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/80af7e2e02130465740161698fb0912f/library-1.0.2/AndroidManifest.xml:7:5-9:41
-MERGED from [com.ajts.androidmads.SQLite2Excel:library:1.0.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/80af7e2e02130465740161698fb0912f/library-1.0.2/AndroidManifest.xml:7:5-9:41
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:8:5-10:41
-MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:8:5-10:41
-MERGED from [androidx.appcompat:appcompat:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0cb9ff486f5edb59977e253831b932c8/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0cb9ff486f5edb59977e253831b932c8/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9a6fa3c553e02b3a07c8a8565588eb54/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9a6fa3c553e02b3a07c8a8565588eb54/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/47185ad723d232e6208c03e6fdcb34a4/appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/47185ad723d232e6208c03e6fdcb34a4/appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f76237f51a0f7e63bcb3c74d5b185ef8/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f76237f51a0f7e63bcb3c74d5b185ef8/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/84abe344207c34d4a56c6167bf93e6d4/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/84abe344207c34d4a56c6167bf93e6d4/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f2d63b2c28ee1d548ef27f10c2385caa/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f2d63b2c28ee1d548ef27f10c2385caa/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/36dcb862f7bd88dade6a96bc3b9a35c6/activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/36dcb862f7bd88dade6a96bc3b9a35c6/activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/666ad058b1d9c3d7c4bdf80afbc3e64c/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/666ad058b1d9c3d7c4bdf80afbc3e64c/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a9578e6bb35b0664a235fe136bea7086/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a9578e6bb35b0664a235fe136bea7086/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9f97f489f2a5c174c803b63b463795b0/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9f97f489f2a5c174c803b63b463795b0/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.3.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d2282b2039db7b96a5d44b761b02443/core-1.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d2282b2039db7b96a5d44b761b02443/core-1.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/5dbc57b58024a8f25b5db3778841ef05/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/5dbc57b58024a8f25b5db3778841ef05/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/90ecde5404179819368e2359ab771b50/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/90ecde5404179819368e2359ab771b50/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/dade9b59ee5981570bbd8ef7443af33a/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/dade9b59ee5981570bbd8ef7443af33a/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/27ffe024b65d36df19e13f551b6b146c/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/27ffe024b65d36df19e13f551b6b146c/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/512febfd0468b29d551bd267612a464f/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/512febfd0468b29d551bd267612a464f/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/722883bbeda4a23af2c332d7342ff3d3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/722883bbeda4a23af2c332d7342ff3d3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/227916b3f0008a165e996ac0bce20467/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/227916b3f0008a165e996ac0bce20467/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/96d0ad977091c6484e2db42674538c87/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/96d0ad977091c6484e2db42674538c87/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9a82a1a22af6402c2242c9ee80e8919f/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9a82a1a22af6402c2242c9ee80e8919f/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9f8cfd3eac1f76be3253c1891f484fcd/viewbinding-4.1.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9f8cfd3eac1f76be3253c1891f484fcd/viewbinding-4.1.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/931064dd1dabd9855818e4ef27763d7d/core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/931064dd1dabd9855818e4ef27763d7d/core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.material:material:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a08a1eefc7971c3487f150f636a3c6fa/material-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a08a1eefc7971c3487f150f636a3c6fa/material-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/aea8ef72149a3058e8a92bf4b27526b2/constraintlayout-2.1.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/aea8ef72149a3058e8a92bf4b27526b2/constraintlayout-2.1.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:8:5-10:41
+MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:8:5-10:41
+MERGED from [androidx.appcompat:appcompat:1.4.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/210b6aae209a73f472d5c73a8cbe6a30/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.4.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/210b6aae209a73f472d5c73a8cbe6a30/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/724475c0070d4998f0078714b361501f/sqlitetoexcel-1.0.10/AndroidManifest.xml:7:5-9:41
+MERGED from [com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/724475c0070d4998f0078714b361501f/sqlitetoexcel-1.0.10/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/dc48ba1a284341ee627200960374c765/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/dc48ba1a284341ee627200960374c765/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0fbd15f287723571bf468668c44619b2/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0fbd15f287723571bf468668c44619b2/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] /home/esleyder/.gradle/caches/transforms-2/files-2.1/00e1f480ace7b7c47a6eeee012a2bdeb/activity-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] /home/esleyder/.gradle/caches/transforms-2/files-2.1/00e1f480ace7b7c47a6eeee012a2bdeb/activity-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f0fc0b1d3149b2c439d3e519d1f599de/appcompat-resources-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/f0fc0b1d3149b2c439d3e519d1f599de/appcompat-resources-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1243f7f823fc41068c29e01a153f4979/emoji2-views-helper-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1243f7f823fc41068c29e01a153f4979/emoji2-views-helper-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/d503c1991b40e2441fcbc513c3cc0f46/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/d503c1991b40e2441fcbc513c3cc0f46/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/8d0d9835e7d644c9c4c1f6d67b8a717c/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/8d0d9835e7d644c9c4c1f6d67b8a717c/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2d3164e00843b51845c38c1c2487ca27/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2d3164e00843b51845c38c1c2487ca27/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2713ec9cd74f01bae4200f4050fe7c1b/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2713ec9cd74f01bae4200f4050fe7c1b/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/09e10398b66f8744e20a390eef3a21c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/09e10398b66f8744e20a390eef3a21c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2d5ba24a71ae43c949b0c7a9838b97a3/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2d5ba24a71ae43c949b0c7a9838b97a3/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/98f5d2974873375a6524a94939f8db29/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/98f5d2974873375a6524a94939f8db29/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9ca8ab8d2b75b3e3204092f9690f15aa/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9ca8ab8d2b75b3e3204092f9690f15aa/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d6ee21c3f7b9c7845958d3a26c20202/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9d6ee21c3f7b9c7845958d3a26c20202/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/92ed035d7e2ad642cd59261a7a7ab7f8/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/92ed035d7e2ad642cd59261a7a7ab7f8/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/92d40c8ba12725446708adc06fd69738/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/92d40c8ba12725446708adc06fd69738/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ba8a3d241a1b81556649136ec2637f09/core-1.7.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ba8a3d241a1b81556649136ec2637f09/core-1.7.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a6ab7001a3cc97d281f95dc0acfeda52/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a6ab7001a3cc97d281f95dc0acfeda52/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a7548d0e9a6b097732445d5e03bb10ba/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a7548d0e9a6b097732445d5e03bb10ba/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0331639e9b927e196176679b616eea1f/savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/0331639e9b927e196176679b616eea1f/savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2efa10caf42f72fffdc8e2b09faf87bb/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/2efa10caf42f72fffdc8e2b09faf87bb/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ff4c16d90d6ccca3c9cc1200608ff39e/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ff4c16d90d6ccca3c9cc1200608ff39e/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/45d21530b00f0042f7a6f50235bae18f/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/45d21530b00f0042f7a6f50235bae18f/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c78016220afbebd300eaba6a538192cb/startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c78016220afbebd300eaba6a538192cb/startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/31bb1c9bbb8787ec9b2814670686c6ae/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/31bb1c9bbb8787ec9b2814670686c6ae/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1461310bc082e50fa471469770092fe6/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1461310bc082e50fa471469770092fe6/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/14b9812f8a3e829171d161b8f4677d9b/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/esleyder/.gradle/caches/transforms-2/files-2.1/14b9812f8a3e829171d161b8f4677d9b/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/cf9b51052e0e073adafba0bc075a01e6/lifecycle-runtime-2.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/cf9b51052e0e073adafba0bc075a01e6/lifecycle-runtime-2.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c43a6b6d6ccf354db93fca7909f31309/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c43a6b6d6ccf354db93fca7909f31309/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a69f70f89212645d1457fb0793f019f5/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a69f70f89212645d1457fb0793f019f5/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/44bbb881635125b269716309878fb54a/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/44bbb881635125b269716309878fb54a/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ebfac4e4c1012a166202e4c4ddc8bdc1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ebfac4e4c1012a166202e4c4ddc8bdc1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/fd8f6341ff63f8a409e7de23107a4d69/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/fd8f6341ff63f8a409e7de23107a4d69/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1e0ece2a2397b3c4008a83efa20a8cdf/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1e0ece2a2397b3c4008a83efa20a8cdf/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -231,16 +299,42 @@ INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml
 		INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml
 supports-screens
-ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:12:5-18:40
+ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:12:5-18:40
 	android:largeScreens
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:14:9-36
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:14:9-36
 	android:smallScreens
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:17:9-36
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:17:9-36
 	android:normalScreens
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:15:9-37
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:15:9-37
 	android:xlargeScreens
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:18:9-37
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:18:9-37
 	android:resizeable
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:16:9-34
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:16:9-34
 	android:anyDensity
-		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/bd9574efc3befd388515e484c083d6ad/pdf417.mobi-8.0.0/AndroidManifest.xml:13:9-34
+		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:13:9-34
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c78016220afbebd300eaba6a538192cb/startup-runtime-1.0.0/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/c78016220afbebd300eaba6a538192cb/startup-runtime-1.0.0/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:30:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:28:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:27:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:32:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
