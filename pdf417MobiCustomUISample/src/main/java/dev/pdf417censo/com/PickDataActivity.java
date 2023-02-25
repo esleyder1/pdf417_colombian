@@ -39,14 +39,24 @@ public class PickDataActivity extends AppCompatActivity {
         textViewCommunity.setAdapter(adapterCommunity);
 
         //Campo: PARENTESCO
-        String[] arrayRelationshipF ={"Madre cabeza de hogar","Abuela","Hija","Prima","Tía", "Nieta", "Sobrina" };
+/*        String[] arrayRelationshipF ={"Madre cabeza de hogar","Abuela","Hija","Prima","Tía", "Nieta", "Sobrina" };
         String[] arrayRelationshipM ={"Padre cabeza de hogar","Abuelo","Hijo","Primo","Tío", "Nieto", "Sobrino" };
-
         ArrayAdapter<String> adapter;
         acRelationship = findViewById(R.id.acRelationship);
         adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, arrayRelationshipM);
+        acRelationship.setAdapter(adapter);*/
+
+        //Campo: INTEGRANTES
+
+        String[] arrayAddresses ={"La Mina","Guayope","El Epiro","Picacho", "La Palma", "Loma Redonda", "La Esperanza", "Barondillo", "Zolapa", "El Tablón" };
+        ArrayAdapter<String> adapter;
+        acRelationship = findViewById(R.id.acAddress);
+        adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, arrayAddresses);
         acRelationship.setAdapter(adapter);
+
+
 
 
         Button button = (Button) findViewById(R.id.btnSaveForm);

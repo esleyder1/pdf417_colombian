@@ -69,10 +69,10 @@
             tools:layout_editor_absoluteY="68dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--PARENTESCO-->
+    <!--&lt;!&ndash;PARENTESCO&ndash;&gt;
 
     <TextView
-        android:id="@+id/tvRelationship"
+        android:id="@+id/tvAddress"
         android:layout_width="352dp"
         android:layout_height="26dp"
         android:layout_marginStart="36dp"
@@ -86,7 +86,7 @@
     </TextView>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiRelationship"
+        android:id="@+id/tiAddress"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="360dp"
         android:layout_height="73dp"
@@ -97,18 +97,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRelationship"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress"
         tools:ignore="MissingConstraints">
 
         <AutoCompleteTextView
-            android:id="@+id/acRelationship"
+            android:id="@+id/acAddress"
             android:layout_width="match_parent"
             android:layout_height="59dp"
             android:inputType="none"
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="68dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>-->
 
+    <!--VEREDA O BARRIO-->
+
+    <!--PARENTESCO-->
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="352dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:text="Vereda - Barrio"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiCommunity">
+
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiAddress"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="360dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="39dp"
+        android:hint="Seleccione una opción"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+        tools:ignore="MissingConstraints">
+
+        <AutoCompleteTextView
+            android:id="@+id/acAddress"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="68dp" />
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btnSaveForm"
         android:layout_width="wrap_content"

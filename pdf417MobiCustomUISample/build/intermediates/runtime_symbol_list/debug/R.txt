@@ -2627,8 +2627,8 @@ int id SHOW_PROGRESS 0x7f09000a
 int id SYM 0x7f09000b
 int id TOP_END 0x7f09000c
 int id TOP_START 0x7f09000d
-int id acCommunity 0x7f09000e
-int id acRelationship 0x7f09000f
+int id acAddress 0x7f09000e
+int id acCommunity 0x7f09000f
 int id accelerate 0x7f090010
 int id accessibility_action_clickable_span 0x7f090011
 int id accessibility_custom_action_0 0x7f090012
@@ -3088,8 +3088,8 @@ int id textinput_placeholder 0x7f0901d7
 int id textinput_prefix_text 0x7f0901d8
 int id textinput_suffix_text 0x7f0901d9
 int id textview 0x7f0901da
-int id tiCommunity 0x7f0901db
-int id tiRelationship 0x7f0901dc
+int id tiAddress 0x7f0901db
+int id tiCommunity 0x7f0901dc
 int id time 0x7f0901dd
 int id title 0x7f0901de
 int id titleDividerNoCustom 0x7f0901df
@@ -3106,8 +3106,8 @@ int id transition_position 0x7f0901e9
 int id transition_scene_layoutid_cache 0x7f0901ea
 int id transition_transform 0x7f0901eb
 int id triangle 0x7f0901ec
-int id tvCommunity 0x7f0901ed
-int id tvRelationship 0x7f0901ee
+int id tvAddress 0x7f0901ed
+int id tvCommunity 0x7f0901ee
 int id tvSnackbarMessage 0x7f0901ef
 int id unchecked 0x7f0901f0
 int id uniform 0x7f0901f1
