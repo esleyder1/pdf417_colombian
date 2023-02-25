@@ -2628,6 +2628,8 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id acCommunity
+id acRelationship
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2762,7 +2764,6 @@ id custom
 id customPanel
 id cut
 id date_picker_actions
-id dd_field
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -3029,8 +3030,6 @@ id snackbar_text
 id snap
 id snapMargins
 id south
-id spCommunity
-id spRelationShip
 id spacer
 id special_effects_controller_view_tag
 id spline
@@ -3090,6 +3089,8 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id textview
+id tiCommunity
+id tiRelationship
 id time
 id title
 id titleDividerNoCustom
@@ -3106,6 +3107,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvCommunity
+id tvRelationship
 id tvSnackbarMessage
 id unchecked
 id uniform
@@ -3993,6 +3996,7 @@ style TextAppearance_Test_UsesSP
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
+style TextLabel
 style Theme_AppCompat
 style Theme_AppCompat_CompactMenu
 style Theme_AppCompat_DayNight

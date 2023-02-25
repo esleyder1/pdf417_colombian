@@ -14,4 +14,8 @@
         <item name="android:background">@drawable/bg_button</item>
     </style>
 
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>
