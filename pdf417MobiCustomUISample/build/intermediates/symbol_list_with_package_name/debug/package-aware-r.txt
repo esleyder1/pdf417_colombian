@@ -872,7 +872,28 @@ attr navigationViewStyle
 attr nestedScrollFlags
 attr nestedScrollViewStyle
 attr nestedScrollable
+attr np_dividerColor
+attr np_dividerDistance
+attr np_dividerThickness
+attr np_fadingEdgeEnabled
+attr np_formatter
+attr np_height
+attr np_max
+attr np_min
+attr np_order
+attr np_orientation
+attr np_scrollerEnabled
+attr np_selectedTextColor
+attr np_selectedTextSize
+attr np_textColor
+attr np_textSize
+attr np_typeface
+attr np_value
+attr np_wheelItemCount
+attr np_width
+attr np_wrapSelectorWheel
 attr number
+attr numberPickerStyle
 attr numericModifiers
 attr onCross
 attr onHide
@@ -2543,6 +2564,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_arrow_left
+drawable ic_arrow_right
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher
@@ -2605,6 +2628,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable np_numberpicker_selection_divider
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -2614,6 +2638,18 @@ font comfortaa_light
 font comfortaa_regular
 font opensans
 font opensans_italic
+font robot_bold_italic
+font roboto_black
+font roboto_black_italic
+font roboto_bold
+font roboto_italic
+font roboto_light
+font roboto_light_italic
+font roboto_medium
+font roboto_medium_italic
+font roboto_regular
+font roboto_thin
+font roboto_thin_italic
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2698,6 +2734,7 @@ id antiClockwise
 id anticipate
 id arc
 id asConfigured
+id ascending
 id async
 id auto
 id autoComplete
@@ -2775,6 +2812,7 @@ id default_activity_button
 id default_photopay_viewfinder
 id deltaRelative
 id dependency_ordering
+id descending
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2847,6 +2885,7 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
+id horizontal
 id horizontal_only
 id icon
 id icon_group
@@ -2956,6 +2995,8 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id np__numberpicker_input
+id numberpicker_main_picker
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3079,6 +3120,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3115,6 +3157,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id vertical
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3308,6 +3351,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout number_picker_with_selector_wheel
 layout scan_region_overlay
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
@@ -3784,6 +3828,7 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
+style NumberPickerText
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -4665,6 +4710,7 @@ styleable NavigationBarActiveIndicator android_height android_width android_colo
 styleable NavigationBarView backgroundTint elevation itemActiveIndicatorStyle itemBackground itemIconSize itemIconTint itemPaddingBottom itemPaddingTop itemRippleColor itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable NavigationRailView headerLayout itemMinHeight menuGravity paddingBottomSystemWindowInsets paddingTopSystemWindowInsets
 styleable NavigationView android_layout_gravity android_background android_fitsSystemWindows android_maxWidth bottomInsetScrimEnabled dividerInsetEnd dividerInsetStart drawerLayoutCornerSize elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconSize itemIconTint itemMaxLines itemRippleColor itemShapeAppearance itemShapeAppearanceOverlay itemShapeFillColor itemShapeInsetBottom itemShapeInsetEnd itemShapeInsetStart itemShapeInsetTop itemTextAppearance itemTextColor itemVerticalPadding menu shapeAppearance shapeAppearanceOverlay subheaderColor subheaderInsetEnd subheaderInsetStart subheaderTextAppearance topInsetScrimEnabled
+styleable NumberPicker np_dividerColor np_dividerDistance np_dividerThickness np_fadingEdgeEnabled np_formatter np_height np_max np_min np_order np_orientation np_scrollerEnabled np_selectedTextColor np_selectedTextSize np_textColor np_textSize np_typeface np_value np_wheelItemCount np_width np_wrapSelectorWheel
 styleable OnClick clickAction targetId
 styleable OnSwipe autoCompleteMode dragDirection dragScale dragThreshold limitBoundsTo maxAcceleration maxVelocity moveWhenScrollAtTop nestedScrollFlags onTouchUp rotationCenterId springBoundary springDamping springMass springStiffness springStopThreshold touchAnchorId touchAnchorSide touchRegionId
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
