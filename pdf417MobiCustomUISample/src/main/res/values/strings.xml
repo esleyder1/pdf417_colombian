@@ -6,6 +6,7 @@
     <string name="custom_ui">Custom camera activity</string>
     <string name="default_ui_no_dialog">Default overlay in fragment</string>
     <string name="scan_document">Escanear documento</string>
+    <string name="fill_document">Digitar manualmente</string>
     <string name="UseWith">Usar con:</string>
     <string name="Back">Volver</string>
     <string name="LightOff">Luces: apagadas</string>

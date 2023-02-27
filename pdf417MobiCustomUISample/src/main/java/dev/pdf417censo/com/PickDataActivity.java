@@ -1,5 +1,6 @@
 package dev.pdf417censo.com;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +18,8 @@ import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.slider.Slider;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
@@ -25,9 +28,7 @@ public class PickDataActivity extends AppCompatActivity {
 
     AutoCompleteTextView textViewCommunity, acSidewalk;
     private NumberPicker npFamilyIntegrants;
-    private String[] npMembersFamily;
-    String[] arrayAddresses ={"La Mina","Guayope","El Epiro","Picacho", "La Palma", "Loma Redonda", "La Esperanza", "Barondillo", "Zolapa", "El Tablón" };
-    boolean sidewalkError = false;
+    private int numberMembersFamily = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class PickDataActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_pick_data);
+
+        Slider sliderMembersFamily = findViewById(R.id.sliderMembersFamily);
 
         //Campo: COMUNIDAD INDÍGENA
         String[] arrayCommunity={"Misak","Nasa"};
@@ -55,6 +58,17 @@ public class PickDataActivity extends AppCompatActivity {
 
         //Campo: VEREDAS - BARRIO
 
+        String[] arrayAddresses ={
+                "La Mina",
+                "Guayope",
+                "El Epiro",
+                "Picacho",
+                "La Palma",
+                "Loma Redonda",
+                "La Esperanza",
+                "Barondillo",
+                "Zolapa",
+                "El Tablón" };
         ArrayAdapter<String> adapter;
         acSidewalk = findViewById(R.id.acAddress);
         adapter = new ArrayAdapter<>(this,
@@ -62,17 +76,10 @@ public class PickDataActivity extends AppCompatActivity {
         acSidewalk.setAdapter(adapter);
 
         //INTEGRANTES DE LA FAMILIA
-        npFamilyIntegrants = findViewById(R.id.npFamilyIntegrants);
-        npFamilyIntegrants.setMaxValue(15);
-        npFamilyIntegrants.setMinValue(1);
-        npMembersFamily  = new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"};
-        npFamilyIntegrants.setDisplayedValues(npMembersFamily);
-
-        npFamilyIntegrants.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+        sliderMembersFamily.addOnChangeListener(new Slider.OnChangeListener() {
             @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                int valuenpFamilyIntegrants = npFamilyIntegrants.getValue();
-                Log.d("picker value", npMembersFamily[valuenpFamilyIntegrants]);
+            public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
+                numberMembersFamily = (int) value;
             }
         });
 
@@ -88,8 +95,8 @@ public class PickDataActivity extends AppCompatActivity {
 
                 boolean found = Arrays.asList(arrayAddresses).contains(word);
 
-                if(community.isEmpty() || sidewalk.isEmpty()){
-                    Toast.makeText(PickDataActivity.this, "Campos vacios", Toast.LENGTH_SHORT).show();
+                if(community.isEmpty() || sidewalk.isEmpty() || numberMembersFamily <= 0){
+                    Toast.makeText(PickDataActivity.this, "Es necesario llenar todos los campos", Toast.LENGTH_SHORT).show();
                 }else{
                     if(found){
                         Toast.makeText(PickDataActivity.this, "Encontrado", Toast.LENGTH_SHORT).show();
@@ -113,7 +120,7 @@ public class PickDataActivity extends AppCompatActivity {
         //Datos ingresados
         String community = textViewCommunity.getText().toString();
         String  sidewalk = acSidewalk.getText().toString();
-        String membersFamily = String.valueOf(npFamilyIntegrants.getValue());
+        String membersFamily = String.valueOf(numberMembersFamily);
 
         String message = "Comunidad indígena: "+ community + "\n" +
                 "Vereda / Barrio: " + sidewalk + "\n" +

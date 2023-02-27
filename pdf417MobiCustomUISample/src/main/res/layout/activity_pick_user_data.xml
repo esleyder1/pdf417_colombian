@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="36dp"
+            app:title="@string/scan_document" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <!--<com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:hint="@string/scan_document"
+        app:startIconDrawable="@drawable/bg_button"
+        app:startIconTint="@drawable/bg_button"
+        style="@style/Widget.AppCompat.EditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    -->
+
+    <TextView
+        android:id="@+id/tvCommunity"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Comunidad indígena"
+        android:textColor="@color/primary"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiCommunity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:hint="Seleccione una opción"
+        app:hintTextAppearance="@style/TextLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCommunity"
+        tools:ignore="MissingConstraints">
+
+        <AutoCompleteTextView
+            android:id="@+id/acCommunity"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:inputType="none"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="68dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--&lt;!&ndash;PARENTESCO&ndash;&gt;
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="352dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:text="Parentesco"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiCommunity">
+
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiAddress"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="360dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="39dp"
+        android:hint="Seleccione una opción"
+        app:hintTextAppearance="@style/TextLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+        tools:ignore="MissingConstraints">
+
+        <AutoCompleteTextView
+            android:id="@+id/acAddress"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:inputType="none"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="68dp" />
+    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--VEREDA O BARRIO-->
+
+    <!--PARENTESCO-->
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Vereda - Barrio"
+        android:textColor="@color/primary"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiCommunity">
+
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiAddress"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+
+        android:hint="Seleccione una opción"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+        tools:ignore="MissingConstraints">
+
+        <AutoCompleteTextView
+            android:id="@+id/acAddress"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="68dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Integrantes de la familia"
+        android:textColor="@color/primary"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiAddress" />
+
+    <NumberPicker
+        android:id="@+id/npFamilyIntegrants"
+        android:layout_width="354dp"
+        android:layout_height="128dp"
+        android:theme="@style/NumberPickerText"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.036" />
+
+
+    <TextView
+        android:id="@+id/tvFamilyIntegrantsCount"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="1021"
+        android:textAlignment="gravity"
+        android:textColor="@color/accent"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFamilyIntegrants" />
+
+    <TextView
+        android:id="@+id/tvFamilyIntegrants"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Ficha familiar"
+        android:textColor="@color/primary"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/npFamilyIntegrants" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/continuousSlider"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="36dp"
+        android:stepSize="1"
+
+        android:value="0"
+        android:valueFrom="0"
+        android:valueTo="15"
+        app:labelBehavior="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnSaveForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="116dp"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
