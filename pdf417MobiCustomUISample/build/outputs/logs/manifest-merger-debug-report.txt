@@ -1,7 +1,7 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-60:12
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-62:12
+INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-62:12
 MERGED from [androidx.databinding:viewbinding:4.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9f8cfd3eac1f76be3253c1891f484fcd/viewbinding-4.1.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/931064dd1dabd9855818e4ef27763d7d/core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.material:material:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a08a1eefc7971c3487f150f636a3c6fa/material-1.6.0/AndroidManifest.xml:17:1-26:12
@@ -46,7 +46,7 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /home/esleyder/.gradle/ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ebfac4e4c1012a166202e4c4ddc8bdc1/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/fd8f6341ff63f8a409e7de23107a4d69/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/1e0ece2a2397b3c4008a83efa20a8cdf/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:2:1-62:12
 	package
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:4:5-34
 		INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml
@@ -112,7 +112,7 @@ ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/sr
 	android:required
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:22:9-33
 application
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:24:5-58:19
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:24:5-60:19
 MERGED from [com.google.android.material:material:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a08a1eefc7971c3487f150f636a3c6fa/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/a08a1eefc7971c3487f150f636a3c6fa/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/esleyder/.gradle/caches/transforms-2/files-2.1/aea8ef72149a3058e8a92bf4b27526b2/constraintlayout-2.1.2/AndroidManifest.xml:9:5-20
@@ -160,29 +160,33 @@ ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/sr
 	android:name
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:36:13-42
 activity#dev.pdf417censo.com.PickDataActivity
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:38:9-45:20
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:38:9-47:20
+	android:exported
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:41:13-36
+	android:theme
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:40:13-56
 	android:name
 		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:39:13-45
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:40:13-44:29
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:42:13-46:29
 action#android.intent.action.MAIN
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:41:17-69
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:17-69
 	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:41:25-66
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:17-77
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:45:17-77
 	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:27-74
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:45:27-74
 activity#dev.pdf417censo.com.MainActivity
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:46:9-51:20
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:48:9-53:20
 	android:screenOrientation
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:49:13-49
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:51:13-49
 	android:label
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:48:13-45
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:50:13-45
 	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:47:13-41
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:49:13-41
 activity#com.microblink.blinkbarcode.activity.BarcodeScanActivity
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:52:9-54:89
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:54:9-56:89
 MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:36:9-39:52
 MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:36:9-39:52
 	android:screenOrientation
@@ -190,15 +194,15 @@ MERGED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/tra
 	android:configChanges
 		ADDED from [com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:38:13-59
 	android:theme
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:54:13-77
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:56:13-77
 	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:53:13-84
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:55:13-84
 activity#dev.pdf417censo.com.CustomUIScanActivity
-ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:55:9-57:61
+ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:57:9-59:61
 	android:screenOrientation
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:57:13-49
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:59:13-49
 	android:name
-		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:56:13-49
+		ADDED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:58:13-49
 uses-sdk
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml

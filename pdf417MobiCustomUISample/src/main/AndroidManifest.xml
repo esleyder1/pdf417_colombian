@@ -36,7 +36,9 @@
             android:name=".LoginActivity">
         </activity>
         <activity
-            android:name=".PickDataActivity">
+            android:name=".PickDataActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -11,6 +11,14 @@
     <string name="LightOff">Luces: apagadas</string>
     <string name="LightOn">Luces: encendidas</string>
     <string name="save_doc">Guardar</string>
+    <string name="btn_continue">Continuar</string>
 
+    <string name="dialogTitle">Datos ingresados</string>
+    <string name="dialogDescription">Datos ingresados</string>
+
+    <array name="slider_values">
+        <item>1</item>
+        <item>15</item>
+    </array>
 
 </resources>

@@ -4,7 +4,7 @@
         <!-- your app branding color for the app bar -->
         <item name="colorPrimary">@color/primary</item>
         <!-- darker variant for the status bar and contextual app bars -->
-        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorPrimaryDark">@color/primary</item>
         <!-- theme UI controls like checkboxes and text fields -->
         <item name="colorAccent">@color/accent</item>
     </style>
@@ -20,6 +20,27 @@
 
     <style name="NumberPickerText">
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="@android:style/Theme.Dialog">
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SliderTheme" parent="Widget.MaterialComponents.Slider">
+        <!-- Add attributes here -->
+
+        <item name="trackColorActive">#238ae6</item>
+        <item name="trackColorInactive">#a7bada</item>
+        <item name="tickColor">#13161d</item>
+        <item name="thumbColor">#238ae6</item>
+
     </style>
 
 </resources>

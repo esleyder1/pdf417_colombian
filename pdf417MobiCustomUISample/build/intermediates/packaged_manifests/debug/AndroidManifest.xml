@@ -49,7 +49,10 @@
         </activity>
         <activity android:name="dev.pdf417censo.com.LoginActivity" >
         </activity>
-        <activity android:name="dev.pdf417censo.com.PickDataActivity" >
+        <activity
+            android:name="dev.pdf417censo.com.PickDataActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
