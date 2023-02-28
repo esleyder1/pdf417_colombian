@@ -13,8 +13,18 @@ dev/pdf417censo/com/PickDataActivity.java
  dev.pdf417censo.com.PickDataActivity$2
  dev.pdf417censo.com.PickDataActivity$3
  dev.pdf417censo.com.PickDataActivity$4
-dev/pdf417censo/com/PickUserDataActivity.java
- dev.pdf417censo.com.PickUserDataActivity
+dev/pdf417censo/com/CustomUIScanActivity.java
+ dev.pdf417censo.com.CustomUIScanActivity
+ dev.pdf417censo.com.CustomUIScanActivity$1
+ dev.pdf417censo.com.CustomUIScanActivity$2
+ dev.pdf417censo.com.CustomUIScanActivity$2$1
+ dev.pdf417censo.com.CustomUIScanActivity$3
+ dev.pdf417censo.com.CustomUIScanActivity$3$1
+ dev.pdf417censo.com.CustomUIScanActivity$4
+ dev.pdf417censo.com.CustomUIScanActivity$4$1
+ dev.pdf417censo.com.CustomUIScanActivity$5
+ dev.pdf417censo.com.CustomUIScanActivity$6
+ dev.pdf417censo.com.CustomUIScanActivity$7
 dev/pdf417censo/com/BuildConfig.java
  dev.pdf417censo.com.BuildConfig
 dev/pdf417censo/com/databinding/ActivityPickDataBinding.java
@@ -43,15 +53,5 @@ dev/pdf417censo/com/MainActivity.java
  dev.pdf417censo.com.MainActivity$1
  dev.pdf417censo.com.MainActivity$2
  dev.pdf417censo.com.MainActivity$3
-dev/pdf417censo/com/CustomUIScanActivity.java
- dev.pdf417censo.com.CustomUIScanActivity
- dev.pdf417censo.com.CustomUIScanActivity$1
- dev.pdf417censo.com.CustomUIScanActivity$2
- dev.pdf417censo.com.CustomUIScanActivity$2$1
- dev.pdf417censo.com.CustomUIScanActivity$3
- dev.pdf417censo.com.CustomUIScanActivity$3$1
- dev.pdf417censo.com.CustomUIScanActivity$4
- dev.pdf417censo.com.CustomUIScanActivity$4$1
- dev.pdf417censo.com.CustomUIScanActivity$5
- dev.pdf417censo.com.CustomUIScanActivity$6
- dev.pdf417censo.com.CustomUIScanActivity$7
+dev/pdf417censo/com/PickUserDataActivity.java
+ dev.pdf417censo.com.PickUserDataActivity

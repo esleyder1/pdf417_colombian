@@ -22,33 +22,6 @@
             app:title="@string/scan_document" />
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
-    <!--<com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:hint="@string/scan_document"
-        app:startIconDrawable="@drawable/bg_button"
-        app:startIconTint="@drawable/bg_button"
-        style="@style/Widget.AppCompat.EditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    -->
-
     <TextView
         android:id="@+id/tvCommunity"
         android:layout_width="match_parent"
@@ -90,50 +63,6 @@
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="68dp" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <!--&lt;!&ndash;PARENTESCO&ndash;&gt;
-
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="352dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="10dp"
-        android:text="Parentesco"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiCommunity">
-
-    </TextView>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiAddress"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="360dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginEnd="39dp"
-        android:hint="Seleccione una opción"
-        app:hintTextAppearance="@style/TextLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.304"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddress"
-        tools:ignore="MissingConstraints">
-
-        <AutoCompleteTextView
-            android:id="@+id/acAddress"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:inputType="none"
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="68dp" />
-    </com.google.android.material.textfield.TextInputLayout>-->
-
-    <!--VEREDA O BARRIO-->
-
-    <!--PARENTESCO-->
 
     <TextView
         android:id="@+id/tvAddress"
