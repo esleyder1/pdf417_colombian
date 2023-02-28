@@ -52,12 +52,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="dev.pdf417censo.com.SplashActivity" />
         <activity android:name="dev.pdf417censo.com.LoginActivity" />
@@ -70,6 +64,11 @@
             android:exported="true"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.microblink.blinkbarcode.activity.BarcodeScanActivity"

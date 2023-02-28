@@ -58,6 +58,7 @@ public class Persona implements Serializable {
         this.user = user;
     }
 
+    @SuppressLint("Range")
     public Persona(Cursor cursor) {
         id = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.ID));
         documentType = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.DOCUMENTTYPE));
@@ -249,10 +250,14 @@ public class Persona implements Serializable {
         if ((birthDate != null) && (LocalDate.now() != null)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 int age = Period.between(birthDate, LocalDate.now()).getYears();
-                if(age > 18) {
-                    this.setDocumentType("C.C");
-                }else{
+                if(age < 7) {
+                    this.setDocumentType("R.C");
+                }
+                if(age >= 7 && age <= 17) {
                     this.setDocumentType("T.I");
+                }
+                if(age >= 18) {
+                    this.setDocumentType("C.C");
                 }
             }
         }

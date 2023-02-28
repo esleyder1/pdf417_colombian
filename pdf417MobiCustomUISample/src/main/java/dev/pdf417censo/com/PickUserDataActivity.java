@@ -72,7 +72,8 @@ public class PickUserDataActivity extends AppCompatActivity {
                 "Estudiante",
                 "Comerciante",
                 "Contrucción",
-                "Docente" };
+                "Docente",
+                "Empleado"};
 
         ArrayAdapter<String> adapterProfession;
         acProfession = findViewById(R.id.acProfession);
@@ -81,16 +82,24 @@ public class PickUserDataActivity extends AppCompatActivity {
         acProfession.setAdapter(adapterProfession);
 
         //Campo: ESTADO CIVIL
-        String[] arrayCivilState ={
+        String[] arrayCivilStateM ={
                 "Soltero",
                 "Casado",
                 "Unión libre",
-                "Divorciado"};
+                "Divorciado",
+                "Viudo"};
+
+        String[] arrayCivilStateF ={
+                "Soltera",
+                "Casada",
+                "Unión libre",
+                "Divorciada",
+                "Viuda"};
 
         ArrayAdapter<String> adapterCivilState;
         acCivilState = findViewById(R.id.acCivilState);
         adapterCivilState = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, arrayCivilState);
+                android.R.layout.simple_list_item_1, arrayCivilStateM);
         acCivilState.setAdapter(adapterCivilState);
 
     }
