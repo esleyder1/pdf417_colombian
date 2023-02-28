@@ -16,7 +16,6 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + PersonaContract.PersonaEntry.TABLE_NAME + " ("
@@ -26,12 +25,15 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
                 + PersonaContract.PersonaEntry.DOCUMENTNUMBER + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.LASTNAME + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.SECONDNAME + " VARCHAR,"
+                + PersonaContract.PersonaEntry.SURNAMES + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.FIRSTNAME + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.MIDDLENAME + " VARCHAR,"
+                + PersonaContract.PersonaEntry.NAMES + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.GENDER + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.BIRTHDAYYEAR + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.BIRTHDAYMONTH + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.BIRTHDAYDAY + " VARCHAR NOT NULL,"
+                + PersonaContract.PersonaEntry.BIRTHDAYFULL + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.MUNICIPALITYCODE + " VARCHAR,"
                 + PersonaContract.PersonaEntry.DEPARTMENTCODE + " VARCHAR,"
                 + PersonaContract.PersonaEntry.BLOODTYPE + " VARCHAR NOT NULL,"
@@ -39,23 +41,8 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
                 + PersonaContract.PersonaEntry.USER + " TEXT,"
 
                 + "UNIQUE (" + PersonaContract.PersonaEntry.ID + "))");
-
-        mockData(sqLiteDatabase);
     }
 
-    private void mockData(SQLiteDatabase sqLiteDatabase) {
-        mockPersona(sqLiteDatabase, new Persona("C.c", "1061775307",
-                "ordoñez", "",
-                "Esleyder", "", "M","1994","11","25","","","0-", "",""));
-
-    }
-
-    public long mockPersona(SQLiteDatabase db, Persona persona) {
-        return db.insert(
-                PersonaContract.PersonaEntry.TABLE_NAME,
-                null,
-                persona.toContentValues());
-    }
 
     public long savePersona(Persona Persona) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
@@ -109,6 +96,7 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        sqLiteDatabase.execSQL("DROP TABLE "+ PersonaContract.PersonaEntry.TABLE_NAME);
+        onCreate(sqLiteDatabase);
     }
 }

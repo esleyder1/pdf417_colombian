@@ -22,12 +22,15 @@ public class Persona implements Serializable {
     String documentNumber;
     String lastName;
     String secondLastName;
-    String fisrtName;
+    String surnames;
+    String firstName;
     String middleName;
+    String names;
     String gender;
     String birthdayYear;
     String birthdayMonth;
     String birthdayDay;
+    String birthdayFull;
     String municipalityCode;
     String departmentCode;
     String bloodType;
@@ -36,16 +39,13 @@ public class Persona implements Serializable {
     String user;
 
 
-    public Persona() {
-    }
-
-    public Persona(String documentType, String documentNumber, String lastName, String secondLastName, String fisrtName, String middleName, String gender, String birthdayYear, String birthdayMonth, String birthdayDay, String municipalityCode, String departmentCode, String bloodType, String phone, String user) {
+    public Persona(String documentType, String documentNumber, String lastName, String secondLastName, String firstName, String middleName, String gender, String birthdayYear, String birthdayMonth, String birthdayDay, String municipalityCode, String departmentCode, String bloodType, String phone, String user) {
         this.id = UUID.randomUUID().toString();
         this.documentType = documentType;
         this.documentNumber = documentNumber;
         this.lastName = lastName;
         this.secondLastName = secondLastName;
-        this.fisrtName = fisrtName;
+        this.firstName = firstName;
         this.middleName = middleName;
         this.gender = gender;
         this.birthdayYear = birthdayYear;
@@ -65,7 +65,7 @@ public class Persona implements Serializable {
         documentNumber = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.DOCUMENTNUMBER));
         lastName = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.LASTNAME));
         secondLastName = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.SECONDNAME));
-        fisrtName = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.FIRSTNAME));
+        firstName = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.FIRSTNAME));
         middleName = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.MIDDLENAME));
         gender = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.GENDER));
         birthdayYear = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.BIRTHDAYYEAR));
@@ -85,12 +85,15 @@ public class Persona implements Serializable {
         values.put(PersonaContract.PersonaEntry.DOCUMENTNUMBER, documentNumber);
         values.put(PersonaContract.PersonaEntry.LASTNAME, lastName);
         values.put(PersonaContract.PersonaEntry.SECONDNAME, secondLastName);
-        values.put(PersonaContract.PersonaEntry.FIRSTNAME, fisrtName);
+        values.put(PersonaContract.PersonaEntry.SURNAMES, surnames);
+        values.put(PersonaContract.PersonaEntry.FIRSTNAME, firstName);
         values.put(PersonaContract.PersonaEntry.MIDDLENAME, middleName);
+        values.put(PersonaContract.PersonaEntry.NAMES, names);
         values.put(PersonaContract.PersonaEntry.GENDER, gender);
         values.put(PersonaContract.PersonaEntry.BIRTHDAYYEAR, birthdayYear);
         values.put(PersonaContract.PersonaEntry.BIRTHDAYMONTH, birthdayMonth);
         values.put(PersonaContract.PersonaEntry.BIRTHDAYDAY, birthdayDay);
+        values.put(PersonaContract.PersonaEntry.BIRTHDAYFULL, birthdayFull);
         values.put(PersonaContract.PersonaEntry.MUNICIPALITYCODE, municipalityCode);
         values.put(PersonaContract.PersonaEntry.DEPARTMENTCODE, departmentCode);
         values.put(PersonaContract.PersonaEntry.BLOODTYPE, bloodType);
@@ -124,12 +127,12 @@ public class Persona implements Serializable {
         this.secondLastName = secondLastName;
     }
 
-    public String getFisrtName() {
-        return fisrtName;
+    public String getfirstName() {
+        return firstName;
     }
 
-    public void setFisrtName(String fisrtName) {
-        this.fisrtName = fisrtName;
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getMiddleName() {
@@ -226,6 +229,38 @@ public class Persona implements Serializable {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public String getSurnames() {
+        return surnames;
+    }
+
+    public void setSurnames(String surnames) {
+        this.surnames = surnames;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getNames() {
+        return names;
+    }
+
+    public void setNames(String names) {
+        this.names = names;
+    }
+
+    public String getBirthdayFull() {
+        return birthdayFull;
+    }
+
+    public void setBirthdayFull(String birthdayFull) {
+        this.birthdayFull = birthdayFull;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

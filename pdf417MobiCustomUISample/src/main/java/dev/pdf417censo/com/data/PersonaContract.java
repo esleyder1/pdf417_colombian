@@ -21,12 +21,15 @@ public class PersonaContract {
         public static final String DOCUMENTNUMBER = "documentNumber";
         public static final String LASTNAME = "lastName";
         public static final String SECONDNAME = "secondLastName";
+        public static final String SURNAMES = "surnames";
         public static final String FIRSTNAME = "fisrtName";
         public static final String MIDDLENAME = "middleName";
+        public static final String NAMES = "names";
         public static final String GENDER = "gender";
         public static final String BIRTHDAYYEAR ="birthdayYear";
         public static final String BIRTHDAYMONTH = "birthdayMonth";
         public static final String BIRTHDAYDAY = "birthdayDay";
+        public static final String BIRTHDAYFULL ="birthdayFull";
         public static final String MUNICIPALITYCODE = "municipalityCode";
         public static final String DEPARTMENTCODE = "departmentCode";
         public static final String BLOODTYPE = "bloodType";

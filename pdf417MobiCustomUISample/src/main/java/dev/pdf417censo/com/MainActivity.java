@@ -249,22 +249,12 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
     public void createExcel(Persona p) throws IOException {
 
-        PersonasDbHelper conn = new PersonasDbHelper(this);
 
-        long idRes = conn.savePersona(p);
-        conn.close();
 
-        Toast.makeText(this, "ID registro " + idRes, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Hola: " + p.getFisrtName() + " " + p.getLastName(), Toast.LENGTH_SHORT).show();
 
+        Toast.makeText(this, "Hola: " + p.getfirstName() + " " + p.getLastName(), Toast.LENGTH_SHORT).show();
 
         SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
-
-
-        HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-        HSSFSheet hssfSheet = hssfWorkbook.createSheet("CENSO RESGUARDO JAMBALO " + currentYearDate());
-        HSSFRow headerRow = hssfSheet.createRow(0);
-
 
         ArrayList<String> header = new ArrayList<>();
         header.add("VIGENCIA");
@@ -287,37 +277,30 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         header.add("USUARIO");
         header.add("EDAD");
 
-        for (int i = 0; i < header.size(); i++) {
-            HSSFCell cell = headerRow.createCell(i);
-            cell.setCellValue(header.get(i));
-        }
-
-        HSSFRow dataRow = hssfSheet.createRow(getCountRowsExcel() + 1);
-
         ArrayList<String> row = new ArrayList<>();
         row.add(currentYearDate());
         row.add("1131");
         row.add("500");
         row.add("1");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            row.add(p.documentType());
+            p.documentType();
         }
-        row.add(p.getDocumentNumber().replaceFirst("^0*", ""));
+        p.getDocumentNumber().replaceFirst("^0*", "");
 
         if (p.getMiddleName().isEmpty()) {
-            row.add(p.getFisrtName());
+            p.setNames(p.getFirstName());
         } else {
-            row.add(p.getFisrtName() + " " + p.getMiddleName());
+            p.setNames(p.getFirstName() + " " + p.getMiddleName());
         }
 
         if (p.getSecondLastName().isEmpty()) {
-            row.add(p.getLastName());
+           p.setSurnames(p.getLastName());
         } else {
-            row.add(p.getLastName() + " " + p.getSecondLastName());
+            p.setSurnames(p.getLastName() + " " + p.getSecondLastName());
         }
 
 
-        row.add(p.getBirthdayDay() + "/" + p.getBirthdayMonth() + "/" + p.getBirthdayYear());
+        p.setBirthdayFull(p.getBirthdayDay() + "/" + p.getBirthdayMonth() + "/" + p.getBirthdayYear());
         row.add("HI");
         row.add(p.getGender());
         if (Objects.equals(p.getDocumentType(), "T.I")) {
@@ -330,17 +313,18 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         row.add("SE");
         row.add("1");
         row.add("VITOYO");
-        row.add(prefe.getString("phone", ""));
-        row.add(prefe.getString("user", ""));
+        p.setPhone(prefe.getString("phone", ""));
+        p.setUser(prefe.getString("user", ""));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             row.add(p.calculateAge());
         }
 
-        for (int i = 0; i < row.size(); i++) {
-            HSSFCell cell = dataRow.createCell(i);
-            cell.setCellValue(row.get(i));
-        }
+        //Guardar objeto persona en base de datos
+        PersonasDbHelper conn = new PersonasDbHelper(this);
+        long idRes = conn.savePersona(p);
+        conn.close();
 
+        Toast.makeText(this, "ID registro " + idRes, Toast.LENGTH_SHORT).show();
 
         File localStorage = getExternalFilesDir(null);
         if (localStorage == null) {
@@ -348,31 +332,25 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         }
         String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
         String rootPath = storagePath + "/CensoJambalo";
-        String fileName = "/CENSO_JAMBALO_" + currentYearDate() + ".xls";
-
-        File root = new File(rootPath);
-        if (!root.mkdirs()) {
-            Log.i("Test", "This path is already exist: " + root.getAbsolutePath());
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                Files.deleteIfExists(Paths.get(root.getAbsolutePath() +fileName));
-            }
-        }
-
-
-        File file = new File(rootPath + fileName);
-
-
 
         new SQLiteToExcel
                 .Builder(this)
                 .setDataBase(this.getDatabasePath("Encuestados.db").getAbsolutePath())
+                .setSQL("select documentType as 'TIPO DOCUMENTO'," +
+                        " documentNumber as 'DOCUMENTO'," +
+                        " surnames as 'APELLIDOS'," +
+                        " names as 'NOMBRES'," +
+                        " birthdayFull as 'FECHA DE NACIMIENTO'," +
+                        " phone as 'TELEFONO'," +
+                        " user as 'USUARIO'" +
+                        " from persona")
                 .setOutputPath(rootPath)
                 .setOutputFileName("Encuestados.xls")
                 .setTables("persona")
                 .start(new ExportListener() {
                     @Override
                     public void onStart() {
-                        Toast.makeText(MainActivity.this, "iniciado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Exportando", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -385,27 +363,6 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                         Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
-        try {
-            int permissionCheck = ContextCompat.checkSelfPermission(
-                    MainActivity.this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-                if (!file.createNewFile()) {
-                    Log.i("Test", "This file is already exist: " + file.getAbsolutePath());
-                    file.createNewFile();
-                }
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    private int getCountRowsExcel() {
-        SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
-        return prefe.getInt("countRows",1);
     }
 
     public String currentYearDate(){
