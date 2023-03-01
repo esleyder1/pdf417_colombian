@@ -29,6 +29,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
 
+import dev.pdf417censo.com.data.Persona;
+
 public class PickDataActivity extends AppCompatActivity {
 
     AutoCompleteTextView textViewCommunity, acSidewalk;
@@ -42,6 +44,8 @@ public class PickDataActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_pick_data);
+
+
 
         Slider sliderMembersFamily = findViewById(R.id.sliderMembersFamily);
 
@@ -153,8 +157,11 @@ public class PickDataActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // dismiss alert dialog, update preferences with game score and restart play fragment
                         dialog.dismiss();
+                        saveInfo();
+
                         Intent i = new Intent(PickDataActivity.this, MainActivity.class);
                         startActivity(i);
+                        finish();
                     }
                 });
 
@@ -220,11 +227,16 @@ public class PickDataActivity extends AppCompatActivity {
     }
 
     private void saveInfo() {
+
+        String community = textViewCommunity.getText().toString();
+        String  sidewalk = acSidewalk.getText().toString();
+
         SharedPreferences preferencias=getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=preferencias.edit();
-/*        editor.putString("user", edUser.getText().toString().toUpperCase());
-        editor.putString("phone", edPhone.getText().toString());
-        editor.apply();*/
+        editor.putString("community", community.toUpperCase());
+        editor.putString("sidewalk", sidewalk);
+        editor.putInt("membersFamily", numberMembersFamily);
+        editor.apply();
 
         Intent i = new Intent(PickDataActivity.this, MainActivity.class);
         startActivity(i);

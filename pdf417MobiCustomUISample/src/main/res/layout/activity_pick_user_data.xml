@@ -18,13 +18,37 @@
             android:layout_width="match_parent"
 
             android:layout_height="?attr/actionBarSize"
-            android:paddingStart="36dp"
-            app:title="@string/scan_document" />
+            android:paddingStart="36dp"/>
     </com.google.android.material.appbar.AppBarLayout>
 
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvPerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/tvInfoPerson"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:textSize="16sp"
+            android:textStyle="bold"
+        />
+
+    </com.google.android.material.card.MaterialCardView>
+
     <!--PARENTESCO-->
-
-
     <TextView
         android:id="@+id/tvRelationship"
         android:layout_width="match_parent"

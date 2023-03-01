@@ -2813,6 +2813,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id cvPerson
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3171,6 +3172,7 @@ id tvCivilState
 id tvCommunity
 id tvFamilyIntegrants
 id tvFamilyIntegrantsCount
+id tvInfoPerson
 id tvPhone
 id tvProfession
 id tvRelationship
@@ -3570,6 +3572,7 @@ style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
 style AppTheme
+style AppTheme_CardView
 style AppTheme_NoActionBar
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light

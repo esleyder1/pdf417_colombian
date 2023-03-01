@@ -10557,6 +10557,14 @@
         <item name="tickColor">#13161d</item>
         <item name="thumbColor">#238ae6</item>
 
+    </style><style name="AppTheme.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        
+        
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardUseCompatPadding">true</item>
     </style></file><file path="/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">Censo Resguardo Jambaló</string><string name="custom_ui_roi">Custom camera activity with ROI</string><string name="custom_ui">Custom camera activity</string><string name="default_ui_no_dialog">Default overlay in fragment</string><string name="scan_document">Escanear documento</string><string name="fill_document">Digitar manualmente</string><string name="UseWith">Usar con:</string><string name="Back">Volver</string><string name="LightOff">Luces: apagadas</string><string name="LightOn">Luces: encendidas</string><string name="save_doc">Guardar</string><string name="btn_continue">Continuar</string><string name="dialogTitle">Datos ingresados</string><string name="dialogDescription">Datos ingresados</string><array name="slider_values">
         <item>1</item>
         <item>15</item>

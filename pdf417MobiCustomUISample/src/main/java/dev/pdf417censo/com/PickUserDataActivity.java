@@ -2,9 +2,16 @@ package dev.pdf417censo.com;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Objects;
+
+import dev.pdf417censo.com.data.Persona;
 
 public class PickUserDataActivity extends AppCompatActivity {
 
@@ -14,13 +21,21 @@ public class PickUserDataActivity extends AppCompatActivity {
             acProfession,
             acCivilState;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_user_data);
 
-        //Campo: PARENTESCO
+        TextView tvInfoPerson = findViewById(R.id.tvInfoPerson);
 
+        Persona objPersona = (Persona) getIntent().getSerializableExtra("objPersona");
+        Toast.makeText(this, objPersona.getFirstName(), Toast.LENGTH_SHORT).show();
+
+        String fullName = objPersona.getFirstName() + " " + objPersona.getLastName();
+        tvInfoPerson.setText(fullName);
+
+        //Campo: PARENTESCO
         String[] arrayRelationshipF ={
                 "Madre cabeza de hogar",
                 "Abuela",
@@ -43,9 +58,21 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapterRelationship;
         acRelationship = findViewById(R.id.acRelationship);
-        adapterRelationship = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, arrayRelationshipM);
-        acRelationship.setAdapter(adapterRelationship);
+
+        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
+            adapterRelationship = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, arrayRelationshipM);
+            acRelationship.setAdapter(adapterRelationship);
+        }
+        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")){
+            adapterRelationship = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, arrayRelationshipF);
+            acRelationship.setAdapter(adapterRelationship);
+        }
+
+
+
+
 
         //Campo: ESCOLARIDAD
 
@@ -65,7 +92,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         acScholarship.setAdapter(adapterScholarship);
 
         //Campo: PROFESIÓN
-        String[] arrayProfession ={
+        String[] arrayProfessionF ={
                 "Ninguno",
                 "Agricultor",
                 "Ama de casa",
@@ -75,11 +102,32 @@ public class PickUserDataActivity extends AppCompatActivity {
                 "Docente",
                 "Empleado"};
 
+        String[] arrayProfessionM ={
+                "Ninguno",
+                "Agricultor",
+                "Estudiante",
+                "Comerciante",
+                "Contrucción",
+                "Docente",
+                "Empleado"};
+
+
+
         ArrayAdapter<String> adapterProfession;
         acProfession = findViewById(R.id.acProfession);
-        adapterProfession = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, arrayProfession);
-        acProfession.setAdapter(adapterProfession);
+
+
+        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
+            adapterProfession = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, arrayProfessionM);
+            acProfession.setAdapter(adapterProfession);
+        }
+
+        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")){
+            adapterProfession = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, arrayProfessionF);
+            acProfession.setAdapter(adapterProfession);
+        }
 
         //Campo: ESTADO CIVIL
         String[] arrayCivilStateM ={
@@ -98,9 +146,21 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapterCivilState;
         acCivilState = findViewById(R.id.acCivilState);
-        adapterCivilState = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, arrayCivilStateM);
-        acCivilState.setAdapter(adapterCivilState);
+
+        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
+            adapterCivilState = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, arrayCivilStateM);
+            acCivilState.setAdapter(adapterCivilState);
+        }
+
+        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")) {
+            adapterCivilState = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, arrayCivilStateF);
+            acCivilState.setAdapter(adapterCivilState);
+        }
 
     }
+
+    @Override
+    public void onBackPressed() {}
 }

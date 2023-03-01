@@ -15,6 +15,7 @@ import android.os.Environment;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liyu.sqlitetoexcel.ExcelToSQLite;
@@ -59,6 +60,7 @@ import java.util.regex.Pattern;
 
 import dev.pdf417censo.com.data.Persona;
 import dev.pdf417censo.com.data.PersonasDbHelper;
+import dev.pdf417censo.com.data.TinyDB;
 
 // ScanningOverlayBinder must be implemented for case when RecognizerRunnerFragment is used
 public class MainActivity extends AppCompatActivity implements RecognizerRunnerFragment.ScanningOverlayBinder {
@@ -122,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             }
         });
     }
+    private TextView tvFamilyIntegrantsCount;
+
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -129,12 +133,22 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tvFamilyIntegrantsCount = findViewById(R.id.tvFamilyIntegrantsCount);
+
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
 
         if (savedInstanceState != null) {
             mRecognizerRunnerFragment = (RecognizerRunnerFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.recognizer_runner_view_container);
+        }
+
+        SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+
+        if(prefe.getInt("membersFamily", 0) > 0){
+            tvFamilyIntegrantsCount.setText(String.valueOf(prefe.getInt("membersFamily", 0)));
+        }else{
+        tvFamilyIntegrantsCount.setText("0");
         }
     }
 
@@ -238,7 +252,16 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                 , middleName, gender, birthdayYear, birthdayMonth, birthdayDay,
                 municipalityCode, departmentCode, bloodType,"","");
 
-        createExcel(p);
+        //Guardo el objeto persona en un arreglo que persistirá en tiny
+
+        Intent i = new Intent(MainActivity.this, PickUserDataActivity.class);
+        i.putExtra("objPersona", p);
+        startActivity(i);
+        finish();
+/*        TinyDB tinydb = new TinyDB(this.getApplicationContext());
+        tinydb.putListString("nucleoFamiliar", p);*/
+
+        //createExcel(p);
     }
 
     public String convertByteToArray(byte[] rawDataBuffer, int from, int to){
@@ -400,7 +423,5 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
+    public void onBackPressed() {}
 }

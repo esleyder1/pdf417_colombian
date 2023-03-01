@@ -39,11 +39,7 @@
         </activity>
         <activity android:name=".SplashActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"
@@ -59,10 +55,13 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.microblink.blinkbarcode.activity.BarcodeScanActivity"
