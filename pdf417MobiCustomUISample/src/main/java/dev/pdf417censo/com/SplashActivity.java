@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
 
         if(!prefe.getString("user","").isEmpty() && !prefe.getString("phone","").isEmpty()){
-            Intent i = new Intent(SplashActivity.this, MainActivity.class);
+            Intent i = new Intent(SplashActivity.this, PickDataActivity.class);
             startActivity(i);
         }else{
             Intent i = new Intent(SplashActivity.this, LoginActivity.class);

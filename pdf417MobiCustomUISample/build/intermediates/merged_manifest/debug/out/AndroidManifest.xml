@@ -53,11 +53,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="dev.pdf417censo.com.SplashActivity" />
         <activity
-            android:name="dev.pdf417censo.com.LoginActivity"
-            android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:name="dev.pdf417censo.com.SplashActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,8 +63,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="dev.pdf417censo.com.LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
             android:name="dev.pdf417censo.com.PickDataActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name="dev.pdf417censo.com.MainActivity"

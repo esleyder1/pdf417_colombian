@@ -4,14 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -31,6 +34,7 @@ public class PickDataActivity extends AppCompatActivity {
     AutoCompleteTextView textViewCommunity, acSidewalk;
     private NumberPicker npFamilyIntegrants;
     private int numberMembersFamily = 0;
+    private String wordSidewalk = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +52,6 @@ public class PickDataActivity extends AppCompatActivity {
         adapterCommunity = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, arrayCommunity);
         textViewCommunity.setAdapter(adapterCommunity);
-
-        //Campo: PARENTESCO
-/*        String[] arrayRelationshipF ={"Madre cabeza de hogar","Abuela","Hija","Prima","Tía", "Nieta", "Sobrina" };
-        String[] arrayRelationshipM ={"Padre cabeza de hogar","Abuelo","Hijo","Primo","Tío", "Nieto", "Sobrino" };
-        ArrayAdapter<String> adapter;
-        acSidewalk = findViewById(R.id.acSidewalk);
-        adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, arrayRelationshipM);
-        acSidewalk.setAdapter(adapter);*/
 
         //Campo: VEREDAS - BARRIO
 
@@ -77,11 +72,35 @@ public class PickDataActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, arrayAddresses);
         acSidewalk.setAdapter(adapter);
 
+        acSidewalk.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                wordSidewalk = acSidewalk.getText().toString();
+                boolean found = Arrays.asList(arrayAddresses).contains(wordSidewalk);
+                if(found){
+                    View view = PickDataActivity.this.getCurrentFocus();
+                    InputMethodManager imm = (InputMethodManager) getApplicationContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
         //INTEGRANTES DE LA FAMILIA
         sliderMembersFamily.addOnChangeListener(new Slider.OnChangeListener() {
             @Override
             public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
                 numberMembersFamily = (int) value;
+
             }
         });
 
@@ -93,18 +112,15 @@ public class PickDataActivity extends AppCompatActivity {
                 String community = textViewCommunity.getText().toString();
                 String  sidewalk = acSidewalk.getText().toString();
 
-                String word = acSidewalk.getText().toString();
-
-                boolean found = Arrays.asList(arrayAddresses).contains(word);
+                boolean found = Arrays.asList(arrayAddresses).contains(wordSidewalk);
 
                 if(community.isEmpty() || sidewalk.isEmpty() || numberMembersFamily <= 0){
-                    Toast.makeText(PickDataActivity.this, "Es necesario llenar todos los campos", Toast.LENGTH_SHORT).show();
+                    emptyFields();
                 }else{
                     if(found){
-                        Toast.makeText(PickDataActivity.this, "Encontrado", Toast.LENGTH_SHORT).show();
                         confirmationDialog();
                     }else{
-                        Toast.makeText(PickDataActivity.this, "NO ncontrado", Toast.LENGTH_SHORT).show();
+                        infoDialog();
                     }
 
                 }
@@ -136,11 +152,6 @@ public class PickDataActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // dismiss alert dialog, update preferences with game score and restart play fragment
-                        Toast.makeText(PickDataActivity.this, "Continuar", Toast.LENGTH_SHORT).show();
-                        Log.d("myTag", "positive button clicked");
-
-
-
                         dialog.dismiss();
                         Intent i = new Intent(PickDataActivity.this, MainActivity.class);
                         startActivity(i);
@@ -154,8 +165,52 @@ public class PickDataActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // dismiss dialog, start counter again
                         dialog.dismiss();
-                        Log.d("myTag", "negative button clicked");
-                        Toast.makeText(PickDataActivity.this, "Cancelar", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+// display dialog
+        dialog.show();
+    }
+
+    public void infoDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Vereda / Barrio");
+
+        //Datos ingresados
+
+        String message = wordSidewalk + " no es el nombre de una vereda o barrio, verifique e intente nuevamente.";
+        builder.setMessage(message);
+        String negativeText = getString(android.R.string.ok);
+        builder.setNegativeButton(negativeText,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // dismiss dialog, start counter again
+                        dialog.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+// display dialog
+        dialog.show();
+    }
+
+    public void emptyFields() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Error al guardar");
+
+        //Datos ingresados
+
+        String message = "Algunos campos están vacios, verifique e intente nuevamente.";
+        builder.setMessage(message);
+        String negativeText = getString(android.R.string.ok);
+        builder.setNegativeButton(negativeText,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // dismiss dialog, start counter again
+                        dialog.dismiss();
                     }
                 });
 
