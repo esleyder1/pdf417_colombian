@@ -19,6 +19,9 @@ import java.util.UUID;
 
 public class Persona implements Serializable {
     private String id;
+    String community;
+    String sidewalk;
+    String membersFamily;
     String documentNumber;
     String lastName;
     String secondLastName;
@@ -61,6 +64,7 @@ public class Persona implements Serializable {
     @SuppressLint("Range")
     public Persona(Cursor cursor) {
         id = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.ID));
+        user = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.USER));
         documentType = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.DOCUMENTTYPE));
         documentNumber = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.DOCUMENTNUMBER));
         lastName = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.LASTNAME));
@@ -76,13 +80,16 @@ public class Persona implements Serializable {
         bloodType = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.BLOODTYPE));
         phone = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.PHONE));
         user = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.USER));
+
     }
+
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
         values.put(PersonaContract.PersonaEntry.ID, id);
-        values.put(PersonaContract.PersonaEntry.DOCUMENTTYPE, documentType);
-        values.put(PersonaContract.PersonaEntry.DOCUMENTNUMBER, documentNumber);
+        values.put(PersonaContract.PersonaEntry.COMMUNITY, community);
+        values.put(PersonaContract.PersonaEntry.SIDEWALK, sidewalk);
+        values.put(PersonaContract.PersonaEntry.MEMBERSFAMILY, membersFamily);
         values.put(PersonaContract.PersonaEntry.LASTNAME, lastName);
         values.put(PersonaContract.PersonaEntry.SECONDNAME, secondLastName);
         values.put(PersonaContract.PersonaEntry.SURNAMES, surnames);
@@ -261,6 +268,30 @@ public class Persona implements Serializable {
 
     public void setBirthdayFull(String birthdayFull) {
         this.birthdayFull = birthdayFull;
+    }
+
+    public String getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(String community) {
+        this.community = community;
+    }
+
+    public String getSidewalk() {
+        return sidewalk;
+    }
+
+    public void setSidewalk(String sidewalk) {
+        this.sidewalk = sidewalk;
+    }
+
+    public String getMembersFamily() {
+        return membersFamily;
+    }
+
+    public void setMembersFamily(String membersFamily) {
+        this.membersFamily = membersFamily;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

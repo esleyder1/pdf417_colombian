@@ -17,6 +17,9 @@ public class PersonaContract {
         public static final String TABLE_NAME ="persona";
 
         public static final String ID = "id";
+        public static final String COMMUNITY = "community";
+        public static final String SIDEWALK = "sideWalk";
+        public static final String MEMBERSFAMILY = "membersFamily";
         public static final String DOCUMENTTYPE = "documentType";
         public static final String DOCUMENTNUMBER = "documentNumber";
         public static final String LASTNAME = "lastName";

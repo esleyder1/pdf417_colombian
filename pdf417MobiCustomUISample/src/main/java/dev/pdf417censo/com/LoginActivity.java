@@ -12,11 +12,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 public class LoginActivity extends AppCompatActivity {
 
-    private NumberPicker picker1;
-    private EditText edUser;
-    private EditText edPhone;
+
+    private TextInputEditText edUser;
+    private TextInputEditText edPhone;
     private Button btnSaveData;
 
     @Override
@@ -25,8 +28,8 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
-        edUser=findViewById(R.id.edUser);
-        edPhone=findViewById(R.id.edPhone);
+        edUser= (TextInputEditText) findViewById(R.id.edUser);
+        edPhone= (TextInputEditText) findViewById(R.id.edPhone);
 
         btnSaveData = findViewById(R.id.btnSaveData);
 

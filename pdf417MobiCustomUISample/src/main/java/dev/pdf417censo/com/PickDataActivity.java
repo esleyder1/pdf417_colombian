@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -137,6 +139,8 @@ public class PickDataActivity extends AppCompatActivity {
                         Toast.makeText(PickDataActivity.this, "Continuar", Toast.LENGTH_SHORT).show();
                         Log.d("myTag", "positive button clicked");
 
+
+
                         dialog.dismiss();
                         Intent i = new Intent(PickDataActivity.this, MainActivity.class);
                         startActivity(i);
@@ -158,6 +162,17 @@ public class PickDataActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
 // display dialog
         dialog.show();
+    }
+
+    private void saveInfo() {
+        SharedPreferences preferencias=getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferencias.edit();
+/*        editor.putString("user", edUser.getText().toString().toUpperCase());
+        editor.putString("phone", edPhone.getText().toString());
+        editor.apply();*/
+
+        Intent i = new Intent(PickDataActivity.this, MainActivity.class);
+        startActivity(i);
     }
 
 }
