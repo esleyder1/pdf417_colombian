@@ -172,7 +172,7 @@
         android:value="0"
         android:valueFrom="0"
         android:valueTo="15"
-        app:labelBehavior="visible"
+        app:labelBehavior="floating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"

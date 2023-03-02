@@ -145,23 +145,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
                     .findFragmentById(R.id.recognizer_runner_view_container);
         }
 
-        SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
 
-
-        int familyNucleusScanned = prefe.getInt("familyNucleusScanned", 0);
-        int membersFamilyCount = prefe.getInt("membersFamilyCount", 0);
-        if(membersFamilyCount > 0){
-            tvFamilyIntegrantsCount.setText(familyNucleusScanned +"/"+ membersFamilyCount);
-        }else{
-        tvFamilyIntegrantsCount.setText("0");
-        }
-
-        if(membersFamilyCount == familyNucleusScanned){
-            SharedPreferences.Editor editor=prefe.edit();
-            editor.remove("membersFamilyCount");
-            editor.remove("familyNucleusScanned");
-            editor.apply();
-        }
     }
 
     public void scanDocument(View v) {

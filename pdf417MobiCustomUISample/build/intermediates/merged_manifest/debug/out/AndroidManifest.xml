@@ -46,6 +46,11 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="dev.pdf417censo.com.ResultActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
             android:name="dev.pdf417censo.com.PickUserDataActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -56,16 +61,6 @@
         <activity
             android:name="dev.pdf417censo.com.SplashActivity"
             android:exported="true" >
-        </activity>
-        <activity
-            android:name="dev.pdf417censo.com.LoginActivity"
-            android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name="dev.pdf417censo.com.PickDataActivity"
-            android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -73,11 +68,19 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="dev.pdf417censo.com.LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="dev.pdf417censo.com.PickDataActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
             android:name="dev.pdf417censo.com.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.microblink.blinkbarcode.activity.BarcodeScanActivity"
             android:configChanges="orientation|screenSize"

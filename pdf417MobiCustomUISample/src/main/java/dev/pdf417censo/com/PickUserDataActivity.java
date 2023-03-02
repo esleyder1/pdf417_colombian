@@ -226,10 +226,6 @@ public class PickUserDataActivity extends AppCompatActivity {
                         // dismiss alert dialog, update preferences with game score and restart play fragment
                         dialog.dismiss();
                         saveInfo();
-
-                        Intent i = new Intent(PickUserDataActivity.this, MainActivity.class);
-                        startActivity(i);
-                        finish();
                     }
                 });
 
@@ -338,20 +334,13 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         if(prefe.contains("familyNucleusScanned")){
             familyNucleusScanned = prefe.getInt("familyNucleusScanned", 0) + 1;
-
             editor.putInt("familyNucleusScanned", familyNucleusScanned) ;
-
         }else{
             editor.putInt("familyNucleusScanned", familyNucleusScanned + 1) ;
-
         }
         editor.apply();
 
-
-
-
-
-        Intent i = new Intent(PickUserDataActivity.this, MainActivity.class);
+        Intent i = new Intent(PickUserDataActivity.this, ResultActivity.class);
         startActivity(i);
     }
 
