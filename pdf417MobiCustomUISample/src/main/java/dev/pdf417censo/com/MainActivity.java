@@ -3,6 +3,7 @@ package dev.pdf417censo.com;
 import static com.liyu.sqlitetoexcel.SQLiteToExcel.*;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     private TextView tvFamilyIntegrantsCount;
 
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,10 +147,20 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
         SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
 
-        if(prefe.getInt("membersFamily", 0) > 0){
-            tvFamilyIntegrantsCount.setText(String.valueOf(prefe.getInt("membersFamily", 0)));
+
+        int familyNucleusScanned = prefe.getInt("familyNucleusScanned", 0);
+        int membersFamilyCount = prefe.getInt("membersFamilyCount", 0);
+        if(membersFamilyCount > 0){
+            tvFamilyIntegrantsCount.setText(familyNucleusScanned +"/"+ membersFamilyCount);
         }else{
         tvFamilyIntegrantsCount.setText("0");
+        }
+
+        if(membersFamilyCount == familyNucleusScanned){
+            SharedPreferences.Editor editor=prefe.edit();
+            editor.remove("membersFamilyCount");
+            editor.remove("familyNucleusScanned");
+            editor.apply();
         }
     }
 
@@ -258,9 +270,6 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         i.putExtra("objPersona", p);
         startActivity(i);
         finish();
-/*        TinyDB tinydb = new TinyDB(this.getApplicationContext());
-        tinydb.putListString("nucleoFamiliar", p);*/
-
         //createExcel(p);
     }
 
@@ -300,47 +309,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         header.add("USUARIO");
         header.add("EDAD");
 
-        ArrayList<String> row = new ArrayList<>();
-        row.add(currentYearDate());
-        row.add("1131");
-        row.add("500");
-        row.add("1");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            p.documentType();
-        }
-        p.getDocumentNumber().replaceFirst("^0*", "");
 
-        if (p.getMiddleName().isEmpty()) {
-            p.setNames(p.getFirstName());
-        } else {
-            p.setNames(p.getFirstName() + " " + p.getMiddleName());
-        }
-
-        if (p.getSecondLastName().isEmpty()) {
-           p.setSurnames(p.getLastName());
-        } else {
-            p.setSurnames(p.getLastName() + " " + p.getSecondLastName());
-        }
-
-
-        p.setBirthdayFull(p.getBirthdayDay() + "/" + p.getBirthdayMonth() + "/" + p.getBirthdayYear());
-        row.add("HI");
-        row.add(p.getGender());
-        if (Objects.equals(p.getDocumentType(), "T.I")) {
-            row.add("S");
-        } else {
-            row.add("S");
-        }
-
-        row.add("AGRICULTOR");
-        row.add("SE");
-        row.add("1");
-        row.add("VITOYO");
-        p.setPhone(prefe.getString("phone", ""));
-        p.setUser(prefe.getString("user", ""));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            row.add(p.calculateAge());
-        }
 
         //Guardar objeto persona en base de datos
         PersonasDbHelper conn = new PersonasDbHelper(this);

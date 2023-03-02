@@ -2768,6 +2768,7 @@ id btnDefaultActivity
 id btnFillForm
 id btnSaveData
 id btnSaveForm
+id btnSaveUserData
 id btnTorch
 id buttonPanel
 id cache_measures

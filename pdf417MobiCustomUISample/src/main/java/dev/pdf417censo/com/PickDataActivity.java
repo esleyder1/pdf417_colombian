@@ -235,7 +235,7 @@ public class PickDataActivity extends AppCompatActivity {
         SharedPreferences.Editor editor=preferencias.edit();
         editor.putString("community", community.toUpperCase());
         editor.putString("sidewalk", sidewalk);
-        editor.putInt("membersFamily", numberMembersFamily);
+        editor.putInt("membersFamilyCount", numberMembersFamily);
         editor.apply();
 
         Intent i = new Intent(PickDataActivity.this, MainActivity.class);
