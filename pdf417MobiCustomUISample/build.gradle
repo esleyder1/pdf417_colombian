@@ -32,8 +32,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'com.liyu.tools:sqlitetoexcel:1.0.10'
-    implementation 'com.google.android.material:material:1.3.0-alpha02'
-
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
     implementation "com.itextpdf:itext7-core:7.1.10"
 
     implementation ("com.microblink:pdf417.mobi:${rootProject.ext.pdf417MobiVersion}@aar") {
@@ -44,5 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.shawnlin:number-picker:2.4.6'
     implementation 'com.google.code.gson:gson:2.8.8'
-
+    implementation 'com.android.support:design:29.0.0'
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+    implementation 'com.kelin.translucentbar:library:0.8.0'
 }

@@ -83,7 +83,7 @@
 44        android:requestLegacyExternalStorage="true"
 44-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:29:9-52
 45        android:supportsRtl="true"
-45-->[com.liyu.tools:sqlitetoexcel:1.0.10] /home/esleyder/.gradle/caches/transforms-2/files-2.1/ee5ae2570202eec906c40025141ad211/jetified-sqlitetoexcel-1.0.10/AndroidManifest.xml:14:9-35
+45-->[com.kelin.translucentbar:library:0.8.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/958db725a30480f59493b0a33b319948/jetified-library-0.8.0/AndroidManifest.xml:14:9-35
 46        android:testOnly="true"
 47        android:theme="@style/AppTheme" >
 47-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:30:9-40

@@ -3,6 +3,7 @@ package dev.pdf417censo.com;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.Activity;
 import android.content.Context;
@@ -24,6 +25,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.slider.Slider;
+import com.kelin.translucentbar.library.TranslucentBarManager;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -37,6 +39,7 @@ public class PickDataActivity extends AppCompatActivity {
     private NumberPicker npFamilyIntegrants;
     private int numberMembersFamily = 0;
     private String wordSidewalk = "";
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,13 @@ public class PickDataActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_pick_data);
+        TranslucentBarManager translucentBarManager = new TranslucentBarManager(this);
+        translucentBarManager.transparent(this);
 
+
+        setContentView(R.layout.activity_pick_data);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
 
         Slider sliderMembersFamily = findViewById(R.id.sliderMembersFamily);
