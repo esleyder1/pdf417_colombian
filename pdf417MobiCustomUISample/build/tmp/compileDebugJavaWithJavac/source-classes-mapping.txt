@@ -28,9 +28,8 @@ dev/pdf417censo/com/PickUserDataActivity.java
  dev.pdf417censo.com.PickUserDataActivity$4
 dev/pdf417censo/com/BuildConfig.java
  dev.pdf417censo.com.BuildConfig
-dev/pdf417censo/com/ResultActivity.java
- dev.pdf417censo.com.ResultActivity
- dev.pdf417censo.com.ResultActivity$1
+dev/pdf417censo/com/databinding/ActivityPickDataBinding.java
+ dev.pdf417censo.com.databinding.ActivityPickDataBinding
 dev/pdf417censo/com/databinding/ActivitySplashAnimatedBinding.java
  dev.pdf417censo.com.databinding.ActivitySplashAnimatedBinding
 dev/pdf417censo/com/data/PersonaContract.java
@@ -69,5 +68,6 @@ dev/pdf417censo/com/CustomUIScanActivity.java
  dev.pdf417censo.com.CustomUIScanActivity$5
  dev.pdf417censo.com.CustomUIScanActivity$6
  dev.pdf417censo.com.CustomUIScanActivity$7
-dev/pdf417censo/com/databinding/ActivityPickDataBinding.java
- dev.pdf417censo.com.databinding.ActivityPickDataBinding
+dev/pdf417censo/com/ResultActivity.java
+ dev.pdf417censo.com.ResultActivity
+ dev.pdf417censo.com.ResultActivity$1

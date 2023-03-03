@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.app.Activity;
 import android.content.Context;
@@ -24,6 +25,7 @@ import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.slider.Slider;
 import com.kelin.translucentbar.library.TranslucentBarManager;
 
@@ -40,23 +42,25 @@ public class PickDataActivity extends AppCompatActivity {
     private int numberMembersFamily = 0;
     private String wordSidewalk = "";
     private Toolbar toolbar;
+    private AppBarLayout appBarLayout;
+    private Slider sliderMembersFamily;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
+
         setContentView(R.layout.activity_pick_data);
         TranslucentBarManager translucentBarManager = new TranslucentBarManager(this);
         translucentBarManager.transparent(this);
 
-
-        setContentView(R.layout.activity_pick_data);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        appBarLayout = findViewById(R.id.appBarLayout);
 
-        Slider sliderMembersFamily = findViewById(R.id.sliderMembersFamily);
+        sliderMembersFamily = findViewById(R.id.sliderMembersFamily);
 
         //Campo: COMUNIDAD INDÍGENA
         String[] arrayCommunity={"Misak","Nasa"};

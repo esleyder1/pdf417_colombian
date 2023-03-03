@@ -21,11 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleGravity="top"
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleMarginEnd="64dp"
             android:fitsSystemWindows="true"
             app:toolbarId="@id/toolbar"
+            app:expandedTitleGravity="center|center_horizontal"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
 
@@ -34,18 +34,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/family3"
+                android:src="@drawable/family_mod"
                 app:layout_collapseMode="parallax"
                 android:fitsSystemWindows="true"
 />
+
             <com.google.android.material.appbar.MaterialToolbar
 
                 android:id="@+id/toolbar"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:title="Nucleo Familiar"
-                android:paddingStart="36dp" />
+                android:paddingStart="36dp"
+                app:title="Nucleo Familiar" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -57,7 +58,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".MainActivity"
@@ -71,7 +72,7 @@
                 android:layout_marginTop="9dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="45dp"
-                app:cardElevation="10dp"
+                app:cardElevation="2dp"
                 app:cardMaxElevation="12dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true"
@@ -229,25 +230,45 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sliderMembersFamily" />
 
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="26dp"
+                android:text="0"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
             <com.google.android.material.slider.Slider
                 android:id="@+id/sliderMembersFamily"
-                android:layout_width="match_parent"
-                android:layout_height="88dp"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="36dp"
+                android:layout_width="291dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="12dp"
                 android:stepSize="1"
                 android:value="0"
                 android:valueFrom="0"
                 android:valueTo="15"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.739"
-                app:layout_constraintStart_toStartOf="parent"
+                app:labelBehavior="floating"
+                app:layout_constraintEnd_toStartOf="@+id/textViewEnd"
+                app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/textView4"
                 tools:ignore="MissingConstraints" />
 
-
+            <TextView
+                android:id="@+id/textViewEnd"
+                android:layout_width="21dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="36dp"
+                android:text="15"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSaveForm"
