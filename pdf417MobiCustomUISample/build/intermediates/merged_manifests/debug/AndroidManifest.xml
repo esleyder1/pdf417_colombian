@@ -61,11 +61,6 @@
         <activity
             android:name="dev.pdf417censo.com.SplashActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="dev.pdf417censo.com.LoginActivity"
@@ -80,7 +75,13 @@
             android:name="dev.pdf417censo.com.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.microblink.blinkbarcode.activity.BarcodeScanActivity"
             android:configChanges="orientation|screenSize"
