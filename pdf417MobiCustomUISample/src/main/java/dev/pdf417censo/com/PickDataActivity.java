@@ -23,6 +23,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.AppBarLayout;
@@ -44,6 +45,7 @@ public class PickDataActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private AppBarLayout appBarLayout;
     private Slider sliderMembersFamily;
+    private TextView tvFamilyIntegrantsCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,9 @@ public class PickDataActivity extends AppCompatActivity {
         appBarLayout = findViewById(R.id.appBarLayout);
 
         sliderMembersFamily = findViewById(R.id.sliderMembersFamily);
+        tvFamilyIntegrantsCount = findViewById(R.id.tvFamilyIntegrantsCount);
+
+
 
         //Campo: COMUNIDAD INDÍGENA
         String[] arrayCommunity={"Misak","Nasa"};
@@ -117,6 +122,7 @@ public class PickDataActivity extends AppCompatActivity {
             @Override
             public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
                 numberMembersFamily = (int) value;
+                tvFamilyIntegrantsCount.setText(String.valueOf(numberMembersFamily));
 
             }
         });

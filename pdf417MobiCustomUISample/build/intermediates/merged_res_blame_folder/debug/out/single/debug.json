@@ -1,27 +1,11 @@
 [
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_phone_android_24.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_phone_android_24.xml"
-    },
-    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family.jpg.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family.jpg"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_light.ttf.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_light.ttf"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_regular.ttf.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_regular.ttf"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_comfortaa_bold.ttf.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/comfortaa_bold.ttf"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_opensans.ttf.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/opensans.ttf"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
@@ -52,16 +36,88 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/circle.xml"
     },
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/transition_change_image_transform.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/transition/change_image_transform.xml"
-    },
-    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_camera_alt_24.xml.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_camera_alt_24.xml"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_black_italic.ttf.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_black_italic.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_check_circle_24.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_check_circle_24.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_person_24.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family_mod.png.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family_mod.png"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_edit_note_24.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_edit_note_24.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_ic_arrow_right.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/ic_arrow_right.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_opensans_italic.ttf.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/opensans_italic.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_custom_ui_scan.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_custom_ui_scan.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_family_restroom_24.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_family_restroom_24.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_italic.ttf.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_italic.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_login.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_login.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_robot_bold_italic.ttf.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/robot_bold_italic.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_thin_italic.ttf.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_thin_italic.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_keyboard_arrow_right_24.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_phone_android_24.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_phone_android_24.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_regular.ttf.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_regular.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_comfortaa_bold.ttf.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/comfortaa_bold.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_opensans.ttf.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/opensans.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/transition_change_image_transform.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/transition/change_image_transform.xml"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_arrow_left.xml.flat",
@@ -76,48 +132,16 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_black.ttf"
     },
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_person_24.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_person_24.xml"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_check_circle_24.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_check_circle_24.xml"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family_mod.png.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family_mod.png"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_edit_note_24.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_edit_note_24.xml"
-    },
-    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_scan_region_overlay.xml.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/scan_region_overlay.xml"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_ic_arrow_right.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/ic_arrow_right.xml"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_medium_italic.ttf.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_medium_italic.ttf"
     },
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_opensans_italic.ttf.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/opensans_italic.ttf"
-    },
-    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_medium.ttf.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_medium.ttf"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_custom_ui_scan.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_custom_ui_scan.xml"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_thin.ttf.flat",
@@ -152,14 +176,6 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family2.jpg"
     },
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_italic.ttf.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_italic.ttf"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_login.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_login.xml"
-    },
-    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_pick_data.xml.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/layout/activity_pick_data.xml"
     },
@@ -168,16 +184,8 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/comfortaa_regular.ttf"
     },
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_robot_bold_italic.ttf.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/robot_bold_italic.ttf"
-    },
-    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_bg_button.xml.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/bg_button.xml"
-    },
-    {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_thin_italic.ttf.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_thin_italic.ttf"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_comfortaa_light.ttf.flat",
