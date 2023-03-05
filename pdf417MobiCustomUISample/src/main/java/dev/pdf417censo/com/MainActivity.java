@@ -301,50 +301,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
 
 
-        //Guardar objeto persona en base de datos
-        PersonasDbHelper conn = new PersonasDbHelper(this);
-        long idRes = conn.savePersona(p);
-        conn.close();
 
-        Toast.makeText(this, "ID registro " + idRes, Toast.LENGTH_SHORT).show();
-
-        File localStorage = getExternalFilesDir(null);
-        if (localStorage == null) {
-            return;
-        }
-        String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
-        String rootPath = storagePath + "/CensoJambalo";
-
-        new SQLiteToExcel
-                .Builder(this)
-                .setDataBase(this.getDatabasePath("Encuestados.db").getAbsolutePath())
-                .setSQL("select documentType as 'TIPO DOCUMENTO'," +
-                        " documentNumber as 'DOCUMENTO'," +
-                        " surnames as 'APELLIDOS'," +
-                        " names as 'NOMBRES'," +
-                        " birthdayFull as 'FECHA DE NACIMIENTO'," +
-                        " phone as 'TELEFONO'," +
-                        " user as 'USUARIO'" +
-                        " from persona")
-                .setOutputPath(rootPath)
-                .setOutputFileName("Encuestados.xls")
-                .setTables("persona")
-                .start(new ExportListener() {
-                    @Override
-                    public void onStart() {
-                        Toast.makeText(MainActivity.this, "Exportando", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onCompleted(String filePath) {
-                        Toast.makeText(MainActivity.this, "completado", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
     }
 
     public String currentYearDate(){

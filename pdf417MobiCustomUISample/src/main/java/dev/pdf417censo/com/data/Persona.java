@@ -90,10 +90,12 @@ public class Persona implements Serializable {
         values.put(PersonaContract.PersonaEntry.COMMUNITY, community);
         values.put(PersonaContract.PersonaEntry.SIDEWALK, sidewalk);
         values.put(PersonaContract.PersonaEntry.MEMBERSFAMILY, membersFamily);
-        values.put(PersonaContract.PersonaEntry.LASTNAME, lastName);
+        values.put(PersonaContract.PersonaEntry.DOCUMENTTYPE, documentType);
+        values.put(PersonaContract.PersonaEntry.DOCUMENTNUMBER, documentNumber);
         values.put(PersonaContract.PersonaEntry.SECONDNAME, secondLastName);
         values.put(PersonaContract.PersonaEntry.SURNAMES, surnames);
         values.put(PersonaContract.PersonaEntry.FIRSTNAME, firstName);
+        values.put(PersonaContract.PersonaEntry.LASTNAME, lastName);
         values.put(PersonaContract.PersonaEntry.MIDDLENAME, middleName);
         values.put(PersonaContract.PersonaEntry.NAMES, names);
         values.put(PersonaContract.PersonaEntry.GENDER, gender);

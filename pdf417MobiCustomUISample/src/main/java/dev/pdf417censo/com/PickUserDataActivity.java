@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -19,13 +21,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kelin.translucentbar.library.TranslucentBarManager;
+import com.liyu.sqlitetoexcel.SQLiteToExcel;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
 import dev.pdf417censo.com.data.Persona;
+import dev.pdf417censo.com.data.PersonasDbHelper;
 import dev.pdf417censo.com.data.TinyDB;
 
 public class PickUserDataActivity extends AppCompatActivity {
@@ -56,8 +64,6 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         if(getIntent().getSerializableExtra("objPersona") != null){
             objPersona = (Persona) getIntent().getSerializableExtra("objPersona");
-            Toast.makeText(this, objPersona.getFirstName(), Toast.LENGTH_SHORT).show();
-
             String fullName = objPersona.getFirstName() + " " + objPersona.getLastName();
             tvInfoPerson.setText(fullName);
 
@@ -99,10 +105,6 @@ public class PickUserDataActivity extends AppCompatActivity {
             acRelationship.setAdapter(adapterRelationship);
         }
 
-
-
-
-
         //Campo: ESCOLARIDAD
 
         String[] arrayScholarship ={
@@ -140,18 +142,14 @@ public class PickUserDataActivity extends AppCompatActivity {
                 "Docente",
                 "Empleado"};
 
-
-
         ArrayAdapter<String> adapterProfession;
         acProfession = findViewById(R.id.acProfession);
-
 
         if(objPersona != null && !objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
             adapterProfession = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayProfessionM);
             acProfession.setAdapter(adapterProfession);
         }
-
         if(objPersona != null && !objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")){
             adapterProfession = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayProfessionF);
@@ -197,7 +195,6 @@ public class PickUserDataActivity extends AppCompatActivity {
                 String  profession = acProfession.getText().toString();
                 String  civilState = acCivilState.getText().toString();
 
-
                 if(relationShip.isEmpty() || scholarShip.isEmpty() ||
                         profession.isEmpty() || civilState.isEmpty()){
                     emptyFields();
@@ -234,7 +231,11 @@ public class PickUserDataActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // dismiss alert dialog, update preferences with game score and restart play fragment
                         dialog.dismiss();
-                        saveInfo();
+                        try {
+                            saveInfo();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
 
@@ -276,31 +277,30 @@ public class PickUserDataActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    private void saveInfo() {
-
-        String relationShip = acRelationship.getText().toString();
-        String  scholarShip = acScholarship.getText().toString();
-        String  profession = acProfession.getText().toString();
-        String  civilState = acCivilState.getText().toString();
+    private void saveInfo() throws IOException {
 
         SharedPreferences prefe=getSharedPreferences("user_data", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor=prefe.edit();
-        editor.putString("community", relationShip.toUpperCase());
-        editor.putString("sidewalk", scholarShip);
-        editor.putString("membersFamily", profession);
-        editor.putString("membersFamily", civilState);
-        editor.apply();
+        @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor=prefe.edit();
 
 
-
-        ArrayList<String> row = new ArrayList<>();
-        row.add(currentYearDate());
-        row.add("1131");
-        row.add("500");
-        row.add("1");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            objPersona.documentType();
+        if(prefe.contains("community")){
+            objPersona.setCommunity(prefe.getString("community", ""));
         }
+        if(prefe.contains("sidewalk")){
+            objPersona.setSidewalk(prefe.getString("sidewalk", ""));
+        }
+        if(prefe.contains("membersFamilyCount")){
+            objPersona.setMembersFamily(String.valueOf(prefe.getInt("membersFamilyCount", 0)));
+        }
+        if(prefe.contains("user")){
+            objPersona.setUser(prefe.getString("user", ""));
+        }
+        if(prefe.contains("phone")){
+            objPersona.setPhone(prefe.getString("phone", ""));
+        }
+        objPersona.setDocumentType("C.C");
+        ArrayList<String> row = new ArrayList<>();
+
         objPersona.getDocumentNumber().replaceFirst("^0*", "");
 
         if (objPersona.getMiddleName().isEmpty()) {
@@ -319,18 +319,12 @@ public class PickUserDataActivity extends AppCompatActivity {
         objPersona.setBirthdayFull(objPersona.getBirthdayDay() + "/" + objPersona.getBirthdayMonth() + "/" + objPersona.getBirthdayYear());
         row.add("HI");
         row.add(objPersona.getGender());
-        if (Objects.equals(objPersona.getDocumentType(), "T.I")) {
-            row.add("S");
-        } else {
-            row.add("S");
-        }
 
         row.add("AGRICULTOR");
         row.add("SE");
         row.add("1");
         row.add("VITOYO");
-        row.add(prefe.getString("phone", ""));
-        row.add(prefe.getString("user", ""));
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             row.add(objPersona.calculateAge());
         }
@@ -338,6 +332,64 @@ public class PickUserDataActivity extends AppCompatActivity {
         listRows.add(row);
 
 
+
+
+        //Guardar objeto persona en base de datos
+        PersonasDbHelper conn = new PersonasDbHelper(this);
+        long idRes = conn.savePersona(objPersona);
+        conn.close();
+
+        Toast.makeText(this, "ID registro " + idRes, Toast.LENGTH_SHORT).show();
+
+        File localStorage = getExternalFilesDir(null);
+        if (localStorage == null) {
+            return;
+        }
+        String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
+        String rootPath = storagePath + "/CensoJambalo2023";
+        String fileName = "Encuestados.xls";
+
+        File root = new File(rootPath);
+        if (!root.mkdirs()) {
+            Log.i("Test", "This path is already exist: " + root.getAbsolutePath());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                Files.deleteIfExists(Paths.get(root.getAbsolutePath() +fileName));
+            }
+        }
+
+
+
+
+        new SQLiteToExcel
+                .Builder(this)
+                .setDataBase(this.getDatabasePath("Encuestados.db").getAbsolutePath())
+                .setSQL("select documentType as 'TIPO DOCUMENTO'," +
+                        " documentNumber as 'DOCUMENTO'," +
+                        " surnames as 'APELLIDOS'," +
+                        " names as 'NOMBRES'," +
+                        " birthdayFull as 'FECHA DE NACIMIENTO'," +
+                        " phone as 'TELEFONO'," +
+                        " user as 'USUARIO'" +
+                        " from persona")
+                .setOutputPath(rootPath)
+                .setOutputFileName("Encuestados.xls")
+                .setTables("persona")
+                .start(new SQLiteToExcel.ExportListener() {
+                    @Override
+                    public void onStart() {
+                        Toast.makeText(PickUserDataActivity.this, "Exportando", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCompleted(String filePath) {
+                        Toast.makeText(PickUserDataActivity.this, "completado", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Toast.makeText(PickUserDataActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         int familyNucleusScanned = 0;
 
