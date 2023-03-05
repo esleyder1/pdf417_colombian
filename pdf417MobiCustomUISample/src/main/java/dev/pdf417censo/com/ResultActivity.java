@@ -74,9 +74,8 @@ public class ResultActivity extends AppCompatActivity {
             float membersFamilyCount = prefe.getInt("membersFamilyCount", 0);
             int progress = (int) ((familyNucleusScanned/membersFamilyCount)*100);
 
-
             progressAnimator = ObjectAnimator.ofInt(progressBar, "progress", progress);
-            progressAnimator.setDuration(7000);
+            progressAnimator.setDuration(1000);
             progressAnimator.start();
         }
     }
