@@ -61,7 +61,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:indeterminateOnly="false"
-        android:progress="20"
+        android:progress="0"
         android:progressDrawable="@drawable/circle"
         android:rotation="0"
         app:layout_constraintBottom_toBottomOf="parent"
