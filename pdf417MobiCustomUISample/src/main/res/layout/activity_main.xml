@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".PickDataActivity">
+    tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -130,7 +130,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|center_horizontal"
                         android:layout_marginBottom="30dp"
-                        android:text="Escanear documento"
+                        android:text="Escanear"
+                        android:textColor="@color/teal_700"
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
@@ -168,7 +169,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|center_horizontal"
                         android:layout_marginBottom="30dp"
-                        android:text="Escanear documento"
+                        android:text="Digitar"
+                        android:textColor="@color/teal_700"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:visibility="visible" />
@@ -191,8 +193,4 @@
         </FrameLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

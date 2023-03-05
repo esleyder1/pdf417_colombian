@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kelin.translucentbar.library.TranslucentBarManager;
 import com.liyu.sqlitetoexcel.ExcelToSQLite;
 import com.liyu.sqlitetoexcel.SQLiteToExcel;
 import com.microblink.blinkbarcode.entities.recognizers.RecognizerBundle;
@@ -42,6 +43,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -126,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         });
     }
     private TextView tvFamilyIntegrantsCount;
-
+    private Toolbar toolbar;
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -134,6 +136,12 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TranslucentBarManager translucentBarManager = new TranslucentBarManager(this);
+        translucentBarManager.transparent(this);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         tvFamilyIntegrantsCount = findViewById(R.id.tvFamilyIntegrantsCount);
 
@@ -144,8 +152,6 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
             mRecognizerRunnerFragment = (RecognizerRunnerFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.recognizer_runner_view_container);
         }
-
-
     }
 
     public void scanDocument(View v) {

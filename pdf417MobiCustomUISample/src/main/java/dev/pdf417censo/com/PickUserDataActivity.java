@@ -2,6 +2,7 @@ package dev.pdf417censo.com;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,6 +17,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.kelin.translucentbar.library.TranslucentBarManager;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,7 +37,7 @@ public class PickUserDataActivity extends AppCompatActivity {
             acCivilState;
 
     private Persona objPersona;
-
+    private Toolbar toolbar;
     List<ArrayList<String>> listRows = new ArrayList<ArrayList<String>>();
 
     @SuppressLint("SetTextI18n")
@@ -43,15 +46,22 @@ public class PickUserDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_user_data);
 
+        TranslucentBarManager translucentBarManager = new TranslucentBarManager(this);
+        translucentBarManager.transparent(this);
 
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         TextView tvInfoPerson = findViewById(R.id.tvInfoPerson);
 
-        objPersona = (Persona) getIntent().getSerializableExtra("objPersona");
-        Toast.makeText(this, objPersona.getFirstName(), Toast.LENGTH_SHORT).show();
+        if(getIntent().getSerializableExtra("objPersona") != null){
+            objPersona = (Persona) getIntent().getSerializableExtra("objPersona");
+            Toast.makeText(this, objPersona.getFirstName(), Toast.LENGTH_SHORT).show();
 
-        String fullName = objPersona.getFirstName() + " " + objPersona.getLastName();
-        tvInfoPerson.setText(fullName);
+            String fullName = objPersona.getFirstName() + " " + objPersona.getLastName();
+            tvInfoPerson.setText(fullName);
+
+        }
 
         //Campo: PARENTESCO
         String[] arrayRelationshipF ={
@@ -77,12 +87,13 @@ public class PickUserDataActivity extends AppCompatActivity {
         ArrayAdapter<String> adapterRelationship;
         acRelationship = findViewById(R.id.acRelationship);
 
-        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
+
+        if(objPersona != null && !objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
             adapterRelationship = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayRelationshipM);
             acRelationship.setAdapter(adapterRelationship);
         }
-        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")){
+        if(objPersona != null && !objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")){
             adapterRelationship = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayRelationshipF);
             acRelationship.setAdapter(adapterRelationship);
@@ -135,13 +146,13 @@ public class PickUserDataActivity extends AppCompatActivity {
         acProfession = findViewById(R.id.acProfession);
 
 
-        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
+        if(objPersona != null && !objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
             adapterProfession = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayProfessionM);
             acProfession.setAdapter(adapterProfession);
         }
 
-        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")){
+        if(objPersona != null && !objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")){
             adapterProfession = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayProfessionF);
             acProfession.setAdapter(adapterProfession);
@@ -165,13 +176,13 @@ public class PickUserDataActivity extends AppCompatActivity {
         ArrayAdapter<String> adapterCivilState;
         acCivilState = findViewById(R.id.acCivilState);
 
-        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
+        if(objPersona != null && !objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "M")){
             adapterCivilState = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayCivilStateM);
             acCivilState.setAdapter(adapterCivilState);
         }
 
-        if(!objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")) {
+        if(objPersona != null && !objPersona.getGender().isEmpty() && Objects.equals(objPersona.getGender(), "F")) {
             adapterCivilState = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayCivilStateF);
             acCivilState.setAdapter(adapterCivilState);
@@ -194,8 +205,6 @@ public class PickUserDataActivity extends AppCompatActivity {
                     confirmationDialog();
 
                 }
-
-
             }
         });
 

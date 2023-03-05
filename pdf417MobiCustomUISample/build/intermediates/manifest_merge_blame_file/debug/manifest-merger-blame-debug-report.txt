@@ -97,7 +97,7 @@
 51-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:34:13-56
 52        </activity>
 53        <activity
-53-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:37:9-44:20
+53-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:37:9-45:20
 54            android:name="dev.pdf417censo.com.PickUserDataActivity"
 54-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:38:13-49
 55            android:exported="true"
@@ -112,49 +112,49 @@
 59-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:43:17-33
 60        </activity>
 61        <activity
-61-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:45:9-49:20
+61-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:46:9-53:20
 62            android:name="dev.pdf417censo.com.SplashActivity"
-62-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:46:13-43
+62-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:47:13-43
 63            android:exported="true" >
-63-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:47:13-36
-64        </activity>
-65        <activity
-65-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:50:9-53:68
-66            android:name="dev.pdf417censo.com.LoginActivity"
-66-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:51:13-42
-67            android:exported="true"
-67-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:52:13-36
-68            android:theme="@style/AppTheme.NoActionBar" />
-68-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:53:13-56
-69        <activity
-69-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:54:9-59:20
-70            android:name="dev.pdf417censo.com.PickDataActivity"
-70-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:55:13-45
-71            android:exported="true"
-71-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:56:13-36
-72            android:theme="@style/AppTheme.NoActionBar" >
-72-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:57:13-56
-73        </activity>
+63-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:48:13-36
+64            <intent-filter>
+64-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:49:13-52:29
+65                <action android:name="android.intent.action.MAIN" />
+65-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:50:17-69
+65-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:50:25-66
+66
+67                <category android:name="android.intent.category.LAUNCHER" />
+67-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:51:17-77
+67-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:51:27-74
+68            </intent-filter>
+69        </activity>
+70        <activity
+70-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:54:9-57:68
+71            android:name="dev.pdf417censo.com.LoginActivity"
+71-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:55:13-42
+72            android:exported="true"
+72-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:56:13-36
+73            android:theme="@style/AppTheme.NoActionBar" />
+73-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:57:13-56
 74        <activity
-74-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:60:9-70:20
-75            android:name="dev.pdf417censo.com.MainActivity"
-75-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:61:13-41
+74-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:58:9-63:20
+75            android:name="dev.pdf417censo.com.PickDataActivity"
+75-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:59:13-45
 76            android:exported="true"
-76-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:62:13-36
-77            android:screenOrientation="portrait"
-77-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:63:13-49
-78            android:theme="@style/AppTheme.NoActionBar" >
-78-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:64:13-56
-79            <intent-filter>
-79-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:65:13-69:29
-80                <action android:name="android.intent.action.MAIN" />
-80-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:66:17-69
-80-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:66:25-66
-81
-82                <category android:name="android.intent.category.LAUNCHER" />
-82-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:68:17-77
-82-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:68:27-74
-83            </intent-filter>
+76-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:60:13-36
+77            android:theme="@style/AppTheme.NoActionBar" >
+77-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:61:13-56
+78        </activity>
+79        <activity
+79-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:64:9-70:20
+80            android:name="dev.pdf417censo.com.MainActivity"
+80-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:65:13-41
+81            android:exported="true"
+81-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:66:13-36
+82            android:screenOrientation="portrait"
+82-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:67:13-49
+83            android:theme="@style/AppTheme.NoActionBar" >
+83-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:68:13-56
 84        </activity>
 85        <activity
 85-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:71:9-73:80
