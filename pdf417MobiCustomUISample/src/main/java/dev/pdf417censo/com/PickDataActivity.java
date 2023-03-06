@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -46,6 +47,7 @@ public class PickDataActivity extends AppCompatActivity {
     private AppBarLayout appBarLayout;
     private Slider sliderMembersFamily;
     private TextView tvFamilyIntegrantsCount;
+    private TextView tvFamilyRecord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +67,13 @@ public class PickDataActivity extends AppCompatActivity {
         sliderMembersFamily = findViewById(R.id.sliderMembersFamily);
         tvFamilyIntegrantsCount = findViewById(R.id.tvFamilyIntegrantsCount);
 
+        tvFamilyRecord = findViewById(R.id.tvFamilyRecord);
 
+        SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+
+        if(prefe.contains("familyRecord")){
+            tvFamilyRecord.setText("FICHA FAMILIAR #" +String.valueOf(prefe.getInt("familyRecord", 0)));
+        }
 
         //Campo: COMUNIDAD INDÍGENA
         String[] arrayCommunity={"Misak","Nasa"};
@@ -123,11 +131,8 @@ public class PickDataActivity extends AppCompatActivity {
             public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
                 numberMembersFamily = (int) value;
                 tvFamilyIntegrantsCount.setText(String.valueOf(numberMembersFamily));
-
             }
         });
-
-
         Button button = (Button) findViewById(R.id.btnSaveForm);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,10 +150,7 @@ public class PickDataActivity extends AppCompatActivity {
                     }else{
                         infoDialog();
                     }
-
                 }
-
-
             }
         });
 
@@ -177,10 +179,6 @@ public class PickDataActivity extends AppCompatActivity {
                         // dismiss alert dialog, update preferences with game score and restart play fragment
                         dialog.dismiss();
                         saveInfo();
-
-                        Intent i = new Intent(PickDataActivity.this, MainActivity.class);
-                        startActivity(i);
-                        finish();
                     }
                 });
 
@@ -245,20 +243,30 @@ public class PickDataActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    @SuppressLint("SetTextI18n")
     private void saveInfo() {
+        int tvFamilyRecordNumber = Integer.parseInt(tvFamilyRecord.getText().toString().replaceAll("[^0-9]", ""));
 
         String community = textViewCommunity.getText().toString();
         String  sidewalk = acSidewalk.getText().toString();
 
-        SharedPreferences preferencias=getSharedPreferences("user_data", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor=preferencias.edit();
+        SharedPreferences prefe=getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=prefe.edit();
         editor.putString("community", community.toUpperCase());
         editor.putString("sidewalk", sidewalk);
         editor.putInt("membersFamilyCount", numberMembersFamily);
+
+        if(tvFamilyRecordNumber > 0){
+            editor.putInt("familyRecord", tvFamilyRecordNumber);
+            tvFamilyRecord.setText("Ficha Familiar #"+tvFamilyRecordNumber);
+        }
         editor.apply();
 
-        Intent i = new Intent(PickDataActivity.this, MainActivity.class);
+       Intent i = new Intent(PickDataActivity.this, MainActivity.class);
         startActivity(i);
+        finish();
     }
+    @Override
+    public void onBackPressed() {}
 
 }

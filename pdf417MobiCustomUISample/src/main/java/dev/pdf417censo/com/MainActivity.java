@@ -129,8 +129,9 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     }
     private TextView tvFamilyIntegrantsCount;
     private Toolbar toolbar;
+    private TextView tvFamilyRecord;
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "MissingInflatedId"})
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +145,14 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         setSupportActionBar(toolbar);
 
         tvFamilyIntegrantsCount = findViewById(R.id.tvFamilyIntegrantsCount);
+
+        tvFamilyRecord = findViewById(R.id.tvFamilyRecord);
+
+        SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+
+        if(prefe.contains("familyRecord")){
+            tvFamilyRecord.setText("FICHA FAMILIAR #" +String.valueOf(prefe.getInt("familyRecord", 0)));
+        }
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);

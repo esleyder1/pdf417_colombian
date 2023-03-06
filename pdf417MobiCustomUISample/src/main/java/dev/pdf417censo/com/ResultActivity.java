@@ -53,14 +53,16 @@ public class ResultActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = prefe.edit();
                     editor.remove("membersFamilyCount");
                     editor.remove("familyNucleusScanned");
+
+                    int FamilyRecord = prefe.getInt("familyRecord", 0);
+                    editor.putInt("familyRecord", FamilyRecord + 1);
                     editor.apply();
+                    Intent i = new Intent(ResultActivity.this, PickDataActivity.class);
+                    startActivity(i);
+                    finish();
                 }
                 if(familyNucleusScanned < membersFamilyCount) {
                     Intent i = new Intent(ResultActivity.this, MainActivity.class);
-                    startActivity(i);
-                    finish();
-                }else{
-                    Intent i = new Intent(ResultActivity.this, PickDataActivity.class);
                     startActivity(i);
                     finish();
                 }
@@ -79,4 +81,6 @@ public class ResultActivity extends AppCompatActivity {
             progressAnimator.start();
         }
     }
+    @Override
+    public void onBackPressed() {}
 }

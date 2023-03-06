@@ -19,6 +19,7 @@ import java.util.UUID;
 
 public class Persona implements Serializable {
     private String id;
+    String validity;
     String community;
     String sidewalk;
     String membersFamily;
@@ -87,6 +88,7 @@ public class Persona implements Serializable {
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
         values.put(PersonaContract.PersonaEntry.ID, id);
+        values.put(PersonaContract.PersonaEntry.VALIDITY, validity);
         values.put(PersonaContract.PersonaEntry.COMMUNITY, community);
         values.put(PersonaContract.PersonaEntry.SIDEWALK, sidewalk);
         values.put(PersonaContract.PersonaEntry.MEMBERSFAMILY, membersFamily);
@@ -294,6 +296,14 @@ public class Persona implements Serializable {
 
     public void setMembersFamily(String membersFamily) {
         this.membersFamily = membersFamily;
+    }
+
+    public String getValidity() {
+        return validity;
+    }
+
+    public void setValidity(String validity) {
+        this.validity = validity;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

@@ -282,6 +282,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         SharedPreferences prefe=getSharedPreferences("user_data", Context.MODE_PRIVATE);
         @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor=prefe.edit();
 
+        objPersona.setValidity(currentYearDate());
 
         if(prefe.contains("community")){
             objPersona.setCommunity(prefe.getString("community", ""));
@@ -339,7 +340,9 @@ public class PickUserDataActivity extends AppCompatActivity {
         long idRes = conn.savePersona(objPersona);
         conn.close();
 
-        Toast.makeText(this, "ID registro " + idRes, Toast.LENGTH_SHORT).show();
+
+
+
 
         File localStorage = getExternalFilesDir(null);
         if (localStorage == null) {
@@ -347,23 +350,15 @@ public class PickUserDataActivity extends AppCompatActivity {
         }
         String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
         String rootPath = storagePath + "/CensoJambalo2023";
-        String fileName = "Encuestados.xls";
-
-        File root = new File(rootPath);
-        if (!root.mkdirs()) {
-            Log.i("Test", "This path is already exist: " + root.getAbsolutePath());
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                Files.deleteIfExists(Paths.get(root.getAbsolutePath() +fileName));
-            }
-        }
-
-
-
 
         new SQLiteToExcel
                 .Builder(this)
                 .setDataBase(this.getDatabasePath("Encuestados.db").getAbsolutePath())
-                .setSQL("select documentType as 'TIPO DOCUMENTO'," +
+                .setSQL("select " +
+                        "validity as 'VIGENCIA'," +
+                        "community as 'COMUNIDAD'," +
+                        "sideWalk as 'COMUNIDAD'," +
+                        "documentType as 'TIPO DOCUMENTO'," +
                         " documentNumber as 'DOCUMENTO'," +
                         " surnames as 'APELLIDOS'," +
                         " names as 'NOMBRES'," +
@@ -371,7 +366,7 @@ public class PickUserDataActivity extends AppCompatActivity {
                         " phone as 'TELEFONO'," +
                         " user as 'USUARIO'" +
                         " from persona")
-                .setOutputPath(rootPath)
+                .setOutputPath(storagePath)
                 .setOutputFileName("Encuestados.xls")
                 .setTables("persona")
                 .start(new SQLiteToExcel.ExportListener() {

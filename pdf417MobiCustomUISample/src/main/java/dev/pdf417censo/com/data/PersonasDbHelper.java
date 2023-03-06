@@ -21,6 +21,7 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE " + PersonaContract.PersonaEntry.TABLE_NAME + " ("
                 + PersonaContract.PersonaEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + PersonaContract.PersonaEntry.ID + " TEXT NOT NULL,"
+                + PersonaContract.PersonaEntry.VALIDITY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.COMMUNITY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.SIDEWALK + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.MEMBERSFAMILY + " VARCHAR NOT NULL,"
