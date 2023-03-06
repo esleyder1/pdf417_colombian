@@ -22,6 +22,7 @@ public class Persona implements Serializable {
     String validity;
     String community;
     String sidewalk;
+    String familyRecord;
     String membersFamily;
     String documentNumber;
     String lastName;
@@ -91,6 +92,7 @@ public class Persona implements Serializable {
         values.put(PersonaContract.PersonaEntry.VALIDITY, validity);
         values.put(PersonaContract.PersonaEntry.COMMUNITY, community);
         values.put(PersonaContract.PersonaEntry.SIDEWALK, sidewalk);
+        values.put(PersonaContract.PersonaEntry.FAMILYRECORD, familyRecord);
         values.put(PersonaContract.PersonaEntry.MEMBERSFAMILY, membersFamily);
         values.put(PersonaContract.PersonaEntry.DOCUMENTTYPE, documentType);
         values.put(PersonaContract.PersonaEntry.DOCUMENTNUMBER, documentNumber);
@@ -304,6 +306,14 @@ public class Persona implements Serializable {
 
     public void setValidity(String validity) {
         this.validity = validity;
+    }
+
+    public String getFamilyRecord() {
+        return familyRecord;
+    }
+
+    public void setFamilyRecord(String familyRecord) {
+        this.familyRecord = familyRecord;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

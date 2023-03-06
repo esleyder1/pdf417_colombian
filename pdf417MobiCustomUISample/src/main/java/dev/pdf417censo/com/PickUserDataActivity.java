@@ -1,17 +1,27 @@
 package dev.pdf417censo.com;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.os.Build.VERSION.SDK_INT;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -22,6 +32,8 @@ import android.widget.Toast;
 
 import com.kelin.translucentbar.library.TranslucentBarManager;
 import com.liyu.sqlitetoexcel.SQLiteToExcel;
+
+import org.apache.poi.ss.formula.functions.T;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,8 +63,17 @@ public class PickUserDataActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_user_data);
+
+        // If you have access to the external storage, do whatever you need
+        if (SDK_INT >= Build.VERSION_CODES.R) {
+            if (!Environment.isExternalStorageManager()){
+                dialogStoragePermission();
+            }
+        }
 
         TranslucentBarManager translucentBarManager = new TranslucentBarManager(this);
         translucentBarManager.transparent(this);
@@ -290,6 +311,9 @@ public class PickUserDataActivity extends AppCompatActivity {
         if(prefe.contains("sidewalk")){
             objPersona.setSidewalk(prefe.getString("sidewalk", ""));
         }
+        if(prefe.contains("familyRecord")){
+            objPersona.setFamilyRecord(String.valueOf(prefe.getInt("familyRecord", 0)));
+        }
         if(prefe.contains("membersFamilyCount")){
             objPersona.setMembersFamily(String.valueOf(prefe.getInt("membersFamilyCount", 0)));
         }
@@ -316,7 +340,6 @@ public class PickUserDataActivity extends AppCompatActivity {
             objPersona.setSurnames(objPersona.getLastName() + " " + objPersona.getSecondLastName());
         }
 
-
         objPersona.setBirthdayFull(objPersona.getBirthdayDay() + "/" + objPersona.getBirthdayMonth() + "/" + objPersona.getBirthdayYear());
         row.add("HI");
         row.add(objPersona.getGender());
@@ -326,30 +349,23 @@ public class PickUserDataActivity extends AppCompatActivity {
         row.add("1");
         row.add("VITOYO");
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            row.add(objPersona.calculateAge());
-        }
-
-        listRows.add(row);
-
-
-
 
         //Guardar objeto persona en base de datos
         PersonasDbHelper conn = new PersonasDbHelper(this);
         long idRes = conn.savePersona(objPersona);
         conn.close();
 
-
-
-
+        if(idRes > 0) {
+            Toast.makeText(this, "Se guardó correctamente", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show();
+        }
 
         File localStorage = getExternalFilesDir(null);
         if (localStorage == null) {
             return;
         }
         String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
-        String rootPath = storagePath + "/CensoJambalo2023";
 
         new SQLiteToExcel
                 .Builder(this)
@@ -357,12 +373,14 @@ public class PickUserDataActivity extends AppCompatActivity {
                 .setSQL("select " +
                         "validity as 'VIGENCIA'," +
                         "community as 'COMUNIDAD'," +
-                        "sideWalk as 'COMUNIDAD'," +
+                        "familyRecord as 'FICHA FAMILIAR'," +
                         "documentType as 'TIPO DOCUMENTO'," +
                         " documentNumber as 'DOCUMENTO'," +
                         " surnames as 'APELLIDOS'," +
                         " names as 'NOMBRES'," +
                         " birthdayFull as 'FECHA DE NACIMIENTO'," +
+                        "membersFamily as 'INTEGRANTES'," +
+                        "sideWalk as 'DIRECCIÓN'," +
                         " phone as 'TELEFONO'," +
                         " user as 'USUARIO'" +
                         " from persona")
@@ -403,6 +421,39 @@ public class PickUserDataActivity extends AppCompatActivity {
     public String currentYearDate(){
         Calendar calendar = Calendar.getInstance();
         return String.valueOf(calendar.get(Calendar.YEAR));
+    }
+    @RequiresApi(api = Build.VERSION_CODES.R)
+    public void requestStoragePermission () {
+        Intent intent = new Intent();
+        intent.setAction(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+        Uri uri = Uri.fromParts("package", this.getPackageName(), null);
+        intent.setData(uri);
+        startActivity(intent);
+    }
+
+    public void dialogStoragePermission() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Permiso de almacenamiento");
+
+        builder.setMessage("Es necesario habilitar el permiso de almacenamiento para poder guardar el Documento Excel.");
+        String positiveText = getString(android.R.string.ok);
+        builder.setPositiveButton(positiveText,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (SDK_INT >= Build.VERSION_CODES.R) {
+                            requestStoragePermission ();
+                        }
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        dialogStoragePermission();
     }
 
     @Override

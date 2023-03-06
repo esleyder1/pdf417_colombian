@@ -20,6 +20,7 @@ public class PersonaContract {
         public static final String VALIDITY = "validity";
         public static final String COMMUNITY = "community";
         public static final String SIDEWALK = "sideWalk";
+        public static final String FAMILYRECORD = "familyRecord";
         public static final String MEMBERSFAMILY = "membersFamily";
         public static final String DOCUMENTTYPE = "documentType";
         public static final String DOCUMENTNUMBER = "documentNumber";

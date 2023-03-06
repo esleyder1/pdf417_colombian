@@ -24,6 +24,7 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
                 + PersonaContract.PersonaEntry.VALIDITY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.COMMUNITY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.SIDEWALK + " VARCHAR NOT NULL,"
+                + PersonaContract.PersonaEntry.FAMILYRECORD + " CHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.MEMBERSFAMILY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.DOCUMENTTYPE + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.DOCUMENTNUMBER + " VARCHAR NOT NULL,"
