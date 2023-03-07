@@ -35,6 +35,10 @@ public class Persona implements Serializable {
     String birthdayYear;
     String birthdayMonth;
     String birthdayDay;
+    String relationship;
+    String scholarship;
+    String profession;
+    String civilStatus;
     String birthdayFull;
     String municipalityCode;
     String departmentCode;
@@ -42,6 +46,7 @@ public class Persona implements Serializable {
     String documentType;
     String phone;
     String user;
+    String age;
 
 
     public Persona(String documentType, String documentNumber, String lastName, String secondLastName, String firstName, String middleName, String gender, String birthdayYear, String birthdayMonth, String birthdayDay, String municipalityCode, String departmentCode, String bloodType, String phone, String user) {
@@ -82,6 +87,7 @@ public class Persona implements Serializable {
         bloodType = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.BLOODTYPE));
         phone = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.PHONE));
         user = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.USER));
+        age = cursor.getString(cursor.getColumnIndex(PersonaContract.PersonaEntry.AGE));
 
     }
 
@@ -106,15 +112,21 @@ public class Persona implements Serializable {
         values.put(PersonaContract.PersonaEntry.BIRTHDAYYEAR, birthdayYear);
         values.put(PersonaContract.PersonaEntry.BIRTHDAYMONTH, birthdayMonth);
         values.put(PersonaContract.PersonaEntry.BIRTHDAYDAY, birthdayDay);
+        values.put(PersonaContract.PersonaEntry.RELATIONSHIP, relationship);
+        values.put(PersonaContract.PersonaEntry.SCHOLARSHIP, scholarship);
+        values.put(PersonaContract.PersonaEntry.PROFESSION, profession);
+        values.put(PersonaContract.PersonaEntry.CIVILSTATUS, civilStatus);
         values.put(PersonaContract.PersonaEntry.BIRTHDAYFULL, birthdayFull);
         values.put(PersonaContract.PersonaEntry.MUNICIPALITYCODE, municipalityCode);
         values.put(PersonaContract.PersonaEntry.DEPARTMENTCODE, departmentCode);
         values.put(PersonaContract.PersonaEntry.BLOODTYPE, bloodType);
         values.put(PersonaContract.PersonaEntry.PHONE, phone);
         values.put(PersonaContract.PersonaEntry.USER, user);
+        values.put(PersonaContract.PersonaEntry.AGE, age);
 
         return values;
     }
+
 
     public String getDocumentNumber() {
         return documentNumber;
@@ -314,6 +326,46 @@ public class Persona implements Serializable {
 
     public void setFamilyRecord(String familyRecord) {
         this.familyRecord = familyRecord;
+    }
+
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(String relationship) {
+        this.relationship = relationship;
+    }
+
+    public String getScholarship() {
+        return scholarship;
+    }
+
+    public void setScholarship(String scholarship) {
+        this.scholarship = scholarship;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    public String getCivilStatus() {
+        return civilStatus;
+    }
+
+    public void setCivilStatus(String civilStatus) {
+        this.civilStatus = civilStatus;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

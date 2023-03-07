@@ -1,6 +1,7 @@
 package dev.pdf417censo.com;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
@@ -29,6 +30,7 @@ public class ResultActivity extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         tvProgress = findViewById(R.id.tvProgress);
+        Button button = (Button) findViewById(R.id.btnContinious);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -41,10 +43,14 @@ public class ResultActivity extends AppCompatActivity {
         }else{
             tvProgress.setText("0");
         }
+        if(membersFamilyCount == familyNucleusScanned){
+            button.setText("finalizar");
+            button.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.teal_500));
+        }
 
         updateProgressBar();
 
-        Button button = (Button) findViewById(R.id.btnContinious);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

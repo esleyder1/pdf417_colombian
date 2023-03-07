@@ -39,15 +39,21 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
                 + PersonaContract.PersonaEntry.BIRTHDAYMONTH + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.BIRTHDAYDAY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.BIRTHDAYFULL + " VARCHAR NOT NULL,"
+
+                + PersonaContract.PersonaEntry.RELATIONSHIP + " VARCHAR NOT NULL,"
+                + PersonaContract.PersonaEntry.SCHOLARSHIP + " VARCHAR NOT NULL,"
+                + PersonaContract.PersonaEntry.PROFESSION + " VARCHAR NOT NULL,"
+                + PersonaContract.PersonaEntry.CIVILSTATUS + " VARCHAR NOT NULL,"
+
                 + PersonaContract.PersonaEntry.MUNICIPALITYCODE + " VARCHAR,"
                 + PersonaContract.PersonaEntry.DEPARTMENTCODE + " VARCHAR,"
                 + PersonaContract.PersonaEntry.BLOODTYPE + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.PHONE + " TEXT,"
                 + PersonaContract.PersonaEntry.USER + " TEXT,"
+                + PersonaContract.PersonaEntry.AGE + " TEXT,"
 
                 + "UNIQUE (" + PersonaContract.PersonaEntry.ID + "))");
     }
-
 
     public long savePersona(Persona Persona) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();

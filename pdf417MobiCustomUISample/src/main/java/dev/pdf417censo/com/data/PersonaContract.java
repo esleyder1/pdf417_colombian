@@ -35,11 +35,16 @@ public class PersonaContract {
         public static final String BIRTHDAYMONTH = "birthdayMonth";
         public static final String BIRTHDAYDAY = "birthdayDay";
         public static final String BIRTHDAYFULL ="birthdayFull";
+        public static final String RELATIONSHIP ="relationship";
+        public static final String SCHOLARSHIP ="scholarship";
+        public static final String PROFESSION ="profession";
+        public static final String CIVILSTATUS ="civilStatus";
         public static final String MUNICIPALITYCODE = "municipalityCode";
         public static final String DEPARTMENTCODE = "departmentCode";
         public static final String BLOODTYPE = "bloodType";
         public static final String PHONE = "phone";
         public static final String USER = "user";
+        public static final String AGE = "age";
 
     }
 }

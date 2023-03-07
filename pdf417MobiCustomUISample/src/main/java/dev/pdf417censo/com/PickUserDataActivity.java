@@ -58,7 +58,7 @@ public class PickUserDataActivity extends AppCompatActivity {
 
     private Persona objPersona;
     private Toolbar toolbar;
-    List<ArrayList<String>> listRows = new ArrayList<ArrayList<String>>();
+    AlertDialog dialogPermission;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -216,13 +216,21 @@ public class PickUserDataActivity extends AppCompatActivity {
                 String  profession = acProfession.getText().toString();
                 String  civilState = acCivilState.getText().toString();
 
-                if(relationShip.isEmpty() || scholarShip.isEmpty() ||
-                        profession.isEmpty() || civilState.isEmpty()){
-                    emptyFields();
-                }else{
-                    confirmationDialog();
+                if (SDK_INT >= Build.VERSION_CODES.R) {
+                    if (!Environment.isExternalStorageManager()){
+                        dialogStoragePermission();
+                    }else{
+                        if(relationShip.isEmpty() || scholarShip.isEmpty() ||
+                                profession.isEmpty() || civilState.isEmpty()){
+                            emptyFields();
+                        }else{
+                            confirmationDialog();
 
+                        }
+                    }
                 }
+
+
             }
         });
 
@@ -234,9 +242,9 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         //Datos ingresados
         String relationShip = acRelationship.getText().toString();
-        String  scholarShip = acScholarship.getText().toString();
-        String  profession = acProfession.getText().toString();
-        String  civilState = acCivilState.getText().toString();
+        String scholarShip = acScholarship.getText().toString();
+        String profession = acProfession.getText().toString();
+        String civilState = acCivilState.getText().toString();
 
         String message = "Parentesco: "+ relationShip + "\n" +
                 "Escolaridad: " + scholarShip + "\n" +
@@ -298,6 +306,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void saveInfo() throws IOException {
 
         SharedPreferences prefe=getSharedPreferences("user_data", Context.MODE_PRIVATE);
@@ -344,11 +353,19 @@ public class PickUserDataActivity extends AppCompatActivity {
         row.add("HI");
         row.add(objPersona.getGender());
 
-        row.add("AGRICULTOR");
-        row.add("SE");
-        row.add("1");
-        row.add("VITOYO");
+        //Campos personales
+        String relationShip = acRelationship.getText().toString();
+        String scholarShip = acScholarship.getText().toString();
+        String profession = acProfession.getText().toString();
+        String civilState = acCivilState.getText().toString();
 
+        objPersona.setProfession(profession);
+        objPersona.setScholarship(scholarShip);
+        objPersona.setCivilStatus(civilState);
+        objPersona.setRelationship(relationShip);
+        if (SDK_INT >= Build.VERSION_CODES.O) {
+            objPersona.setAge(objPersona.calculateAge());
+        }
 
         //Guardar objeto persona en base de datos
         PersonasDbHelper conn = new PersonasDbHelper(this);
@@ -375,15 +392,22 @@ public class PickUserDataActivity extends AppCompatActivity {
                         "community as 'COMUNIDAD'," +
                         "familyRecord as 'FICHA FAMILIAR'," +
                         "documentType as 'TIPO DOCUMENTO'," +
-                        " documentNumber as 'DOCUMENTO'," +
-                        " surnames as 'APELLIDOS'," +
-                        " names as 'NOMBRES'," +
-                        " birthdayFull as 'FECHA DE NACIMIENTO'," +
+                        "documentNumber as 'DOCUMENTO'," +
+                        "surnames as 'APELLIDOS'," +
+                        "names as 'NOMBRES'," +
+                        "birthdayFull as 'FECHA DE NACIMIENTO'," +
+                        "relationship as 'PARENTESCO'," +
+                        "gender as 'GENERO'," +
+                        "civilStatus as 'ESTADO CIVIL'," +
+                        "profession as 'PROFESION'," +
+                        "scholarship as 'ESCOLARIDAD'," +
                         "membersFamily as 'INTEGRANTES'," +
                         "sideWalk as 'DIRECCIÓN'," +
-                        " phone as 'TELEFONO'," +
-                        " user as 'USUARIO'" +
+                        "phone as 'TELEFONO'," +
+                        "user as 'USUARIO'," +
+                        "age as 'EDAD'" +
                         " from persona")
+
                 .setOutputPath(storagePath)
                 .setOutputFileName("Encuestados.xls")
                 .setTables("persona")
@@ -429,6 +453,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         Uri uri = Uri.fromParts("package", this.getPackageName(), null);
         intent.setData(uri);
         startActivity(intent);
+        dialogPermission.dismiss();
     }
 
     public void dialogStoragePermission() {
@@ -446,15 +471,10 @@ public class PickUserDataActivity extends AppCompatActivity {
                         }
                     }
                 });
-        AlertDialog dialog = builder.create();
-        dialog.setCancelable(false);
-        dialog.show();
+        dialogPermission = builder.create();
+        dialogPermission.show();
     }
-    @Override
-    public void onResume() {
-        super.onResume();
-        dialogStoragePermission();
-    }
+
 
     @Override
     public void onBackPressed() {}

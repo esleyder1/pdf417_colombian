@@ -96,7 +96,7 @@
         android:layout_marginEnd="50dp"
         android:shadowRadius="24"
         app:cornerRadius="30dp"
-        android:text="ContinuaR"
+        android:text="Continuar"
         app:iconGravity="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

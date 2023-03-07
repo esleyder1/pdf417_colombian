@@ -53,8 +53,6 @@ public class PickDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         setContentView(R.layout.activity_pick_data);
         TranslucentBarManager translucentBarManager = new TranslucentBarManager(this);
         translucentBarManager.transparent(this);
@@ -110,7 +108,7 @@ public class PickDataActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                wordSidewalk = acSidewalk.getText().toString();
+                wordSidewalk = acSidewalk.getText().toString().trim();
                 boolean found = Arrays.asList(arrayAddresses).contains(wordSidewalk);
                 if(found){
                     View view = PickDataActivity.this.getCurrentFocus();
@@ -138,7 +136,7 @@ public class PickDataActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String community = textViewCommunity.getText().toString();
-                String  sidewalk = acSidewalk.getText().toString();
+                String  sidewalk = acSidewalk.getText().toString().trim();
 
                 boolean found = Arrays.asList(arrayAddresses).contains(wordSidewalk);
 
@@ -162,7 +160,7 @@ public class PickDataActivity extends AppCompatActivity {
 
         //Datos ingresados
         String community = textViewCommunity.getText().toString();
-        String  sidewalk = acSidewalk.getText().toString();
+        String  sidewalk = acSidewalk.getText().toString().trim();
         String membersFamily = String.valueOf(numberMembersFamily);
 
         String message = "Comunidad indígena: "+ community + "\n" +
@@ -247,8 +245,8 @@ public class PickDataActivity extends AppCompatActivity {
     private void saveInfo() {
         int tvFamilyRecordNumber = Integer.parseInt(tvFamilyRecord.getText().toString().replaceAll("[^0-9]", ""));
 
-        String community = textViewCommunity.getText().toString();
-        String  sidewalk = acSidewalk.getText().toString();
+        String community = textViewCommunity.getText().toString().toUpperCase();
+        String  sidewalk = acSidewalk.getText().toString().trim().toUpperCase();
 
         SharedPreferences prefe=getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=prefe.edit();
