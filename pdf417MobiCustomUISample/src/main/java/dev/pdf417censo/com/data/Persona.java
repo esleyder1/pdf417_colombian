@@ -11,6 +11,7 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -20,6 +21,7 @@ import java.util.UUID;
 public class Persona implements Serializable {
     private String id;
     String validity;
+    String guard;
     String community;
     String sidewalk;
     String familyRecord;
@@ -96,6 +98,7 @@ public class Persona implements Serializable {
         ContentValues values = new ContentValues();
         values.put(PersonaContract.PersonaEntry.ID, id);
         values.put(PersonaContract.PersonaEntry.VALIDITY, validity);
+        values.put(PersonaContract.PersonaEntry.GUARD, guard);
         values.put(PersonaContract.PersonaEntry.COMMUNITY, community);
         values.put(PersonaContract.PersonaEntry.SIDEWALK, sidewalk);
         values.put(PersonaContract.PersonaEntry.FAMILYRECORD, familyRecord);
@@ -368,18 +371,28 @@ public class Persona implements Serializable {
         this.age = age;
     }
 
+    public String getGuard() {
+        return guard;
+    }
+
+    public void setGuard(String guard) {
+        this.guard = guard;
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String calculateAge() {
-        String age = "";
+        Period age;
+        String strAge = null;
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         String birthdayFull = birthdayYear + "/" + birthdayMonth + "/" + birthdayDay;
         LocalDate birthDate = LocalDate.parse(birthdayFull, df);
         if ((birthDate != null) && (LocalDate.now() != null)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                age = String.valueOf(Period.between(birthDate, LocalDate.now()).getYears());
+                age = Period.between(LocalDate.of(Integer.parseInt(birthdayYear), Integer.parseInt(birthdayMonth), Integer.parseInt(birthdayDay)), LocalDate.now());
+                strAge = age.getYears() + " años y "+ age.getMonths() + " meses";
             }
         }
-        return age;
+        return strAge;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

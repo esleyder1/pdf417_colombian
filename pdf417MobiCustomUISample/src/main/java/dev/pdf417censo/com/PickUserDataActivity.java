@@ -261,7 +261,9 @@ public class PickUserDataActivity extends AppCompatActivity {
                         // dismiss alert dialog, update preferences with game score and restart play fragment
                         dialog.dismiss();
                         try {
-                            saveInfo();
+                            if (SDK_INT >= Build.VERSION_CODES.O) {
+                                saveInfo();
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -313,6 +315,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor=prefe.edit();
 
         objPersona.setValidity(currentYearDate());
+        objPersona.setGuard("1131");
 
         if(prefe.contains("community")){
             objPersona.setCommunity(prefe.getString("community", ""));
@@ -389,15 +392,16 @@ public class PickUserDataActivity extends AppCompatActivity {
                 .setDataBase(this.getDatabasePath("Encuestados.db").getAbsolutePath())
                 .setSQL("select " +
                         "validity as 'VIGENCIA'," +
-                        "community as 'COMUNIDAD'," +
+                        "guard as 'RESGUARDO INDIGENA'," +
+                        "community as 'COMUNIDAD INDIGENA'," +
                         "familyRecord as 'FICHA FAMILIAR'," +
                         "documentType as 'TIPO DOCUMENTO'," +
-                        "documentNumber as 'DOCUMENTO'," +
-                        "surnames as 'APELLIDOS'," +
+                        "documentNumber as 'NUMERO DE DOCUMENTO'," +
                         "names as 'NOMBRES'," +
+                        "surnames as 'APELLIDOS'," +
                         "birthdayFull as 'FECHA DE NACIMIENTO'," +
                         "relationship as 'PARENTESCO'," +
-                        "gender as 'GENERO'," +
+                        "gender as 'SEXO'," +
                         "civilStatus as 'ESTADO CIVIL'," +
                         "profession as 'PROFESION'," +
                         "scholarship as 'ESCOLARIDAD'," +
@@ -409,7 +413,7 @@ public class PickUserDataActivity extends AppCompatActivity {
                         " from persona")
 
                 .setOutputPath(storagePath)
-                .setOutputFileName("Encuestados.xls")
+                .setOutputFileName("CensoJambalo2023.xls")
                 .setTables("persona")
                 .start(new SQLiteToExcel.ExportListener() {
                     @Override

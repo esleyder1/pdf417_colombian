@@ -18,6 +18,7 @@ public class PersonaContract {
 
         public static final String ID = "id";
         public static final String VALIDITY = "validity";
+        public static final String GUARD = "guard";
         public static final String COMMUNITY = "community";
         public static final String SIDEWALK = "sideWalk";
         public static final String FAMILYRECORD = "familyRecord";

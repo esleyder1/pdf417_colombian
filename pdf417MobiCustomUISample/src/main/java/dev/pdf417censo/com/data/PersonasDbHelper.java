@@ -21,6 +21,7 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE " + PersonaContract.PersonaEntry.TABLE_NAME + " ("
                 + PersonaContract.PersonaEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + PersonaContract.PersonaEntry.ID + " TEXT NOT NULL,"
+                + PersonaContract.PersonaEntry.GUARD + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.VALIDITY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.COMMUNITY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.SIDEWALK + " VARCHAR NOT NULL,"
@@ -39,12 +40,10 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
                 + PersonaContract.PersonaEntry.BIRTHDAYMONTH + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.BIRTHDAYDAY + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.BIRTHDAYFULL + " VARCHAR NOT NULL,"
-
                 + PersonaContract.PersonaEntry.RELATIONSHIP + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.SCHOLARSHIP + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.PROFESSION + " VARCHAR NOT NULL,"
                 + PersonaContract.PersonaEntry.CIVILSTATUS + " VARCHAR NOT NULL,"
-
                 + PersonaContract.PersonaEntry.MUNICIPALITYCODE + " VARCHAR,"
                 + PersonaContract.PersonaEntry.DEPARTMENTCODE + " VARCHAR,"
                 + PersonaContract.PersonaEntry.BLOODTYPE + " VARCHAR NOT NULL,"

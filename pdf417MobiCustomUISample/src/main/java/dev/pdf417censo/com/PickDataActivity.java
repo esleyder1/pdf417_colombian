@@ -191,7 +191,7 @@ public class PickDataActivity extends AppCompatActivity {
                 });
 
         AlertDialog dialog = builder.create();
-// display dialog
+        // display dialog
         dialog.show();
     }
 
@@ -214,7 +214,7 @@ public class PickDataActivity extends AppCompatActivity {
                 });
 
         AlertDialog dialog = builder.create();
-// display dialog
+        // display dialog
         dialog.show();
     }
 
@@ -245,7 +245,14 @@ public class PickDataActivity extends AppCompatActivity {
     private void saveInfo() {
         int tvFamilyRecordNumber = Integer.parseInt(tvFamilyRecord.getText().toString().replaceAll("[^0-9]", ""));
 
+        String communityWord = textViewCommunity.getText().toString().toUpperCase();
         String community = textViewCommunity.getText().toString().toUpperCase();
+        if(communityWord.equals("MISAK")){
+            community = "290";
+        }
+        if(communityWord.equals("NASA")){
+            community = "500";
+        }
         String  sidewalk = acSidewalk.getText().toString().trim().toUpperCase();
 
         SharedPreferences prefe=getSharedPreferences("user_data", Context.MODE_PRIVATE);
