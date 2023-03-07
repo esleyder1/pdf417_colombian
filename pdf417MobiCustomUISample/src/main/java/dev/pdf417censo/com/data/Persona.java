@@ -396,6 +396,22 @@ public class Persona implements Serializable {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
+    public int calculateAgeYear() {
+        Period age;
+        int ageYear = 0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        String birthdayFull = birthdayYear + "/" + birthdayMonth + "/" + birthdayDay;
+        LocalDate birthDate = LocalDate.parse(birthdayFull, df);
+        if ((birthDate != null) && (LocalDate.now() != null)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                age = Period.between(LocalDate.of(Integer.parseInt(birthdayYear), Integer.parseInt(birthdayMonth), Integer.parseInt(birthdayDay)), LocalDate.now());
+                ageYear = age.getYears();
+            }
+        }
+        return ageYear;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public String documentType() {
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         String birthdayFull = birthdayYear + "/" + birthdayMonth + "/" + birthdayDay;

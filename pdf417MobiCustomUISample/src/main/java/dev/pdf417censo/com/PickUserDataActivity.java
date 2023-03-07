@@ -54,7 +54,8 @@ public class PickUserDataActivity extends AppCompatActivity {
             acRelationship,
             acScholarship,
             acProfession,
-            acCivilState;
+            acCivilState,
+            acDocumentType;
 
     private Persona objPersona;
     private Toolbar toolbar;
@@ -88,6 +89,33 @@ public class PickUserDataActivity extends AppCompatActivity {
             String fullName = objPersona.getFirstName() + " " + objPersona.getLastName();
             tvInfoPerson.setText(fullName);
 
+        }
+
+        //Campo: TIPO DOCUMENTO
+        String[] arrayDocumentTypes ={"C.C", "T.I", "R.C"};
+
+        ArrayAdapter<String> adapterDocumentType;
+        acDocumentType = findViewById(R.id.acDocumentType);
+
+        if(objPersona != null){
+            adapterDocumentType = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, arrayDocumentTypes);
+            acDocumentType.setAdapter(adapterDocumentType);
+
+            int age = 0;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                age = objPersona.calculateAgeYear();
+
+                if(age >= 18){
+                    acDocumentType.setText(acDocumentType.getAdapter().getItem(0).toString(), false);
+                }
+                if(age >= 7 && age < 18){
+                    acDocumentType.setText(acDocumentType.getAdapter().getItem(1).toString(), false);
+                }
+                if(age < 7){
+                    acDocumentType.setText(acDocumentType.getAdapter().getItem(2).toString(), false);
+                }
+            }
         }
 
         //Campo: PARENTESCO
@@ -241,12 +269,15 @@ public class PickUserDataActivity extends AppCompatActivity {
         builder.setTitle(R.string.dialogTitle);
 
         //Datos ingresados
+        String documentType = acDocumentType.getText().toString();
         String relationShip = acRelationship.getText().toString();
         String scholarShip = acScholarship.getText().toString();
         String profession = acProfession.getText().toString();
         String civilState = acCivilState.getText().toString();
 
-        String message = "Parentesco: "+ relationShip + "\n" +
+        String message =
+                "Tipo documento: "+ documentType + "\n" +
+                "Parentesco: " + relationShip + "\n" +
                 "Escolaridad: " + scholarShip + "\n" +
                 "Profesión: "+ profession + "\n" +
                 "Estado civíl: "+ civilState + "\n";
@@ -335,8 +366,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         if(prefe.contains("phone")){
             objPersona.setPhone(prefe.getString("phone", ""));
         }
-        objPersona.setDocumentType("C.C");
-        ArrayList<String> row = new ArrayList<>();
+
 
         objPersona.getDocumentNumber().replaceFirst("^0*", "");
 
@@ -353,15 +383,15 @@ public class PickUserDataActivity extends AppCompatActivity {
         }
 
         objPersona.setBirthdayFull(objPersona.getBirthdayDay() + "/" + objPersona.getBirthdayMonth() + "/" + objPersona.getBirthdayYear());
-        row.add("HI");
-        row.add(objPersona.getGender());
 
         //Campos personales
+        String documentType = acDocumentType.getText().toString();
         String relationShip = acRelationship.getText().toString();
         String scholarShip = acScholarship.getText().toString();
         String profession = acProfession.getText().toString();
         String civilState = acCivilState.getText().toString();
 
+        objPersona.setDocumentType(documentType);
         objPersona.setProfession(profession);
         objPersona.setScholarship(scholarShip);
         objPersona.setCivilStatus(civilState);

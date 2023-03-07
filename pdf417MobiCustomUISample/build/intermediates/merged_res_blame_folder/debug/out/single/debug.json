@@ -44,12 +44,12 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_black_italic.ttf"
     },
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_person_24.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_person_24.xml"
-    },
-    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_check_circle_24.xml.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_check_circle_24.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_person_24.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_person_24.xml"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family_mod.png.flat",
