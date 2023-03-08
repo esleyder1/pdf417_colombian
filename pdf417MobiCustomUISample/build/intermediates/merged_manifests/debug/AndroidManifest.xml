@@ -72,6 +72,10 @@
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="dev.pdf417censo.com.FormDocumentActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="dev.pdf417censo.com.PickDataActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" >

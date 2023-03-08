@@ -61,9 +61,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiUser"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginStart="36dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="36dp"
         app:hintTextAppearance="@style/TextLabel"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,6 +103,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiPhone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -109,7 +112,9 @@
         app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPhone"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        app:counterEnabled="true"
+        app:counterMaxLength="10">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edPhone"
@@ -131,7 +136,6 @@
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
         android:shadowRadius="4"
-        android:text="Guardar datos"
         app:icon="@drawable/ic_baseline_save_24"
         app:iconGravity="textStart"
         app:layout_constraintBottom_toBottomOf="parent"

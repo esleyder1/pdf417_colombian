@@ -163,12 +163,17 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         }
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void scanDocument(View v) {
         int id = v.getId();
 
         switch (id) {
             case R.id.btnDefaultActivity: {
                 startScanDocument();
+                break;
+            }
+            case R.id.btnFillForm: {
+                startFillDocument();
                 break;
             }
 
@@ -178,6 +183,11 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
     private void startScanDocument() {
         BarcodeUISettings uiSettings = new BarcodeUISettings(mRecognizerBundle);
         ActivityRunner.startActivityForResult(this, MY_REQUEST_CODE, uiSettings);
+    }
+
+    private void startFillDocument() {
+        Intent i = new Intent(MainActivity.this, FormDocumentActivity.class);
+        startActivity(i);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

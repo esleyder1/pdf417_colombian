@@ -222,7 +222,7 @@ public class PickDataActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Error al guardar");
 
-        //Datos ingresados
+        //Datos ingresadosemptyFields
 
         String message = "Algunos campos están vacios, verifique e intente nuevamente.";
         builder.setMessage(message);

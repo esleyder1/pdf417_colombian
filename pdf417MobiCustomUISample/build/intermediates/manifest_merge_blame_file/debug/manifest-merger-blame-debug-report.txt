@@ -65,7 +65,7 @@
 33-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:18:9-37
 34
 35    <application
-35-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:25:5-78:19
+35-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:25:5-82:19
 36        android:name="dev.pdf417censo.com.CustomUIDemoApp"
 36-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:26:9-40
 37        android:allowBackup="true"
@@ -129,7 +129,7 @@
 68            </intent-filter>
 69        </activity>
 70        <activity
-70-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:55:9-58:68
+70-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:55:9-58:59
 71            android:name="dev.pdf417censo.com.LoginActivity"
 71-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:56:13-42
 72            android:exported="true"
@@ -137,63 +137,71 @@
 73            android:theme="@style/AppTheme.NoActionBar" />
 73-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:58:13-56
 74        <activity
-74-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:59:9-64:20
-75            android:name="dev.pdf417censo.com.PickDataActivity"
-75-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:60:13-45
+74-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:59:9-62:59
+75            android:name="dev.pdf417censo.com.FormDocumentActivity"
+75-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:60:13-49
 76            android:exported="true"
 76-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:61:13-36
-77            android:theme="@style/AppTheme.NoActionBar" >
+77            android:theme="@style/AppTheme.NoActionBar" />
 77-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:62:13-56
-78        </activity>
-79        <activity
-79-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:65:9-71:20
-80            android:name="dev.pdf417censo.com.MainActivity"
-80-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:66:13-41
-81            android:exported="true"
-81-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:67:13-36
-82            android:screenOrientation="portrait"
-82-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:68:13-49
-83            android:theme="@style/AppTheme.NoActionBar" >
-83-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:69:13-56
-84        </activity>
-85        <activity
-85-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:72:9-74:80
-86            android:name="com.microblink.blinkbarcode.activity.BarcodeScanActivity"
-86-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:73:13-84
-87            android:configChanges="orientation|screenSize"
-87-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:38:13-59
-88            android:screenOrientation="nosensor"
-88-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:39:13-49
-89            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-89-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:74:13-77
-90        <activity
-90-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:75:9-77:52
-91            android:name="dev.pdf417censo.com.CustomUIScanActivity"
-91-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:76:13-49
-92            android:screenOrientation="portrait" />
-92-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:77:13-49
-93
-94        <provider
-94-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-95            android:name="androidx.startup.InitializationProvider"
-95-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:27:13-67
-96            android:authorities="dev.pdf417censo.com.androidx-startup"
-96-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:28:13-68
-97            android:exported="false" >
-97-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:29:13-37
-98            <meta-data
-98-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-99                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-99-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:32:17-75
-100                android:value="androidx.startup" />
-100-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:33:17-49
-101            <meta-data
-101-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-102                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-102-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-103                android:value="androidx.startup" />
-103-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-104        </provider>
-105    </application>
-106
-107</manifest>
+78        <activity
+78-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:63:9-68:20
+79            android:name="dev.pdf417censo.com.PickDataActivity"
+79-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:64:13-45
+80            android:exported="true"
+80-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:65:13-36
+81            android:theme="@style/AppTheme.NoActionBar" >
+81-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:66:13-56
+82        </activity>
+83        <activity
+83-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:69:9-75:20
+84            android:name="dev.pdf417censo.com.MainActivity"
+84-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:70:13-41
+85            android:exported="true"
+85-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:71:13-36
+86            android:screenOrientation="portrait"
+86-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:72:13-49
+87            android:theme="@style/AppTheme.NoActionBar" >
+87-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:73:13-56
+88        </activity>
+89        <activity
+89-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:76:9-78:80
+90            android:name="com.microblink.blinkbarcode.activity.BarcodeScanActivity"
+90-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:77:13-84
+91            android:configChanges="orientation|screenSize"
+91-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:38:13-59
+92            android:screenOrientation="nosensor"
+92-->[com.microblink:pdf417.mobi:8.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/eceb6eb237abe1f9ef06e9184a5e7595/pdf417.mobi-8.0.0/AndroidManifest.xml:39:13-49
+93            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+93-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:78:13-77
+94        <activity
+94-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:79:9-81:52
+95            android:name="dev.pdf417censo.com.CustomUIScanActivity"
+95-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:80:13-49
+96            android:screenOrientation="portrait" />
+96-->/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/AndroidManifest.xml:81:13-49
+97
+98        <provider
+98-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+99            android:name="androidx.startup.InitializationProvider"
+99-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:27:13-67
+100            android:authorities="dev.pdf417censo.com.androidx-startup"
+100-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:28:13-68
+101            android:exported="false" >
+101-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:29:13-37
+102            <meta-data
+102-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+103                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+103-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:32:17-75
+104                android:value="androidx.startup" />
+104-->[androidx.emoji2:emoji2:1.0.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/e352b764ecd4b819a6de4a6861619408/emoji2-1.0.0/AndroidManifest.xml:33:17-49
+105            <meta-data
+105-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+106                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+106-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+107                android:value="androidx.startup" />
+107-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/esleyder/.gradle/caches/transforms-2/files-2.1/9af09d6ef4af6aae33db8165dc192c29/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+108        </provider>
+109    </application>
+110
+111</manifest>
