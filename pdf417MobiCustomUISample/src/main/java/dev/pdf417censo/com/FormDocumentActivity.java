@@ -170,9 +170,38 @@ public class FormDocumentActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
 
-/*        Intent i = new Intent(FormDocumentActivity.this, PickUserDataActivity.class);
+        String lastName, secondLastName = null, firstName, middleName = null;
+
+        //apellidos
+        String[] surnamesSplited = surnames.split("\\s+");
+        lastName = surnamesSplited[0];
+        if(surnamesSplited.length > 1){
+            secondLastName = surnamesSplited[1];
+        }
+        //nombres
+        String[] namesSplited = names.split("\\s+");
+        firstName = namesSplited[0];
+        if(namesSplited.length > 1){
+            middleName = namesSplited[1];
+        }
+
+        String[] birthdaySplited = birthday.split("/");
+        String birthdayYear, birthdayMonth, birthdayDay;
+        birthdayYear = birthdaySplited[2];
+        birthdayMonth = birthdaySplited[1];
+        birthdayDay = birthdaySplited[0];
+
+        Persona p = new Persona("",document, lastName, secondLastName, firstName
+                , middleName, strSex, birthdayYear, birthdayMonth, birthdayDay,
+                "", "", "","","");
+
+        //Guardo el objeto persona en un arreglo que persistirá en tiny
+
+        Intent i = new Intent(FormDocumentActivity.this, PickUserDataActivity.class);
+        i.putExtra("objPersona", p);
         startActivity(i);
-        finish();*/
+        finish();
+        //createExcel(
     }
 
     private void updateLabel(){

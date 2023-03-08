@@ -65,7 +65,6 @@ public class PickUserDataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_user_data);
 
@@ -97,26 +96,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         ArrayAdapter<String> adapterDocumentType;
         acDocumentType = findViewById(R.id.acDocumentType);
 
-        if(objPersona != null){
-            adapterDocumentType = new ArrayAdapter<String>(this,
-                    android.R.layout.simple_list_item_1, arrayDocumentTypes);
-            acDocumentType.setAdapter(adapterDocumentType);
 
-            int age = 0;
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                age = objPersona.calculateAgeYear();
-
-                if(age >= 18){
-                    acDocumentType.setText(acDocumentType.getAdapter().getItem(0).toString(), false);
-                }
-                if(age >= 7 && age < 18){
-                    acDocumentType.setText(acDocumentType.getAdapter().getItem(1).toString(), false);
-                }
-                if(age < 7){
-                    acDocumentType.setText(acDocumentType.getAdapter().getItem(2).toString(), false);
-                }
-            }
-        }
 
         //Campo: PARENTESCO
         String[] arrayRelationshipF ={
@@ -157,7 +137,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         //Campo: ESCOLARIDAD
 
         String[] arrayScholarship ={
-                "Ninguno",
+                "N/A",
                 "Primaria",
                 "Secundaria",
                 "Técnico",
@@ -173,7 +153,7 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         //Campo: PROFESIÓN
         String[] arrayProfessionF ={
-                "Ninguno",
+                "N/A",
                 "Agricultor",
                 "Ama de casa",
                 "Estudiante",
@@ -183,7 +163,7 @@ public class PickUserDataActivity extends AppCompatActivity {
                 "Empleado"};
 
         String[] arrayProfessionM ={
-                "Ninguno",
+                "N/A",
                 "Agricultor",
                 "Estudiante",
                 "Comerciante",
@@ -207,6 +187,7 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         //Campo: ESTADO CIVIL
         String[] arrayCivilStateM ={
+                "N/A",
                 "Soltero",
                 "Casado",
                 "Unión libre",
@@ -214,6 +195,7 @@ public class PickUserDataActivity extends AppCompatActivity {
                 "Viudo"};
 
         String[] arrayCivilStateF ={
+                "N/A",
                 "Soltera",
                 "Casada",
                 "Unión libre",
@@ -233,6 +215,34 @@ public class PickUserDataActivity extends AppCompatActivity {
             adapterCivilState = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1, arrayCivilStateF);
             acCivilState.setAdapter(adapterCivilState);
+        }
+
+
+        if(objPersona != null){
+            adapterDocumentType = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, arrayDocumentTypes);
+            acDocumentType.setAdapter(adapterDocumentType);
+
+            int age = 0;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                age = objPersona.calculateAgeYear();
+
+                if(age >= 18){
+                    acDocumentType.setText(acDocumentType.getAdapter().getItem(0).toString(), false);
+                }
+                if(age >= 7 && age < 18){
+                    acDocumentType.setText(acDocumentType.getAdapter().getItem(1).toString(), false);
+                }
+                if(age < 7){
+                    acDocumentType.setText(acDocumentType.getAdapter().getItem(2).toString(), false);
+
+                    acCivilState.setText(acCivilState.getAdapter().getItem(0).toString(), false);
+                    acScholarship.setText(acScholarship.getAdapter().getItem(0).toString(), false);
+                    acProfession.setText(acProfession.getAdapter().getItem(0).toString(), false);
+                    acCivilState.setText(acCivilState.getAdapter().getItem(0).toString(), false);
+
+                }
+            }
         }
 
         Button button = (Button) findViewById(R.id.btnSaveUserData);
@@ -370,13 +380,13 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         objPersona.getDocumentNumber().replaceFirst("^0*", "");
 
-        if (objPersona.getMiddleName().isEmpty()) {
+        if (objPersona.getMiddleName() == null || objPersona.getMiddleName().isEmpty()) {
             objPersona.setNames(objPersona.getFirstName());
         } else {
             objPersona.setNames(objPersona.getFirstName() + " " + objPersona.getMiddleName());
         }
 
-        if (objPersona.getSecondLastName().isEmpty()) {
+        if (objPersona.getSecondLastName() == null || objPersona.getSecondLastName().isEmpty()) {
             objPersona.setSurnames(objPersona.getLastName());
         } else {
             objPersona.setSurnames(objPersona.getLastName() + " " + objPersona.getSecondLastName());
