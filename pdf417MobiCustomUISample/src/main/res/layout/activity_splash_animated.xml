@@ -1,31 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/idRLContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_custom_skin"
+    android:background="@color/light_blue_50"
     android:orientation="vertical"
     tools:context=".SplashActivity">
 
     <!--on below line we are adding an image view-->
-    <ImageView
-        android:id="@+id/idIVLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="25dp"
-        app:tint="@color/background_custom_skin" />
 
     <!--on below line we are creating progress bar-->
+
+    <TextView
+        android:id="@+id/titleAppName"
+        android:layout_width="314dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="36dp"
+        android:gravity="center_horizontal"
+        android:text="@string/app_name"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/idIVLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/idPBLoading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleAppName"
+        app:layout_constraintVertical_bias="0.272"
+        app:tint="@color/background_custom_skin" />
+
     <ProgressBar
         android:id="@+id/idPBLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_below="@id/idIVLogo"
-        android:layout_centerInParent="true"
-        android:indeterminateTint="@color/background_custom_skin" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="200dp"
+        android:indeterminateTint="@color/background_custom_skin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,41 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
+    android:background="@color/light_blue_50"
     >
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
-            android:layout_width="match_parent"
-
-            android:layout_height="?attr/actionBarSize"
-            android:paddingStart="36dp"
-            app:title="@string/scan_document" />
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="170dp"
+        android:layout_height="180dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="36dp"
-        android:fontFamily="@font/comfortaa_bold"
-        android:text="Usuario"
-        android:textColor="@color/primary"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        android:textAlignment="center"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </TextView>
+
 
     <TextView
         android:id="@+id/tvUser"
@@ -55,7 +37,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome">
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo">
 
     </TextView>
 
@@ -63,7 +45,7 @@
         android:id="@+id/tiUser"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="66dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="36dp"
@@ -79,8 +61,12 @@
             android:drawableStart="@drawable/ic_baseline_person_24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="68dp" />
+            tools:layout_editor_absoluteY="68dp"
+            android:inputType="text"
+            android:textSize="18dp"
+            android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -105,7 +91,7 @@
         android:id="@+id/tiPhone"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +106,8 @@
             android:id="@+id/edPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
+            android:textSize="18sp"
+            android:maxLines="1"
             android:inputType="phone|textNoSuggestions"
             android:drawableStart="@drawable/ic_baseline_phone_android_24"
 
@@ -130,18 +117,25 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSaveData"
-        style="@style/Widget.MaterialComponents.Button.Icon"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="70dp"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
-        android:shadowRadius="4"
-        app:icon="@drawable/ic_baseline_save_24"
+        android:backgroundTint="@color/accent"
+        android:shadowRadius="24"
+        android:text="Guardar"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="24dp"
         app:iconGravity="textStart"
+        android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiPhone"
+        app:layout_constraintVertical_bias="0.212"
         tools:ignore="MissingConstraints" />
 
 

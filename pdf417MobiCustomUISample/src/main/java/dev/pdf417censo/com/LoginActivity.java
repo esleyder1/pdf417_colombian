@@ -14,9 +14,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.kelin.translucentbar.library.TranslucentBarManager;
 
 import java.util.Objects;
 
@@ -33,14 +35,13 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
+        TranslucentBarManager translucentBarManager = new TranslucentBarManager(this);
+        translucentBarManager.transparent(this);
+
         edUser= (TextInputEditText) findViewById(R.id.edUser);
         edPhone= (TextInputEditText) findViewById(R.id.edPhone);
 
         btnSaveData = findViewById(R.id.btnSaveData);
-
-
-
-
 
 
         btnSaveData.setOnClickListener(new View.OnClickListener() {

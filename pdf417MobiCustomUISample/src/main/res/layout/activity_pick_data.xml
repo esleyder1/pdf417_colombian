@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/family_mod"
+                android:src="@drawable/banner"
                 app:layout_collapseMode="parallax"
                 android:fitsSystemWindows="true"
 />

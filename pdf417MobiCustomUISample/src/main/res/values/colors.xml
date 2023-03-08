@@ -7,9 +7,9 @@
     <color name="buttonBackgroundNormal">#AAFFFFFF</color>
     <color name="buttonBackgroundPressed">#CCFFFFFF</color>
 
-    <color name="accent">#006c45</color>
-    <color name="primary">#006c45</color>
-    <color name="primaryDark">#002112</color>
+    <color name="accent">#53A552</color>
+    <color name="primary">#046004</color>
+    <color name="primaryDark">#042504</color>
     <color name="white">#fff</color>
 
     <color name="teal_50">#e0f2f1</color>
