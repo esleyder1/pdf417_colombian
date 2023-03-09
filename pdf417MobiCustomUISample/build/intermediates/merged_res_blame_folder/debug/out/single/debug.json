@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_light.ttf.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_light.ttf"
-    },
-    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family.jpg.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family.jpg"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_light.ttf.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_light.ttf"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
@@ -32,12 +32,16 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_save_24.xml"
     },
     {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family3.jpg.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family3.jpg"
+    },
+    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_circle.xml.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/circle.xml"
     },
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family3.jpg.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family3.jpg"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_symbol1.jpeg.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/symbol1.jpeg"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_camera_alt_24.xml.flat",
@@ -48,12 +52,16 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_black_italic.ttf"
     },
     {
-        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_check_circle_24.xml.flat",
-        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_check_circle_24.xml"
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family4.jpeg.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family4.jpeg"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_person_24.xml.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_ic_baseline_check_circle_24.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/ic_baseline_check_circle_24.xml"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family_mod.png.flat",
@@ -96,8 +104,16 @@
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/robot_bold_italic.ttf"
     },
     {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_wave.xml.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/wave.xml"
+    },
+    {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/font_roboto_thin_italic.ttf.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/font/roboto_thin_italic.ttf"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_family5.jpeg.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/family5.jpeg"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -198,6 +214,10 @@
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable-hdpi_family2.jpg.flat",
         "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable-hdpi/family2.jpg"
+    },
+    {
+        "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/drawable_wave_image.png.flat",
+        "source": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/src/main/res/drawable/wave_image.png"
     },
     {
         "merged": "/home/esleyder/Documents/pdf417_colombian/pdf417MobiCustomUISample/build/intermediates/res/merged/debug/layout_activity_pick_data.xml.flat",

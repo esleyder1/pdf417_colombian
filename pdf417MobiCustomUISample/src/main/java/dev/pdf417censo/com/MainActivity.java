@@ -141,8 +141,7 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
         TranslucentBarManager translucentBarManager = new TranslucentBarManager(this);
         translucentBarManager.transparent(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         tvFamilyIntegrantsCount = findViewById(R.id.tvFamilyIntegrantsCount);
 

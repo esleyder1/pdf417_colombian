@@ -341,7 +341,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_family_restroom_24" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="wave" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/../wave.svg" />
                           </map>
                         </option>
                       </PersistentState>
