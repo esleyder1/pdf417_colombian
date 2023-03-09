@@ -379,7 +379,7 @@ public class PickUserDataActivity extends AppCompatActivity {
         }
 
 
-        objPersona.getDocumentNumber().replaceFirst("^0*", "");
+        objPersona.setDocumentNumber(objPersona.getDocumentNumber().replaceFirst("^0*", ""));
 
         if (objPersona.getMiddleName() == null || objPersona.getMiddleName().isEmpty()) {
             objPersona.setNames(objPersona.getFirstName());
@@ -420,81 +420,105 @@ public class PickUserDataActivity extends AppCompatActivity {
             long idRes = conn.savePersona(objPersona);
             if(idRes > 0) {
                 Toast.makeText(this, "Se guardó correctamente", Toast.LENGTH_SHORT).show();
+
+                File localStorage = getExternalFilesDir(null);
+                if (localStorage == null) {
+                    return;
+                }
+                String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
+
+                new SQLiteToExcel
+                        .Builder(this)
+                        .setDataBase(this.getDatabasePath("Encuestados.db").getAbsolutePath())
+                        .setSQL("select " +
+                                "validity as 'VIGENCIA'," +
+                                "guard as 'RESGUARDO INDIGENA'," +
+                                "community as 'COMUNIDAD INDIGENA'," +
+                                "familyRecord as 'FICHA FAMILIAR'," +
+                                "documentType as 'TIPO DOCUMENTO'," +
+                                "documentNumber as 'NUMERO DE DOCUMENTO'," +
+                                "names as 'NOMBRES'," +
+                                "surnames as 'APELLIDOS'," +
+                                "birthdayFull as 'FECHA DE NACIMIENTO'," +
+                                "relationship as 'PARENTESCO'," +
+                                "gender as 'SEXO'," +
+                                "civilStatus as 'ESTADO CIVIL'," +
+                                "profession as 'PROFESION'," +
+                                "scholarship as 'ESCOLARIDAD'," +
+                                "membersFamily as 'INTEGRANTES'," +
+                                "sideWalk as 'DIRECCIÓN'," +
+                                "phone as 'TELEFONO'," +
+                                "user as 'USUARIO'," +
+                                "age as 'EDAD'" +
+                                " from persona")
+
+                        .setOutputPath(storagePath)
+                        .setOutputFileName("CensoJambalo2023.xls")
+                        .setTables("persona")
+                        .start(new SQLiteToExcel.ExportListener() {
+                            @Override
+                            public void onStart() {
+                                Toast.makeText(PickUserDataActivity.this, "Exportando", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onCompleted(String filePath) {
+                                Toast.makeText(PickUserDataActivity.this, "completado", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+                                Toast.makeText(PickUserDataActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                int familyNucleusScanned = 0;
+
+                if(prefe.contains("familyNucleusScanned")){
+                    familyNucleusScanned = prefe.getInt("familyNucleusScanned", 0) + 1;
+                    editor.putInt("familyNucleusScanned", familyNucleusScanned) ;
+                }else{
+                    editor.putInt("familyNucleusScanned", familyNucleusScanned + 1) ;
+                }
+                editor.apply();
+
+                Intent i = new Intent(PickUserDataActivity.this, ResultActivity.class);
+                startActivity(i);
             }else{
                 Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show();
             }
             conn.close();
         }else{
             Toast.makeText(this, "Duplicado", Toast.LENGTH_SHORT).show();
+            duplicateDocument();
+
         }
+    }
 
+    public void duplicateDocument() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Documento duplicado");
 
+        //Datos ingresadosemptyFields
 
-
-
-        File localStorage = getExternalFilesDir(null);
-        if (localStorage == null) {
-            return;
-        }
-        String storagePath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
-
-        new SQLiteToExcel
-                .Builder(this)
-                .setDataBase(this.getDatabasePath("Encuestados.db").getAbsolutePath())
-                .setSQL("select " +
-                        "validity as 'VIGENCIA'," +
-                        "guard as 'RESGUARDO INDIGENA'," +
-                        "community as 'COMUNIDAD INDIGENA'," +
-                        "familyRecord as 'FICHA FAMILIAR'," +
-                        "documentType as 'TIPO DOCUMENTO'," +
-                        "documentNumber as 'NUMERO DE DOCUMENTO'," +
-                        "names as 'NOMBRES'," +
-                        "surnames as 'APELLIDOS'," +
-                        "birthdayFull as 'FECHA DE NACIMIENTO'," +
-                        "relationship as 'PARENTESCO'," +
-                        "gender as 'SEXO'," +
-                        "civilStatus as 'ESTADO CIVIL'," +
-                        "profession as 'PROFESION'," +
-                        "scholarship as 'ESCOLARIDAD'," +
-                        "membersFamily as 'INTEGRANTES'," +
-                        "sideWalk as 'DIRECCIÓN'," +
-                        "phone as 'TELEFONO'," +
-                        "user as 'USUARIO'," +
-                        "age as 'EDAD'" +
-                        " from persona")
-
-                .setOutputPath(storagePath)
-                .setOutputFileName("CensoJambalo2023.xls")
-                .setTables("persona")
-                .start(new SQLiteToExcel.ExportListener() {
+        String message = "El número de documento: "+objPersona.getDocumentNumber() + " yá se encuentra registrado.";
+        builder.setMessage(message);
+        String negativeText = getString(android.R.string.ok);
+        builder.setNegativeButton(negativeText,
+                new DialogInterface.OnClickListener() {
                     @Override
-                    public void onStart() {
-                        Toast.makeText(PickUserDataActivity.this, "Exportando", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onCompleted(String filePath) {
-                        Toast.makeText(PickUserDataActivity.this, "completado", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                        Toast.makeText(PickUserDataActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    public void onClick(DialogInterface dialog, int which) {
+                        // dismiss dialog, start counter again
+                        Intent i = new Intent(PickUserDataActivity.this, MainActivity.class);
+                        startActivity(i);
+                        dialog.dismiss();
                     }
                 });
 
-        int familyNucleusScanned = 0;
-
-        if(prefe.contains("familyNucleusScanned")){
-            familyNucleusScanned = prefe.getInt("familyNucleusScanned", 0) + 1;
-            editor.putInt("familyNucleusScanned", familyNucleusScanned) ;
-        }else{
-            editor.putInt("familyNucleusScanned", familyNucleusScanned + 1) ;
-        }
-        editor.apply();
-
-        Intent i = new Intent(PickUserDataActivity.this, ResultActivity.class);
-        startActivity(i);
+        AlertDialog dialog = builder.create();
+// display dialog
+        dialog.setCancelable(false);
+        dialog.show();
     }
 
     public String currentYearDate(){

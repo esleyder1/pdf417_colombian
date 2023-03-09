@@ -211,5 +211,7 @@ public class FormDocumentActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {}
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

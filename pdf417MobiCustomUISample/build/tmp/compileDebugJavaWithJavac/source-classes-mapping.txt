@@ -81,3 +81,4 @@ dev/pdf417censo/com/PickUserDataActivity.java
  dev.pdf417censo.com.PickUserDataActivity$4
  dev.pdf417censo.com.PickUserDataActivity$5
  dev.pdf417censo.com.PickUserDataActivity$6
+ dev.pdf417censo.com.PickUserDataActivity$7
