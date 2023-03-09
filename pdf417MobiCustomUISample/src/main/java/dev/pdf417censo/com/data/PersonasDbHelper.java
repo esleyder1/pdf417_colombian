@@ -88,6 +88,18 @@ public class PersonasDbHelper extends SQLiteOpenHelper {
         return c;
     }
 
+    public Cursor getPersonaByDocument(String personaDocument) {
+        Cursor c = getReadableDatabase().query(
+                PersonaContract.PersonaEntry.TABLE_NAME,
+                null,
+                PersonaContract.PersonaEntry.DOCUMENTNUMBER + " LIKE ?",
+                new String[]{personaDocument},
+                null,
+                null,
+                null);
+        return c;
+    }
+
     public int deletePersona(String PersonaId) {
         return getWritableDatabase().delete(
                 PersonaContract.PersonaEntry.TABLE_NAME,

@@ -17,6 +17,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -412,14 +413,24 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         //Guardar objeto persona en base de datos
         PersonasDbHelper conn = new PersonasDbHelper(this);
-        long idRes = conn.savePersona(objPersona);
-        conn.close();
 
-        if(idRes > 0) {
-            Toast.makeText(this, "Se guardó correctamente", Toast.LENGTH_SHORT).show();
+        Cursor data = conn.getPersonaByDocument(objPersona.getDocumentNumber());
+        if (!data.moveToFirst()){
+            Toast.makeText(this, "NO duplicado", Toast.LENGTH_SHORT).show();
+            long idRes = conn.savePersona(objPersona);
+            if(idRes > 0) {
+                Toast.makeText(this, "Se guardó correctamente", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show();
+            }
+            conn.close();
         }else{
-            Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Duplicado", Toast.LENGTH_SHORT).show();
         }
+
+
+
+
 
         File localStorage = getExternalFilesDir(null);
         if (localStorage == null) {
