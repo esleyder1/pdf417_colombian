@@ -416,11 +416,9 @@ public class PickUserDataActivity extends AppCompatActivity {
 
         Cursor data = conn.getPersonaByDocument(objPersona.getDocumentNumber());
         if (!data.moveToFirst()){
-            Toast.makeText(this, "NO duplicado", Toast.LENGTH_SHORT).show();
+
             long idRes = conn.savePersona(objPersona);
             if(idRes > 0) {
-                Toast.makeText(this, "Se guardó correctamente", Toast.LENGTH_SHORT).show();
-
                 File localStorage = getExternalFilesDir(null);
                 if (localStorage == null) {
                     return;
@@ -458,12 +456,12 @@ public class PickUserDataActivity extends AppCompatActivity {
                         .start(new SQLiteToExcel.ExportListener() {
                             @Override
                             public void onStart() {
-                                Toast.makeText(PickUserDataActivity.this, "Exportando", Toast.LENGTH_SHORT).show();
+
                             }
 
                             @Override
                             public void onCompleted(String filePath) {
-                                Toast.makeText(PickUserDataActivity.this, "completado", Toast.LENGTH_SHORT).show();
+
                             }
 
                             @Override
@@ -489,7 +487,6 @@ public class PickUserDataActivity extends AppCompatActivity {
             }
             conn.close();
         }else{
-            Toast.makeText(this, "Duplicado", Toast.LENGTH_SHORT).show();
             duplicateDocument();
 
         }

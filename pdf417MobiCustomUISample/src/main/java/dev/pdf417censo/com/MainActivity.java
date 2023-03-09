@@ -292,7 +292,6 @@ public class MainActivity extends AppCompatActivity implements RecognizerRunnerF
 
 
 
-        Toast.makeText(this, "Hola: " + p.getfirstName() + " " + p.getLastName(), Toast.LENGTH_SHORT).show();
 
         SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
 

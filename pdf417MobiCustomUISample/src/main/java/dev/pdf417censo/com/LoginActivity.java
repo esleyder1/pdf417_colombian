@@ -76,8 +76,6 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // dismiss alert dialog, update preferences with game score and restart play fragment
-                        Toast.makeText(LoginActivity.this, "Continuar", Toast.LENGTH_SHORT).show();
-                        Log.d("myTag", "positive button clicked");
                         dialog.dismiss();
                         saveInfo();
                     }
@@ -90,8 +88,6 @@ public class LoginActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // dismiss dialog, start counter again
                         dialog.dismiss();
-                        Log.d("myTag", "negative button clicked");
-                        Toast.makeText(LoginActivity.this, "Cancelar", Toast.LENGTH_SHORT).show();
                     }
                 });
 

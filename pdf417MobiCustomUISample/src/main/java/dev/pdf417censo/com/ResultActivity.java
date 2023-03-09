@@ -59,6 +59,7 @@ public class ResultActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = prefe.edit();
                     editor.remove("membersFamilyCount");
                     editor.remove("familyNucleusScanned");
+                    editor.apply();
 
                     int FamilyRecord = prefe.getInt("familyRecord", 0);
                     editor.putInt("familyRecord", FamilyRecord + 1);
@@ -89,4 +90,5 @@ public class ResultActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {}
+
 }

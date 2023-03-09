@@ -1,6 +1,7 @@
 package dev.pdf417censo.com;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +28,22 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
             SharedPreferences prefe = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefe.edit();
+
+            int familyNucleusScanned = prefe.getInt("familyNucleusScanned", 0);
+            int membersFamilyCount = prefe.getInt("membersFamilyCount", 0);
+            int familyRecord = prefe.getInt("familyRecord", 0);
+
+            if(prefe.contains("membersFamilyCount") && prefe.contains("familyNucleusScanned") && familyNucleusScanned >= membersFamilyCount){
+                editor.remove("membersFamilyCount");
+                editor.remove("familyNucleusScanned");
+
+                if(prefe.contains("familyRecord") && familyRecord > 1) {
+                    editor.putInt("familyRecord", familyRecord + 1);
+                    editor.apply();
+                }
+            }
+
 
         if(prefe.contains("user") && prefe.contains("phone") && !prefe.contains("membersFamilyCount")){
             Intent i = new Intent(SplashActivity.this, PickDataActivity.class);

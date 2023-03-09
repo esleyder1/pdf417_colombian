@@ -142,8 +142,8 @@ public class FormDocumentActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void saveInfo() {
         String document = Objects.requireNonNull(edDocument.getText().toString().trim());
-        String  names = Objects.requireNonNull(edNames.getText()).toString().trim();
-        String  surnames = Objects.requireNonNull(edSurnames.getText()).toString().trim();
+        String  names = Objects.requireNonNull(edNames.getText()).toString().toUpperCase().trim();
+        String  surnames = Objects.requireNonNull(edSurnames.getText()).toString().toUpperCase().trim();
         String  birthday = Objects.requireNonNull(edBirthday.getText()).toString().trim();
 
 
@@ -151,9 +151,7 @@ public class FormDocumentActivity extends AppCompatActivity {
                 rgSex.getCheckedRadioButtonId();
 
         if (selectedBtnId == -1) {
-            Toast.makeText(FormDocumentActivity.this,
-                    "Nothing selected",
-                    Toast.LENGTH_SHORT).show();
+
         }
         else{
             MaterialRadioButton selectedRadioBtn =
@@ -164,10 +162,6 @@ public class FormDocumentActivity extends AppCompatActivity {
             }else{
                 strSex = "F";
             }
-            Toast.makeText(FormDocumentActivity.this,
-                    "SEXO: " +
-                            strSex,
-                    Toast.LENGTH_SHORT).show();
         }
 
         String lastName, secondLastName = null, firstName, middleName = null;

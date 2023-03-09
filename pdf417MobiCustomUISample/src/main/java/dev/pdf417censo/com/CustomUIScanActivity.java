@@ -294,7 +294,6 @@ public class CustomUIScanActivity extends Activity implements View.OnClickListen
             mScanCount++;
 
             String scanCountText = "Scanned: " + mScanCount + " / 5";
-            Toast.makeText(CustomUIScanActivity.this, scanCountText, Toast.LENGTH_SHORT).show();
 
             // pause scanning to prevent scan results to come while
             // activity is being finished or while we wait for delayed task that will resume scanning
